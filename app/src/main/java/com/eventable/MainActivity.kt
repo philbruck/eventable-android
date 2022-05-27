@@ -11,6 +11,8 @@ class MainActivity : AppCompatActivity() {
 
         Log.e("TAG", "test msg")
 
+        Log.e("TAG", "Ein anderer Test")
+
 
     }
 }
