@@ -42,7 +42,7 @@
         app:srcCompat="@android:drawable/screen_background_dark" />
 
     <EditText
-        android:id="@+id/EmailEdTe"
+        android:id="@+id/EmailLogInEdTe"
         android:layout_width="370dp"
         android:layout_height="50dp"
         android:ems="10"
@@ -56,7 +56,7 @@
         app:layout_constraintVertical_bias="0.296" />
 
     <EditText
-        android:id="@+id/PasswordEdTe"
+        android:id="@+id/PasswordRegistrationEdTe"
         android:layout_width="370dp"
         android:layout_height="50dp"
         android:ems="10"
