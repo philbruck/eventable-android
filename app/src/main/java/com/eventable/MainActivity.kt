@@ -1,6 +1,7 @@
 package com.eventable
 
 import android.content.ContentValues.TAG
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -16,7 +17,13 @@ class MainActivity : AppCompatActivity() {
 
         Log.e("TAG", "Ein anderer Test")
 
-        val db = Firebase.firestore
+        val intent = Intent(this, LogIn::class.java)
+        startActivity(intent)
+
+
+
+
+//        val db = Firebase.firestore
 
 
      //--> Neuer User wird unter der Sammlung users mit automatisch generierte ID angelegt
@@ -36,30 +43,58 @@ class MainActivity : AppCompatActivity() {
 //                Log.w(TAG, "Error adding document", e)
 //            }
 
-//   --> Daten auslesen
+//   --> Alle Daten in Sammlung auslesen und ausgeben
 
-        db.collection("users")
-            .get()
-            .addOnSuccessListener { result ->
-                for (document in result) {
-                    Log.d(TAG, "${document.id} => ${document.data}")
-                }
-            }
-            .addOnFailureListener { exception ->
-                Log.w(TAG, "Error getting documents.", exception)
-            }
+//        db.collection("users")
+//            .get()
+//            .addOnSuccessListener { result ->
+//                for (document in result) {
+//                    Log.d(TAG, "${document.id} => ${document.data}")
+//                }
+//            }
+//            .addOnFailureListener { exception ->
+//                Log.w(TAG, "Error getting documents.", exception)
+//            }
 
-        val cities = db.collection("cities")
+        // --> Hier werden Daten mit festen Pfad in DB geschrieben
+        //--> ListOf ist auch möglich (Arrays)
+ //       val cities = db.collection("cities")
 
-        val data1 = hashMapOf(
-            "name" to "San Francisco",
-            "state" to "CA",
-            "country" to "USA",
-            "capital" to false,
-            "population" to 860000,
-            "regions" to listOf("west_coast", "norcal")
-        )
-        cities.document("name").set(data1)
+//        val data1 = hashMapOf(
+//            "name" to "San Francisco",
+//            "state" to "CA",
+//            "country" to "USA",
+//            "capital" to false,
+//            "population" to 860000,
+//            "regions" to listOf("west_coast", "norcal")
+//        )
+//        cities.document("name").set(data1)
+
+//        // Create a reference to the cities collection
+//        val nameRef = db.collection("users")
+//
+//        // Create a query against the collection.
+//        val query = nameRef.whereEqualTo("first", "Christopher")
+//
+//        Log.e("TAG", "$query")
+//        Log.e("TAG", "query")
+
+
+
+
+
+//        db.collection("users")
+//            .whereEqualTo("first", "Christopher")
+//            .get()
+//            .addOnSuccessListener { documents ->
+//                for (document in documents) {
+//                    Log.d(TAG, "${document.id} => ${document.data}")
+//                }
+//            }
+//            .addOnFailureListener { exception ->
+//                Log.w(TAG, "Error getting documents: ", exception)
+//            }
+
 
 
 
