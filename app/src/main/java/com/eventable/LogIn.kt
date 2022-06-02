@@ -13,11 +13,11 @@ import android.widget.TextView
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
-import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 
 class LogIn : AppCompatActivity() {
+    private lateinit var auth:FirebaseAuth;
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_log_in)
@@ -25,17 +25,16 @@ class LogIn : AppCompatActivity() {
         val loginBtn : Button = findViewById(R.id.LogInBtn)
         val emailTextField : EditText = findViewById(R.id.EmailTextField)
         val passwordTextField : EditText = findViewById(R.id.PasswordTextField)
-        val email2TextView : TextView = findViewById(R.id.email2TextView)
-        val password2TextView : TextView = findViewById(R.id.password2TextView)
         val emailregistrationTextField : TextView = findViewById(R.id.emailregistrationtextField)
         val passwordregistrationTextField : TextView = findViewById(R.id.passwordregistrationTextField)
-        val anzeigenbtn : Button = findViewById(R.id.AnzeigenBtn)
+        val registrationBtn : Button = findViewById(R.id.registrationBtn)
+        auth = FirebaseAuth.getInstance()
 
         val db = Firebase.firestore
 
 
 
-        anzeigenbtn.setOnClickListener{
+        registrationBtn.setOnClickListener{
             when{
                 // Wenn Email Field leer, dann Meldung
                 TextUtils.isEmpty(emailregistrationTextField.text.toString().trim{ it <= ' ' }) -> {
@@ -87,63 +86,34 @@ class LogIn : AppCompatActivity() {
                                     Toast.LENGTH_SHORT
                                 ).show()
                             }
-
-
                         }
                     )
-
                 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
             }
-
         }
 
 
-
-
-
-
-
-        loginBtn.setOnClickListener(object : View.OnClickListener{
-            override fun onClick(v: View?) {
-                val EmailRegistrationText : String = emailTextField.text.toString()
-                val PasswordRegistrationText : String = passwordTextField.text.toString()
-
-                Log.e("TAG", "$EmailRegistrationText")
-                Log.e("TAG", "$PasswordRegistrationText")
-
-                val user = hashMapOf(
-                    "first" to "$EmailRegistrationText",
-                    "last" to "$PasswordRegistrationText",
-                )
-
-                db.collection("users")
-                    .add(user)
-                    .addOnSuccessListener { documentReference ->
-                        Log.d(TAG, "DocumentSnapshot added with ID: ${documentReference.id}")
-                    }
-                    .addOnFailureListener { e ->
-                        Log.w(TAG, "Error adding document", e)
-                    }
-
+        loginBtn.setOnClickListener{
+            if(emailTextField.text.trim().toString().isNotEmpty() || passwordTextField.text.trim().toString().isNotEmpty()){
+                signInUser(emailTextField.text.trim().toString(), passwordTextField.text.trim().toString())
+            }else{
+                Toast.makeText(this, "Input requured", Toast.LENGTH_LONG).show()
             }
-        })
 
 
+        }
 
+    }
 
+    fun signInUser(email:String, password:String){
+        auth.signInWithEmailAndPassword(email,password)
+            .addOnCompleteListener(this){task->
+                if(task.isSuccessful){
+                    val intent = Intent(this, Hauptseite::class.java)
+                    startActivity(intent)
+                }else{
+                    Toast.makeText(this, "Error!"+task.exception, Toast.LENGTH_LONG).show()
+                }
+            }
     }
 }
