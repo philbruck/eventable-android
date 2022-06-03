@@ -10,10 +10,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Eventable">
         <activity
-            android:name=".Hauptseite"
+            android:name=".DashboardActivity"
             android:exported="false" />
         <activity
-            android:name=".LogIn"
+            android:name=".RegistrationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".LogInActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
