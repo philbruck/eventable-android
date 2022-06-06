@@ -5,9 +5,24 @@
       <map>
         <entry key="..\:/01_App_programmieren/03_Studienprojekt/01_Eventable/app/src/main/res/layout/activity_log_in.xml" value="0.264" />
         <entry key="..\:/01_App_programmieren/03_Studienprojekt/01_Eventable/app/src/main/res/layout/activity_main.xml" value="0.2" />
-        <entry key="..\:/01_App_programmieren/03_Studienprojekt/eventable-android/app/src/main/res/layout/activity_log_in.xml" value="0.1" />
-        <entry key="..\:/01_App_programmieren/03_Studienprojekt/eventable-android/app/src/main/res/layout/activity_main.xml" value="0.3625" />
-        <entry key="..\:/01_App_programmieren/03_Studienprojekt/eventable-android/app/src/main/res/layout/activity_registration.xml" value="0.18541666666666667" />
+        <entry key="..\:/Users/Philip/Git-Folder/eventable-android/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1" />
+        <entry key="..\:/Users/Philip/Git-Folder/eventable-android/app/src/main/res/drawable/ic_baseline_home_24.xml" value="0.1" />
+        <entry key="..\:/Users/Philip/Git-Folder/eventable-android/app/src/main/res/drawable/ic_baseline_how_to_reg_24.xml" value="0.1" />
+        <entry key="..\:/Users/Philip/Git-Folder/eventable-android/app/src/main/res/drawable/ic_baseline_input_24.xml" value="0.108" />
+        <entry key="..\:/Users/Philip/Git-Folder/eventable-android/app/src/main/res/drawable/ic_baseline_insert_invitation_24.xml" value="0.1" />
+        <entry key="..\:/Users/Philip/Git-Folder/eventable-android/app/src/main/res/drawable/ic_baseline_plus_one_24.xml" value="0.1" />
+        <entry key="..\:/Users/Philip/Git-Folder/eventable-android/app/src/main/res/drawable/ic_home.xml" value="0.108" />
+        <entry key="..\:/Users/Philip/Git-Folder/eventable-android/app/src/main/res/drawable/ic_search.xml" value="0.108" />
+        <entry key="..\:/Users/Philip/Git-Folder/eventable-android/app/src/main/res/layout/activity_log_in.xml" value="0.1390625" />
+        <entry key="..\:/Users/Philip/Git-Folder/eventable-android/app/src/main/res/layout/activity_main.xml" value="0.12" />
+        <entry key="..\:/Users/Philip/Git-Folder/eventable-android/app/src/main/res/layout/activity_registration.xml" value="0.140625" />
+        <entry key="..\:/Users/Philip/Git-Folder/eventable-android/app/src/main/res/layout/fragment_confirmed.xml" value="0.1265625" />
+        <entry key="..\:/Users/Philip/Git-Folder/eventable-android/app/src/main/res/layout/fragment_create.xml" value="0.1265625" />
+        <entry key="..\:/Users/Philip/Git-Folder/eventable-android/app/src/main/res/layout/fragment_home.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/Philip/Git-Folder/eventable-android/app/src/main/res/layout/fragment_invitation.xml" value="0.1" />
+        <entry key="..\:/Users/Philip/Git-Folder/eventable-android/app/src/main/res/layout/fragment_settings.xml" value="0.1" />
+        <entry key="..\:/Users/Philip/Git-Folder/eventable-android/app/src/main/res/menu/bottom_nav_menu.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/Philip/Git-Folder/eventable-android/app/src/main/res/menu/options_menu.xml" value="0.16666666666666666" />
       </map>
     </option>
   </component>

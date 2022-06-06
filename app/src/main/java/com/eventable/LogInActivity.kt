@@ -16,7 +16,13 @@ class LogInActivity : AppCompatActivity() {
         val RegistrationBtn : Button = findViewById(R.id.RegistrationLogInBtn)
 
         val goToRegistration = Intent(this, RegistrationActivity::class.java) //Man benötigt Intent für Wechsel auf andere Activity
+        val testToMain1 = Intent(this, MainActivity:: class.java)
 
+        LogInBtn.setOnClickListener(object: View.OnClickListener{
+            override fun onClick(v: View?){
+                startActivity(testToMain1)
+            }
+        })
 
         RegistrationBtn.setOnClickListener(object : View.OnClickListener {
             override fun onClick (v: View?) {
