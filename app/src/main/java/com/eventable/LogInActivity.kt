@@ -52,7 +52,7 @@ class LogInActivity : AppCompatActivity() {
 
                     val intent = Intent(
                         this@LogInActivity,
-                        DashboardActivity::class.java
+                        MainActivity::class.java
                     )
                     intent.flags =
                         Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
