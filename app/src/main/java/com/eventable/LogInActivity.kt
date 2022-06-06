@@ -3,38 +3,75 @@ package com.eventable
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import android.view.View
 import android.widget.Button
+import android.widget.EditText
+import android.widget.Toast
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
 
 class LogInActivity : AppCompatActivity() {
+    private lateinit var auth: FirebaseAuth;
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_log_in)
 
-        val LogInBtn : Button = findViewById(R.id.LogInBtn) //Macht den Button mit der Klasse bekannt
-        val RegistrationBtn : Button = findViewById(R.id.RegistrationLogInBtn)
+        val registrationActivityBtn: Button = findViewById(R.id.registrationActivityBtn)
+        val emailLogInEdTe: EditText = findViewById(R.id.emailLogInEdTe)
+        val passwordLogInEdTe: EditText = findViewById(R.id.passwordLogInEdTe)
+        val logInBtn: Button = findViewById(R.id.logInBtn)
+        auth = FirebaseAuth.getInstance()
+        
 
-        val goToRegistration = Intent(this, RegistrationActivity::class.java) //Man benötigt Intent für Wechsel auf andere Activity
-        val testToMain1 = Intent(this, MainActivity:: class.java)
+        registrationActivityBtn.setOnClickListener {
+            val intent = Intent(this, RegistrationActivity::class.java)
+            startActivity(intent)
+        }
 
-        LogInBtn.setOnClickListener(object: View.OnClickListener{
-            override fun onClick(v: View?){
-                startActivity(testToMain1)
+        logInBtn.setOnClickListener {
+            if (emailLogInEdTe.text.trim().toString().isNotEmpty() || passwordLogInEdTe.text.trim()
+                    .toString().isNotEmpty()
+            ) {
+                signInUser(
+                    emailLogInEdTe.text.trim().toString(),
+                    passwordLogInEdTe.text.trim().toString()
+                )
+            } else {
+                Toast.makeText(this, "Input requured", Toast.LENGTH_LONG).show()
             }
-        })
+        }
+    }
 
-        RegistrationBtn.setOnClickListener(object : View.OnClickListener {
-            override fun onClick (v: View?) {
-                startActivity(goToRegistration)
+    fun signInUser(email: String, password: String) {
+        auth.signInWithEmailAndPassword(email, password)
+            .addOnCompleteListener(this) { task ->
+                if (task.isSuccessful) {
+
+                    //Firebase registerd user
+                    val firebaseUser: FirebaseUser = task.result!!.user!!
+
+
+                    val intent = Intent(
+                        this@LogInActivity,
+                        DashboardActivity::class.java
+                    )
+                    intent.flags =
+                        Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                    intent.putExtra("user_id", firebaseUser.uid)
+                    intent.putExtra("email_id", email)
+                    startActivity(intent)
+                    finish()
+                } else {
+                    Toast.makeText(
+                        this@LogInActivity,
+                        task.exception!!.message.toString(),
+                        Toast.LENGTH_SHORT
+                    ).show()
+
+                }
             }
-        })
-
-
-
-
-
-
-
     }
 }
+
+
+
+

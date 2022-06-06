@@ -10,21 +10,21 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Eventable">
         <activity
+            android:name=".DashboardActivity"
+            android:exported="false" />
+        <activity
             android:name=".RegistrationActivity"
             android:exported="false" />
         <activity
             android:name=".LogInActivity"
-            android:exported="true">
+            android:exported="true"
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
+                <action android:name="android.intent.action.LogInActivity" />
                 <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            </intent-filter>/>
         <activity
             android:name=".MainActivity"
             android:exported="false">
-
         </activity>
     </application>
 

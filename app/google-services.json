@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "321190266363",
+    "project_id": "eventable-android-e1114",
+    "storage_bucket": "eventable-android-e1114.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:321190266363:android:a0262cbdad2c691fe6375e",
+        "android_client_info": {
+          "package_name": "com.eventable"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "321190266363-tog519cvd4ktrvgd840pdvg99q22mb0m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAW8bEANZPC-jGjg5Y0VcneupCh7xlcQBY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "321190266363-tog519cvd4ktrvgd840pdvg99q22mb0m.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
