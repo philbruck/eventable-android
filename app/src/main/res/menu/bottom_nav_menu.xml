@@ -7,17 +7,17 @@
         android:id="@+id/homeFragment">
     </item>
     <item
-        android:title="Einladungen"
+        android:title="Invitations"
         android:icon="@drawable/ic_baseline_insert_invitation_24"
         android:id="@+id/invitationFragment">
     </item>
     <item
-        android:title="Bestaetigt"
+        android:title="Confirmed"
         android:icon="@drawable/ic_baseline_how_to_reg_24"
         android:id="@+id/confirmedFragment">
     </item>
     <item
-        android:title="Neue Veranstatltung"
+        android:title="New Event"
         android:icon="@drawable/ic_baseline_plus_one_24"
         android:id="@+id/createFragment">
     </item>

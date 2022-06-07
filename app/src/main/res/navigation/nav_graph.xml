@@ -10,12 +10,8 @@
         android:label="Home"
         tools:layout="@layout/fragment_home">
         <action
-            android:id="@+id/action_homeFragment_to_invitationFragment"
-            app:destination="@id/invitationFragment"
-            app:enterAnim="@anim/slide_in_right"
-            app:exitAnim="@anim/slide_out_left"
-            app:popEnterAnim="@anim/slide_in_left"
-            app:popExitAnim="@anim/slide_out_right" />
+            android:id="@+id/action_homeFragment_to_data1Fragment"
+            app:destination="@id/data1Fragment" />
     </fragment>
     <fragment
         android:id="@+id/invitationFragment"
@@ -37,4 +33,9 @@
         android:name="com.eventable.CreateFragment"
         android:label="Create"
         tools:layout="@layout/fragment_create" />
+    <fragment
+        android:id="@+id/data1Fragment"
+        android:name="com.eventable.Data1Fragment"
+        android:label="Data1"
+        tools:layout="@layout/fragment_data1" />
 </navigation>
