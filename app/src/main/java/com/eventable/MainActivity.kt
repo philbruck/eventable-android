@@ -28,6 +28,8 @@ class MainActivity : AppCompatActivity() {
 
         Log.i("TAG", "Die MainActivity hat gestartet!")
 
+
+
         appBarConfiguration = AppBarConfiguration(
             setOf(
                 R.id.homeFragment,
