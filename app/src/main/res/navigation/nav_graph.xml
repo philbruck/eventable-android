@@ -11,13 +11,28 @@
         tools:layout="@layout/fragment_home">
         <action
             android:id="@+id/action_homeFragment_to_data1Fragment"
-            app:destination="@id/data1Fragment" />
+            app:destination="@id/data1Fragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_homeFragment_self"
+            app:destination="@id/homeFragment" />
     </fragment>
     <fragment
         android:id="@+id/invitationFragment"
         android:name="com.eventable.InvitationFragment"
         android:label="Invitation"
-        tools:layout="@layout/fragment_invitation" />
+        tools:layout="@layout/fragment_invitation" >
+        <action
+            android:id="@+id/action_invitationFragment_to_data2Fragment"
+            app:destination="@id/data2Fragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
     <fragment
         android:id="@+id/settingsFragment"
         android:name="com.eventable.SettingsFragment"
@@ -27,15 +42,44 @@
         android:id="@+id/confirmedFragment"
         android:name="com.eventable.ConfirmedFragment"
         android:label="Confirmed"
-        tools:layout="@layout/fragment_confirmed" />
+        tools:layout="@layout/fragment_confirmed" >
+        <action
+            android:id="@+id/action_confirmedFragment_self"
+            app:destination="@id/confirmedFragment" />
+    </fragment>
     <fragment
         android:id="@+id/createFragment"
         android:name="com.eventable.CreateFragment"
         android:label="Create"
-        tools:layout="@layout/fragment_create" />
+        tools:layout="@layout/fragment_create" >
+        <action
+            android:id="@+id/action_createFragment_to_data3Fragment"
+            app:destination="@id/data3Fragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+    </fragment>
     <fragment
         android:id="@+id/data1Fragment"
         android:name="com.eventable.Data1Fragment"
         android:label="Data1"
-        tools:layout="@layout/fragment_data1" />
+        tools:layout="@layout/fragment_data1" >
+        <argument
+            android:name="event_id"
+            app:argType="string" />
+        <argument
+            android:name="user_id"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/data2Fragment"
+        android:name="com.eventable.Data2Fragment"
+        android:label="fragment_data2"
+        tools:layout="@layout/fragment_data2" />
+    <fragment
+        android:id="@+id/data3Fragment"
+        android:name="com.eventable.Data3Fragment"
+        android:label="fragment_data3"
+        tools:layout="@layout/fragment_data3" />
 </navigation>

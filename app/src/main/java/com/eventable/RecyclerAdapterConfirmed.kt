@@ -11,44 +11,40 @@ import androidx.navigation.fragment.NavHostFragment.Companion.findNavController
 import androidx.recyclerview.widget.RecyclerView
 
 
-class RecyclerAdapter : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
+class RecyclerAdapterConfirmed : RecyclerView.Adapter<RecyclerAdapterConfirmed.ViewHolder>() {
 
     private lateinit var navController: NavController
 
-    val testvar_1 = (0..10).random()
-    val testvar_2 = (0..10).random()
-    val testvar_3 = (0..10).random()
+    val testvarc_1 = (0..10).random()
+    val testvarc_2 = (0..10).random()
+    val testvarc_3 = (0..10).random()
 
-    private var testvar = arrayOf(
-        "1 random:" + testvar_1.toString(),
-        "2 random" + testvar_2.toString(),
-        "3 random" + testvar_3.toString(),
-        "4 Event",
-        "5 Event",
-        "6 Event",
-        "7",
-        "8",
-        "9",
-        "10",
-        "11",
-        "12"
+    private var testvarc = arrayOf(
+        "M-HALLO1-Random:" + testvarc_1.toString(),
+        "B-HALLO2-Random:" + testvarc_2.toString(),
+        "F-HALLO3-Random:" + testvarc_3.toString(),
+        "O-HALLO4",
 
-    )
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerAdapter.ViewHolder {
+        )
+
+    override fun onCreateViewHolder(
+        parent: ViewGroup,
+        viewType: Int
+    ): RecyclerAdapterConfirmed.ViewHolder {
         val v = LayoutInflater.from(parent.context).inflate(R.layout.view_cardlayout, parent, false)
         return ViewHolder(v)
     }
 
     override fun onBindViewHolder(
-        holder: RecyclerAdapter.ViewHolder,
+        holder: RecyclerAdapterConfirmed.ViewHolder,
         position: Int
     ) { //philbruck: der Binder matcht die Daten auf die XML Elemente
-        holder.itemTitle.text = testvar[position]
+        holder.itemTitle.text = testvarc[position]
     }
 
     override fun getItemCount(): Int { //philbruck: wie bei Java, man muss sagn wie viele Emelent man hat
-        return testvar.size
+        return testvarc.size
     }
 
     inner class ViewHolder(itemView: View) :
@@ -61,15 +57,12 @@ class RecyclerAdapter : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
                 val pos: Int =
                     bindingAdapterPosition //philbruck: wenn man die akteulle Position wissen will
 
-                val user_id = pos
-                val event_id = testvar[pos]
+                /*navController = findNavController(itemView)
 
-
-                navController = findNavController(itemView)
-                val action_HomeToData1 =
-                    HomeFragmentDirections.actionHomeFragmentToData1Fragment(event_id, user_id)
-                navController.navigate(action_HomeToData1) //philbruck: geht auch "// navController.navigate(R.id.action.....)"
-
+                val action_ConfirmedToSelf =
+                    ConfirmedFragmentDirections.actionConfirmedFragmentSelf()
+                navController.navigate(action_ConfirmedToSelf) //philbruck: geht auch "// navController.navigate(R.id.action.....)"
+*/
 
             }
         }

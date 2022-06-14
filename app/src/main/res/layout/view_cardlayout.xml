@@ -1,33 +1,182 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/card_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
     android:layout_margin="12dp"
-    app:cardBackgroundColor="#5B0A2DDD"
-    app:cardCornerRadius="12dp"
+    app:cardBackgroundColor="#1E0A70DD"
+    app:cardCornerRadius="10dp"
     app:cardElevation="3dp"
-    app:contentPadding="4dp">
+    app:contentPadding="2dp">
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/card_const_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/card_const_layout"
-        android:padding="16dp"
         android:gravity="center"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:padding="10dp">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/testTextView1"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-        </TextView>
+            <TextView
+                android:id="@+id/headlineTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:text="Lorem ipsum..."
+                android:textAppearance="@style/TextAppearance.AppCompat.Large">
 
+            </TextView>
+
+            <TextView
+                android:id="@+id/placeTV"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/headlineTV"
+                android:padding="4dp"
+                android:text="Ort:">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/dateTV"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/placeTV"
+                android:padding="4dp"
+                android:text="Datum:">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/timeTV"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/dateTV"
+                android:padding="4dp"
+                android:text="Uhrzeit:">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/placeHolderTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/headlineTV"
+                android:layout_toRightOf="@+id/placeTV"
+                android:padding="4dp"
+                android:text="Lorem ipsum..">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/dateHolderTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/placeTV"
+                android:layout_toRightOf="@+id/placeTV"
+                android:padding="4dp"
+                android:text="Lorem ipsum..">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/timeHolderTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/dateTV"
+                android:layout_toRightOf="@+id/placeTV"
+                android:padding="4dp"
+                android:text="Lorem ipsum..">
+
+            </TextView>
+
+            <LinearLayout
+                android:id="@+id/linearlayoutLL"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/timeTV"
+                android:layout_marginTop="2dp"
+                android:orientation="horizontal"
+                android:padding="4dp">
+
+                <TextView
+                    android:id="@+id/invitationTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".33"
+                    android:text="Einladungen"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium">
+
+                </TextView>
+
+                <TextView
+                    android:id="@+id/confirmedTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Zusagen"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium">
+
+                </TextView>
+
+                <TextView
+                    android:id="@+id/cancelTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Absagen"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium">
+
+                </TextView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearlayout2LL"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/linearlayoutLL"
+                android:orientation="horizontal"
+                android:padding="4dp">
+
+                <TextView
+                    android:id="@+id/invitationHolderTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="25"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium">
+
+                </TextView>
+
+                <TextView
+                    android:id="@+id/confirmedHolderTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="13"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium">
+
+                </TextView>
+
+                <TextView
+                    android:id="@+id/cancelHolderTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="4"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium">
+
+                </TextView>
+            </LinearLayout>
+
+
+        </RelativeLayout>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
