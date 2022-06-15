@@ -15,6 +15,7 @@ class RecyclerAdapter : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
 
     private lateinit var navController: NavController
 
+
     val testvar_1 = (0..10).random()
     val testvar_2 = (0..10).random()
     val testvar_3 = (0..10).random()
@@ -32,8 +33,17 @@ class RecyclerAdapter : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
         "10",
         "11",
         "12"
-
     )
+
+    fun readEvent() {
+
+    }
+
+
+
+
+
+
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerAdapter.ViewHolder {
         val v = LayoutInflater.from(parent.context).inflate(R.layout.view_cardlayout, parent, false)
