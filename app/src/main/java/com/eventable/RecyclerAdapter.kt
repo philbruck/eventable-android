@@ -1,5 +1,7 @@
 package com.eventable
 
+import android.content.ContentValues.TAG
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,6 +11,8 @@ import androidx.navigation.Navigation
 import androidx.navigation.Navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment.Companion.findNavController
 import androidx.recyclerview.widget.RecyclerView
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
 
 
 class RecyclerAdapter : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
@@ -16,9 +20,18 @@ class RecyclerAdapter : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
     private lateinit var navController: NavController
 
 
+
     val testvar_1 = (0..10).random()
     val testvar_2 = (0..10).random()
     val testvar_3 = (0..10).random()
+
+    var auth = FirebaseAuth.getInstance()
+    var user = auth.currentUser
+    var uid = user?.uid
+
+    var db = FirebaseFirestore.getInstance()
+    var i = 0
+
 
     private var testvar = arrayOf(
         "1 random:" + testvar_1.toString(),
@@ -35,9 +48,30 @@ class RecyclerAdapter : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
         "12"
     )
 
-    fun readEvent() {
+//Augustin: Das ist die Funktion, um Daten aus der Db zu lesen
+        fun readData() {
+            var db = FirebaseFirestore.getInstance()
+            var i = 0
 
-    }
+            db.collection("events")
+                .whereEqualTo("creator", "$uid")
+                .get()
+                .addOnSuccessListener { documents ->
+                    var countDoc = documents.size().toString().toInt()
+                    var dataEvents = Array(countDoc) {"init"}
+
+                    for(document in documents) {
+                        dataEvents[i] = "${document.get("name")}"
+                        i++
+                    }
+
+
+                }
+                .addOnFailureListener{ execption ->
+                    Log.w(TAG, "Fehler beim Auslesen der Eventnamen", execption)
+                }
+        }
+
 
 
 
