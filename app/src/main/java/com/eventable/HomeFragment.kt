@@ -69,10 +69,10 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         // Refresh funktioniert nicht
         refreshHome()
 
-/*        recyclerView.layoutManager =
+      recyclerView.layoutManager =
             LinearLayoutManager(activity) //philbruck: hier wird die activity übergeben weil man ja eine Context übergebn muss und Fragmnet leiter nicht von Context ab!
 
-        recyclerView.adapter = RecyclerAdapter()*/
+        //recyclerView.adapter = RecyclerAdapter()
     }
 
 
