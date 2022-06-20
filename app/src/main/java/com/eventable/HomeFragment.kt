@@ -1,32 +1,80 @@
 package com.eventable
 
+import android.content.ContentValues.TAG
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentActivity
+import androidx.navigation.Navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.eventable.model.Event
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.fragment_home.*
 
 
 class HomeFragment : Fragment(R.layout.fragment_home) {
 
+    private lateinit var firestoneDb: FirebaseFirestore
+    private lateinit var events: MutableList<Event>
+    //private lateinit var adapter: RecyclerAdapter
+
+
     private var layoutManager: RecyclerView.LayoutManager? = null
-    private var adapter: RecyclerView.Adapter<RecyclerAdapter.ViewHolder>? = null
+    //private var adapter: RecyclerView.Adapter<RecyclerAdapter.ViewHolder>? = null
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        var auth = FirebaseAuth.getInstance()
+        var user = auth.currentUser
+        var uid = user?.uid
+
+
+        firestoneDb = FirebaseFirestore.getInstance()
+        //Datenquelle wird erstellt
+        events = mutableListOf()
+        //adapter = RecyclerAdapter(this, events )
+
+        recyclerView.adapter = RecyclerAdapter(this, events)
+        recyclerView.layoutManager = LinearLayoutManager(activity)
+
+
+        val eventsReference = firestoneDb.collection("events")
+        eventsReference
+            .whereEqualTo("creator", uid)
+            .addSnapshotListener { snapshot, exception ->
+                if (exception != null || snapshot == null) {
+                    Log.e(TAG, "Exception when querying events", exception)
+                    return@addSnapshotListener
+                }
+
+                //Speichert die Objekte in eine Liste
+                var eventList = snapshot.toObjects(Event::class.java)
+                events.clear()
+                events.addAll(eventList)
+                //adapter.notifyDataSetChanged()
+
+                for (event in eventList) {
+                    Log.i(TAG, "Event ${event}")
+                }
+            }
+
+
+
+
+        // Refresh funktioniert nicht
         refreshHome()
 
-        recyclerView.layoutManager =
+      recyclerView.layoutManager =
             LinearLayoutManager(activity) //philbruck: hier wird die activity übergeben weil man ja eine Context übergebn muss und Fragmnet leiter nicht von Context ab!
 
-        recyclerView.adapter = RecyclerAdapter()
-
+        //recyclerView.adapter = RecyclerAdapter()
     }
+
 
     private fun refreshHome() {
 
@@ -39,9 +87,11 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
             findNavController().navigate(action_HomeToSelf)
 
         }
-
-
     }
-
-
 }
+
+
+
+
+
+
