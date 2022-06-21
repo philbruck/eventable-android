@@ -1,6 +1,7 @@
 package com.eventable
 
 import android.content.ContentValues.TAG
+import android.content.Context
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -39,7 +40,8 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         events = mutableListOf()
         //adapter = RecyclerAdapter(this, events )
 
-        recyclerView.adapter = RecyclerAdapter(this, events)
+        recyclerView.adapter = RecyclerAdapter(events)
+        //philbruck: hier wird die activity übergeben weil man ja eine Context übergebn muss und Fragmnet leiter nicht von Context ab!
         recyclerView.layoutManager = LinearLayoutManager(activity)
 
 
@@ -69,10 +71,14 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         // Refresh funktioniert nicht
         refreshHome()
 
-      recyclerView.layoutManager =
-            LinearLayoutManager(activity) //philbruck: hier wird die activity übergeben weil man ja eine Context übergebn muss und Fragmnet leiter nicht von Context ab!
+
 
         //recyclerView.adapter = RecyclerAdapter()
+    }
+
+
+    override fun onResume() {
+        super.onResume()
     }
 
 
