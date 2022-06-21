@@ -55,6 +55,9 @@ class RecyclerAdapter(val context: HomeFragment, val events: List<Event>) :
                 3 -> itemView.confirmedHolderTV.text = "${event.questions?.get(0)} ${event.questions?.get(1)} ${event.questions?.get(2)}"
             }*/
         }
+
+
+        var event_id = "test"
     }
 }
 
