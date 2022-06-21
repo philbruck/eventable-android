@@ -21,9 +21,10 @@ import kotlinx.coroutines.NonDisposableHandle.parent
 
 
 // Augustin: Diese Klasse hab ich erstellt
-class RecyclerAdapter(val context: HomeFragment, val events: List<Event>) :
+class RecyclerAdapter(val events: List<Event>) :
     RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
 
+    private lateinit var navController: NavController
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view =
@@ -54,6 +55,29 @@ class RecyclerAdapter(val context: HomeFragment, val events: List<Event>) :
                 2 -> itemView.confirmedHolderTV.text  = "${event.questions?.get(0)} ${event.questions?.get(1)}"
                 3 -> itemView.confirmedHolderTV.text = "${event.questions?.get(0)} ${event.questions?.get(1)} ${event.questions?.get(2)}"
             }*/
+        }
+
+
+        var event_id = "test"
+
+        init {
+            itemView.setOnClickListener {
+                val pos: Int =
+                    bindingAdapterPosition //philbruck: wenn man die akteulle Position wissen will
+
+                val user_id = pos
+                val event_id = pos.toString()
+
+
+                navController = findNavController(itemView)
+
+                val action_HomeToData1 =
+                    HomeFragmentDirections.actionHomeFragmentToData1Fragment(event_id, user_id)
+
+                navController.navigate(action_HomeToData1) //philbruck: geht auch "// navController.navigate(R.id.action.....)"
+
+
+            }
         }
     }
 }
