@@ -65,14 +65,12 @@ class RecyclerAdapter(val events: List<Event>) :
                 val pos: Int =
                     bindingAdapterPosition //philbruck: wenn man die akteulle Position wissen will
 
-                val user_id = pos
-                val event_id = pos.toString()
-
+                val event_id = pos.toString() //philbruck: hier muss noch die event-Id gespeciht werden damit die im nächsten Schritt ausgelesen wird
 
                 navController = findNavController(itemView)
 
                 val action_HomeToData1 =
-                    HomeFragmentDirections.actionHomeFragmentToData1Fragment(event_id, user_id)
+                    HomeFragmentDirections.actionHomeFragmentToData1Fragment(event_id)
 
                 navController.navigate(action_HomeToData1) //philbruck: geht auch "// navController.navigate(R.id.action.....)"
 

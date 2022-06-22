@@ -57,12 +57,15 @@ class RecyclerAdapterConfirmed : RecyclerView.Adapter<RecyclerAdapterConfirmed.V
                 val pos: Int =
                     bindingAdapterPosition //philbruck: wenn man die akteulle Position wissen will
 
-                /*navController = findNavController(itemView)
+                navController = findNavController(itemView)
 
-                val action_ConfirmedToSelf =
-                    ConfirmedFragmentDirections.actionConfirmedFragmentSelf()
-                navController.navigate(action_ConfirmedToSelf) //philbruck: geht auch "// navController.navigate(R.id.action.....)"
-*/
+                val event_id = pos.toString()
+                val question_id = pos.toString()
+
+                val action_ConfirmedToData3 =
+                    ConfirmedFragmentDirections.actionConfirmedFragmentToData3Fragment(event_id, question_id)
+                navController.navigate(action_ConfirmedToData3) //philbruck: geht auch "// navController.navigate(R.id.action.....)"
+
 
             }
         }

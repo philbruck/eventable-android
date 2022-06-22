@@ -13,8 +13,7 @@ class Data1Fragment : Fragment(R.layout.fragment_data1){
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        data1_user_id_TV.text = args.userId.toString()
-        data1_event_id_TV.text = args.eventId.toString()
+        data1_event_id_TV.text = args.eventId
     }
 
 }
