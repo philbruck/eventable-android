@@ -3,6 +3,7 @@ package com.eventable
 import android.annotation.SuppressLint
 import android.content.ContentValues.TAG
 import android.content.Context
+import android.provider.CalendarContract
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -25,6 +26,7 @@ class RecyclerAdapter(val events: List<Event>) :
     RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
 
     private lateinit var navController: NavController
+    private lateinit var events_id : String
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view =
@@ -46,6 +48,7 @@ class RecyclerAdapter(val events: List<Event>) :
             itemView.timeHolderTV.text = "${event.starttime} Uhr"
             itemView.invitationHolderTV.text = event.votes.toString()
 
+            events_id = event.eventId
 
             //Augustin: Mögliche Lösung um unterschiedliche Anzahl von Arrays auszugeben. Kann auch jeweils in andere Felder gespeichert werden
 /*            var countquestions = event.questions?.size?.toInt()
@@ -57,22 +60,21 @@ class RecyclerAdapter(val events: List<Event>) :
             }*/
         }
 
-
-        var event_id = "test"
-
         init {
             itemView.setOnClickListener {
                 val pos: Int =
                     bindingAdapterPosition //philbruck: wenn man die akteulle Position wissen will
 
-                val user_id = pos
-                val event_id = pos.toString()
+                //-> Wie gebe ich nur die EventsID mit?
+
+
+
 
 
                 navController = findNavController(itemView)
 
                 val action_HomeToData1 =
-                    HomeFragmentDirections.actionHomeFragmentToData1Fragment(event_id, user_id)
+                    HomeFragmentDirections.actionHomeFragmentToData1Fragment(events_id)
 
                 navController.navigate(action_HomeToData1) //philbruck: geht auch "// navController.navigate(R.id.action.....)"
 
