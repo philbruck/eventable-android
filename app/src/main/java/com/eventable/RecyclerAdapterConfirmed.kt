@@ -32,7 +32,7 @@ class RecyclerAdapterConfirmed : RecyclerView.Adapter<RecyclerAdapterConfirmed.V
         parent: ViewGroup,
         viewType: Int
     ): RecyclerAdapterConfirmed.ViewHolder {
-        val v = LayoutInflater.from(parent.context).inflate(R.layout.view_cardlayout, parent, false)
+        val v = LayoutInflater.from(parent.context).inflate(R.layout.view_cardlayout_confirmed, parent, false)
         return ViewHolder(v)
     }
 

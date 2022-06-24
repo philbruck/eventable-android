@@ -7,398 +7,333 @@
     tools:context=".Data1Fragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/dataHomeName"
+        android:id="@+id/dataHomeNameCL"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".Data1Fragment"
-        tools:layout_editor_absoluteX="145dp"
-        tools:layout_editor_absoluteY="72dp">
+        tools:layout_editor_absoluteX="70dp"
+        tools:layout_editor_absoluteY="0dp">
 
         <TextView
-            android:id="@+id/DataHomeQuestion3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Frage3"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.04"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.669" />
-
-        <TextView
-            android:id="@+id/DataHomeQuestion3Yes"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="20"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.134"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.714" />
-
-        <TextView
-            android:id="@+id/DataHomeQueston3Sum"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="20"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.84"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.714" />
-
-        <TextView
-            android:id="@+id/dataHomeQuestion3No"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="0"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.518"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.714" />
-
-        <TextView
-            android:id="@+id/textView71"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Ja"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.073"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.714" />
-
-        <TextView
-            android:id="@+id/DataHomeQuestion2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Frage2"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.049"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.558" />
-
-        <TextView
-            android:id="@+id/DataHomeQuestion2Yes"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="20"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.141"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.603" />
-
-        <TextView
-            android:id="@+id/DataHomeQueston2Sum"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="20"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.848"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.603" />
-
-        <TextView
-            android:id="@+id/textView66"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Ja"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.08"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.603" />
-
-        <TextView
-            android:id="@+id/DataHomeQuestion1Yes"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="20"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.143"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.487" />
-
-        <TextView
-            android:id="@+id/DataHomeQueston1Sum"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="20"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.848"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.487" />
-
-        <TextView
-            android:id="@+id/DataHomeQuestion1No"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="0"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.526"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.487" />
-
-        <TextView
-            android:id="@+id/dataHomeQuestion2No"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="0"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.538"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.602" />
-
-        <TextView
-            android:id="@+id/DataHomeQuestion1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Frage1"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.049"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.443" />
-
-        <TextView
-            android:id="@+id/textView56"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Ja"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.08"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.487" />
-
-        <TextView
-            android:id="@+id/textView57"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Nein: "
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.444"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.487" />
-
-        <TextView
-            android:id="@+id/textView72"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Nein: "
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.444"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.713" />
-
-        <TextView
-            android:id="@+id/textView73"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Nein: "
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.462"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.602" />
-
-        <TextView
-            android:id="@+id/textView58"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Gesamt:"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.757"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.713" />
-
-        <TextView
-            android:id="@+id/textView75"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Gesamt:"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.76"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.602" />
-
-        <TextView
-            android:id="@+id/textView74"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Gesamt:"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.757"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.487" />
-
-        <TextView
-            android:id="@+id/textView52"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Beschreibung:"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.044"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.301" />
-
-        <TextView
-            android:id="@+id/DataHomeDescription"
+            android:id="@+id/dataHomeName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="TextView"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.365"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.3" />
-
-        <TextView
-            android:id="@+id/textView50"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Event ID"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.041"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.261" />
-
-        <TextView
-            android:id="@+id/textView48"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Standort:"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.044"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.213" />
-
-        <TextView
-            android:id="@+id/DataHomeLocation"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="TextView"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.365"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.213" />
-
-        <TextView
-            android:id="@+id/DataHomeData"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="TextView"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.362"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.123" />
-
-        <TextView
-            android:id="@+id/DataHomeEventId"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="TextView"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.362"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.261" />
-
-        <TextView
-            android:id="@+id/DataHomeStartTime"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="TextView"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.362"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.171" />
-
-        <TextView
-            android:id="@+id/textView46"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Uhrzeit:"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.041"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.172" />
-
-        <TextView
-            android:id="@+id/DataHomeName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Pokerturnier"
-            android:textSize="24sp"
+            android:textSize="32sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.045"
+            app:layout_constraintHorizontal_bias="0.071"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.022" />
+            app:layout_constraintVertical_bias="0.023" />
 
-        <TextView
-            android:id="@+id/textView44"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Datum: "
+        <RelativeLayout
+            android:id="@+id/dataRL"
+            android:layout_width="360dp"
+            android:layout_height="211dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.044"
+            app:layout_constraintHorizontal_bias="0.49"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.123" />
+            app:layout_constraintVertical_bias="0.146">
+
+            <TextView
+                android:id="@+id/textView44"
+                android:layout_width="125dp"
+                android:layout_height="30dp"
+                android:text="Datum: "
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/dataHomeData"
+                android:layout_width="283dp"
+                android:layout_height="30dp"
+                android:layout_toRightOf="@id/textView44"
+                android:text="TextView"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/textView46"
+                android:layout_width="125dp"
+                android:layout_height="30dp"
+                android:layout_below="@id/textView44"
+                android:text="Uhrzeit:"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/dataHomeStartTime"
+                android:layout_width="284dp"
+                android:layout_height="30dp"
+                android:layout_below="@id/dataHomeData"
+                android:layout_toRightOf="@id/textView46"
+                android:text="TextView"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/textView48"
+                android:layout_width="125dp"
+                android:layout_height="30dp"
+                android:layout_below="@id/textView46"
+                android:text="Standort:"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/dataHomeLocation"
+                android:layout_width="284dp"
+                android:layout_height="30dp"
+                android:layout_below="@id/dataHomeStartTime"
+                android:layout_toRightOf="@id/textView48"
+                android:text="TextView"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/textView50"
+                android:layout_width="125dp"
+                android:layout_height="30dp"
+                android:layout_below="@id/textView48"
+                android:text="Event ID"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/dataHomeEventId"
+                android:layout_width="284dp"
+                android:layout_height="30dp"
+                android:layout_below="@id/dataHomeLocation"
+                android:layout_toRightOf="@id/textView50"
+                android:text="TextView"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/textView52"
+                android:layout_width="125dp"
+                android:layout_height="30dp"
+                android:layout_below="@id/dataHomeEventId"
+                android:text="Beschreibung:"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/dataHomeDescription"
+                android:layout_width="284dp"
+                android:layout_height="122dp"
+                android:layout_below="@id/dataHomeEventId"
+                android:layout_toRightOf="@id/textView52"
+                android:text="TextView"
+                android:textSize="18sp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/questionRL"
+            android:layout_width="360dp"
+            android:layout_height="394dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.49"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.952">
+
+            <TextView
+                android:id="@+id/dataHomeQuestion1"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:text="Frage1"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/dataHomeQuestion1Yes"
+                android:layout_width="125dp"
+                android:layout_height="25dp"
+                android:layout_below="@id/dataHomeQuestion1"
+                android:text="0"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/dataHomeQuestion1No"
+                android:layout_width="125dp"
+                android:layout_height="25dp"
+                android:layout_below="@id/dataHomeQuestion1"
+                android:layout_toRightOf="@id/dataHomeQuestion1Yes"
+                android:text="0"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/dataHomeQueston1Sum"
+                android:layout_width="125dp"
+                android:layout_height="25dp"
+                android:layout_below="@id/dataHomeQuestion1"
+                android:layout_toRightOf="@id/dataHomeQuestion1No"
+                android:text="0"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/spacer1"
+                android:layout_width="339dp"
+                android:layout_height="25dp"
+                android:layout_below="@id/dataHomeQuestion1Yes" />
+
+            <TextView
+                android:id="@+id/dataHomeQuestion2"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_below="@id/spacer1"
+                android:text="Frage2"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/dataHomeQuestion2Yes"
+                android:layout_width="125dp"
+                android:layout_height="25dp"
+                android:layout_below="@id/dataHomeQuestion2"
+                android:text="0"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/dataHomeQuestion2No"
+                android:layout_width="125dp"
+                android:layout_height="25dp"
+                android:layout_below="@id/dataHomeQuestion2"
+                android:layout_toRightOf="@id/dataHomeQuestion2Yes"
+                android:text="0"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/dataHomeQueston2Sum"
+                android:layout_width="125dp"
+                android:layout_height="25dp"
+                android:layout_below="@id/dataHomeQuestion2"
+                android:layout_toRightOf="@id/dataHomeQuestion2No"
+                android:text="0"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/spacer2"
+                android:layout_width="314dp"
+                android:layout_height="25dp"
+                android:layout_below="@id/dataHomeQuestion2Yes" />
+
+            <TextView
+                android:id="@+id/dataHomeQuestion3"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_below="@id/spacer2"
+                android:text="Frage3"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/dataHomeQuestion3Yes"
+                android:layout_width="125dp"
+                android:layout_height="25dp"
+                android:layout_below="@id/dataHomeQuestion3"
+                android:text="0"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/dataHomeQuestion3No"
+                android:layout_width="125dp"
+                android:layout_height="25dp"
+                android:layout_below="@id/dataHomeQuestion3"
+                android:layout_toRightOf="@id/dataHomeQuestion3Yes"
+                android:text="0"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/dataHomeQueston3Sum"
+                android:layout_width="125dp"
+                android:layout_height="25dp"
+                android:layout_below="@id/dataHomeQuestion3"
+                android:layout_toRightOf="@id/dataHomeQuestion3No"
+                android:text="0"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/spacer3"
+                android:layout_width="292dp"
+                android:layout_height="25dp"
+                android:layout_below="@id/dataHomeQuestion3Yes" />
+
+            <TextView
+                android:id="@+id/dataHomeQuestion4"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_below="@id/spacer3"
+                android:text="Frage4"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/dataHomeQuestion4Yes"
+                android:layout_width="125dp"
+                android:layout_height="25dp"
+                android:layout_below="@id/dataHomeQuestion4"
+                android:text="0"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/dataHomeQuestion4No"
+                android:layout_width="125dp"
+                android:layout_height="25dp"
+                android:layout_below="@id/dataHomeQuestion4"
+                android:layout_toRightOf="@id/dataHomeQuestion4Yes"
+                android:text="0"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/dataHomeQueston4Sum"
+                android:layout_width="125dp"
+                android:layout_height="25dp"
+                android:layout_below="@id/dataHomeQuestion4"
+                android:layout_toRightOf="@id/dataHomeQuestion4No"
+                android:text="0"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/spacer4"
+                android:layout_width="290dp"
+                android:layout_height="25dp"
+                android:layout_below="@id/dataHomeQuestion4Yes" />
+
+            <TextView
+                android:id="@+id/dataHomeQuestion5"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_below="@id/spacer4"
+                android:text="Frage5"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/dataHomeQuestion5Yes"
+                android:layout_width="125dp"
+                android:layout_height="25dp"
+                android:layout_below="@id/dataHomeQuestion5"
+                android:text="0"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/dataHomeQuestion5No"
+                android:layout_width="125dp"
+                android:layout_height="25dp"
+                android:layout_below="@id/dataHomeQuestion5"
+                android:layout_toRightOf="@id/dataHomeQuestion5Yes"
+                android:text="0"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/dataHomeQueston5Sum"
+                android:layout_width="125dp"
+                android:layout_height="25dp"
+                android:layout_below="@id/dataHomeQuestion5"
+                android:layout_toRightOf="@id/dataHomeQuestion5No"
+                android:text="0"
+                android:textSize="18sp" />
+
+        </RelativeLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

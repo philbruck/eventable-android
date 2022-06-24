@@ -19,6 +19,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.view_cardlayout.view.*
 import kotlinx.coroutines.NonDisposableHandle.parent
+import java.lang.reflect.Array
 
 
 // Augustin: Diese Klasse hab ich erstellt
@@ -27,6 +28,12 @@ class RecyclerAdapter(val events: List<Event>) :
 
     private lateinit var navController: NavController
     private lateinit var events_id : String
+
+    //Augustin: Wie kann ich Anzahl von Events bestimmen? Mit events.size gehts nicht
+    var countEventId = Array(5) {"init"}
+    var count = 0
+
+
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view =
@@ -46,18 +53,10 @@ class RecyclerAdapter(val events: List<Event>) :
             itemView.placeHolderTV.text = event.location
             itemView.dateHolderTV.text = event.date
             itemView.timeHolderTV.text = "${event.starttime} Uhr"
-            itemView.invitationHolderTV.text = event.votes.toString()
+            itemView.dataHolderVotes.text = event.votes.toString()
 
-            events_id = event.eventId
-
-            //Augustin: Mögliche Lösung um unterschiedliche Anzahl von Arrays auszugeben. Kann auch jeweils in andere Felder gespeichert werden
-/*            var countquestions = event.questions?.size?.toInt()
-            when(countquestions) {
-                0 -> Log.e(TAG, "Keine Fragen vorhanden")
-                1 -> itemView.confirmedHolderTV.text = event.questions?.get(0)
-                2 -> itemView.confirmedHolderTV.text  = "${event.questions?.get(0)} ${event.questions?.get(1)}"
-                3 -> itemView.confirmedHolderTV.text = "${event.questions?.get(0)} ${event.questions?.get(1)} ${event.questions?.get(2)}"
-            }*/
+            countEventId[count] = event.eventId
+            count++
         }
 
         init {
@@ -65,16 +64,10 @@ class RecyclerAdapter(val events: List<Event>) :
                 val pos: Int =
                     bindingAdapterPosition //philbruck: wenn man die akteulle Position wissen will
 
-                //-> Wie gebe ich nur die EventsID mit?
-
-
-
-
-
                 navController = findNavController(itemView)
 
                 val action_HomeToData1 =
-                    HomeFragmentDirections.actionHomeFragmentToData1Fragment(events_id)
+                    HomeFragmentDirections.actionHomeFragmentToData1Fragment(countEventId[pos])
 
                 navController.navigate(action_HomeToData1) //philbruck: geht auch "// navController.navigate(R.id.action.....)"
 

@@ -102,36 +102,6 @@
 
             </TextView>
 
-            <LinearLayout
-                android:id="@+id/linearlayoutLL"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/timeTV"
-                android:layout_marginTop="2dp"
-                android:orientation="horizontal"
-                android:padding="4dp">
-
-                <TextView
-                    android:id="@+id/invitationTV"
-                    android:layout_width="145dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight=".33"
-                    android:text="Abstimmungen:"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Medium">
-
-                </TextView>
-
-                <TextView
-                    android:id="@+id/dataHolderVotes"
-                    android:layout_width="179dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Medium">
-
-                </TextView>
-
-            </LinearLayout>
-
 
         </RelativeLayout>
 
