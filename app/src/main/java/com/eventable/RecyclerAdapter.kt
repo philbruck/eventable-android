@@ -64,10 +64,12 @@ class RecyclerAdapter(val events: List<Event>) :
                 val pos: Int =
                     bindingAdapterPosition //philbruck: wenn man die akteulle Position wissen will
 
+
                 navController = findNavController(itemView)
 
                 val action_HomeToData1 =
                     HomeFragmentDirections.actionHomeFragmentToData1Fragment(countEventId[pos])
+
 
                 navController.navigate(action_HomeToData1) //philbruck: geht auch "// navController.navigate(R.id.action.....)"
             }

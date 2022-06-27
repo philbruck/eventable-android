@@ -1,26 +1,136 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools"
     tools:context=".CreateFragment">
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/card_const_layout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
+        android:layout_height="wrap_content"
         android:gravity="center"
-        android:padding="16dp">
+        android:orientation="vertical"
+        android:padding="25dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Hier bist du um  neue Einladungen zu erstellen :O"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large">
-            >
+        <RelativeLayout
+            android:id="@+id/relativeLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:layout_editor_absoluteX="25dp"
+            tools:layout_editor_absoluteY="25dp">
+
+            <TextView
+                android:id="@+id/headlineTV"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="10dp"
+                android:text="Name:"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textSize="30dp">
+
+            </TextView>
+
+            <EditText
+                android:id="@+id/headlineHolderET"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_toRightOf="@+id/headlineTV"
+                android:text="Lorem ipsum..."
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textSize="30dp">
+
+            </EditText>
+
+            <TextView
+                android:id="@+id/placeTV"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/headlineHolderET"
+                android:padding="4dp"
+                android:text="Ort:"
+                android:textSize="20dp">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/dateTV"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/placeTV"
+                android:padding="4dp"
+                android:text="Datum:"
+                android:textSize="20dp">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/timeTV"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/dateTV"
+                android:padding="4dp"
+                android:text="Uhrzeit:"
+                android:textSize="20dp">
+
+            </TextView>
+
+            <EditText
+                android:id="@+id/placeHolderET"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/headlineHolderET"
+                android:layout_toRightOf="@+id/placeTV"
+                android:padding="4dp"
+                android:text="Lorem ipsum.."
+                android:textSize="20dp">
+
+            </EditText>
+
+            <EditText
+                android:id="@+id/dateHolderET"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/placeTV"
+                android:layout_toRightOf="@+id/placeTV"
+                android:padding="4dp"
+                android:text="Lorem ipsum.."
+                android:textSize="20dp">
+
+            </EditText>
+
+            <EditText
+                android:id="@+id/timeHolderET"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/dateTV"
+                android:layout_toRightOf="@+id/placeTV"
+                android:padding="4dp"
+                android:text="Lorem ipsum.."
+                android:textSize="20dp">
+
+            </EditText>
 
 
-        </TextView>
-    </LinearLayout>
+        </RelativeLayout>
 
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <Button
+        android:id="@+id/createBtn"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="Weiter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.4" />
 </androidx.constraintlayout.widget.ConstraintLayout>

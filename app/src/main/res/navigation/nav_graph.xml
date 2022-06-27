@@ -7,7 +7,7 @@
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.eventable.HomeFragment"
-        android:label="Home"
+        android:label="Startseite"
         tools:layout="@layout/fragment_home">
         <action
             android:id="@+id/action_homeFragment_to_data1Fragment"
@@ -23,8 +23,8 @@
     <fragment
         android:id="@+id/invitationFragment"
         android:name="com.eventable.InvitationFragment"
-        android:label="Invitation"
-        tools:layout="@layout/fragment_invitation" >
+        android:label="Einladung"
+        tools:layout="@layout/fragment_invitation">
         <action
             android:id="@+id/action_invitationFragment_to_data2Fragment"
             app:destination="@id/data2Fragment"
@@ -36,35 +36,42 @@
     <fragment
         android:id="@+id/settingsFragment"
         android:name="com.eventable.SettingsFragment"
-        android:label="Settings"
+        android:label="Einstellungen"
         tools:layout="@layout/fragment_settings" />
     <fragment
         android:id="@+id/confirmedFragment"
         android:name="com.eventable.ConfirmedFragment"
-        android:label="Confirmed"
-        tools:layout="@layout/fragment_confirmed" >
+        android:label="Zugesagt"
+        tools:layout="@layout/fragment_confirmed">
         <action
             android:id="@+id/action_confirmedFragment_self"
             app:destination="@id/confirmedFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/createFragment"
-        android:name="com.eventable.CreateFragment"
-        android:label="Create"
-        tools:layout="@layout/fragment_create" >
         <action
-            android:id="@+id/action_createFragment_to_data3Fragment"
+            android:id="@+id/action_confirmedFragment_to_data3Fragment"
             app:destination="@id/data3Fragment"
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
-            app:popExitAnim="@anim/slide_out_right"/>
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/createFragment"
+        android:name="com.eventable.CreateFragment"
+        android:label="Erstellen"
+        tools:layout="@layout/fragment_create">
+        <action
+            android:id="@+id/action_createFragment_to_data4Fragment"
+            app:destination="@id/data4Fragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
     </fragment>
     <fragment
         android:id="@+id/data1Fragment"
         android:name="com.eventable.Data1Fragment"
-        android:label="Data1"
-        tools:layout="@layout/fragment_data1" >
+        android:label="Details"
+        tools:layout="@layout/fragment_data1">
         <argument
             android:name="countEventId"
             app:argType="string" />
@@ -72,11 +79,40 @@
     <fragment
         android:id="@+id/data2Fragment"
         android:name="com.eventable.Data2Fragment"
-        android:label="fragment_data2"
-        tools:layout="@layout/fragment_data2" />
+        android:label="Fragen"
+        tools:layout="@layout/fragment_data2" >
+        <argument
+            android:name="invitation_code"
+            app:argType="integer" />
+        <argument
+            android:name="user_id"
+            app:argType="string" />
+    </fragment>
     <fragment
         android:id="@+id/data3Fragment"
         android:name="com.eventable.Data3Fragment"
-        android:label="fragment_data3"
-        tools:layout="@layout/fragment_data3" />
+        android:label="Antworten"
+        tools:layout="@layout/fragment_data3">
+        <argument
+            android:name="event_id"
+            app:argType="string" />
+        <argument
+            android:name="user_id"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/data4Fragment"
+        android:name="com.eventable.Data4Fragment"
+        android:label="Erstellen"
+        tools:layout="@layout/fragment_data4" >
+        <argument
+            android:name="user_id"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_data4Fragment_self"
+            app:destination="@id/data4Fragment" />
+        <action
+            android:id="@+id/action_data4Fragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
 </navigation>

@@ -65,8 +65,6 @@ class Data1Fragment : Fragment(R.layout.fragment_data1){
                 dynamicCL.addView(tv_dynamic)*/
 
 
-
-
                 for (event in eventList) {
                     Log.i(TAG, "Event ${event}")
 
@@ -99,7 +97,7 @@ class Data1Fragment : Fragment(R.layout.fragment_data1){
                             dataHomeQuestion2.text = event.questions?.get(1)
                             dataHomeQuestion3.text = event.questions?.get(2)
                             dataHomeQuestion4.text = event.questions?.get(3)
-
+        
                         }
                         5 -> {
                             dataHomeQuestion1.text = event.questions?.get(0)

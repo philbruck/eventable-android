@@ -122,6 +122,15 @@ class RecyclerAdapterConfirmed(val events: List<Event>) :
                     ConfirmedFragmentDirections.actionConfirmedFragmentSelf()
                 navController.navigate(action_ConfirmedToSelf) //philbruck: geht auch "// navController.navigate(R.id.action.....)"
 
+                navController = findNavController(itemView)
+
+                val event_id = pos.toString()
+                val question_id = pos.toString()
+
+                val action_ConfirmedToData3 =
+                    ConfirmedFragmentDirections.actionConfirmedFragmentToData3Fragment(event_id, question_id)
+                navController.navigate(action_ConfirmedToData3) //philbruck: geht auch "// navController.navigate(R.id.action.....)"
+
             }
         }
     }
