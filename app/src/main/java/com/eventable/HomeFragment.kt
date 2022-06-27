@@ -5,6 +5,10 @@ import android.content.Context
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.view.ViewGroup
+import android.widget.LinearLayout
+import android.widget.RelativeLayout
+import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation.findNavController
@@ -14,7 +18,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.eventable.model.Event
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
+import kotlinx.android.synthetic.main.fragment_data1.*
 import kotlinx.android.synthetic.main.fragment_home.*
+import kotlinx.android.synthetic.main.fragment_invitation.*
+import kotlinx.android.synthetic.main.view_cardlayout.*
 
 
 class HomeFragment : Fragment(R.layout.fragment_home) {
@@ -65,13 +72,8 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
                 }
             }
 
-
-
-
         // Refresh funktioniert nicht
         refreshHome()
-
-
 
         //recyclerView.adapter = RecyclerAdapter()
     }

@@ -73,7 +73,7 @@
         android:label="Details"
         tools:layout="@layout/fragment_data1">
         <argument
-            android:name="event_id"
+            android:name="countEventId"
             app:argType="string" />
     </fragment>
     <fragment
