@@ -51,6 +51,22 @@ class Data1Fragment : Fragment(R.layout.fragment_data1){
                 events.addAll(eventList)
                 //adapter.notifyDataSetChanged()
 
+
+
+
+                // So kann man TextViews dynamisch erzeugen -> Wie kann ich zum Beispiel die Höhe einstellen?
+/*                val tv_dynamic = TextView(activity)
+                tv_dynamic.textSize = 20f
+                tv_dynamic.text = "Automatisch generiert 1"
+                //Augustin: Größe setzen
+                  tv_dynamic.layoutParams = RelativeLayout.LayoutParams(
+                     ViewGroup.LayoutParams.WRAP_CONTENT,
+                     ViewGroup.LayoutParams.WRAP_CONTENT)
+                dynamicCL.addView(tv_dynamic)*/
+
+
+
+
                 for (event in eventList) {
                     Log.i(TAG, "Event ${event}")
 
@@ -61,17 +77,6 @@ class Data1Fragment : Fragment(R.layout.fragment_data1){
                     dataHomeStartTime.text = event.starttime
                     dataHomeDescription.text = event.description
 
-
-
-                    // So kann man TextViews dynamisch erzeugen -> Wie kann ich zum Beispiel die Höhe einstellen?
-/*                    val tv_dynamic = TextView(activity)
-                    tv_dynamic.textSize = 20f
-                    tv_dynamic.text = "Automatisch generiert"
-                    //Augustin: Größe setzen
-                    tv_dynamic.layoutParams = RelativeLayout.LayoutParams(
-                        ViewGroup.LayoutParams.WRAP_CONTENT,
-                        ViewGroup.LayoutParams.WRAP_CONTENT)
-                    questionRL.addView(tv_dynamic)*/
 
 
 

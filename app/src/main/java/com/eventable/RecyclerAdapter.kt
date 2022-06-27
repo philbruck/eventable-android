@@ -19,6 +19,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.view_cardlayout.view.*
 import kotlinx.coroutines.NonDisposableHandle.parent
+import org.w3c.dom.Text
 import java.lang.reflect.Array
 
 
@@ -29,11 +30,9 @@ class RecyclerAdapter(val events: List<Event>) :
     private lateinit var navController: NavController
     private lateinit var events_id : String
 
-    //Augustin: Wie kann ich Anzahl von Events bestimmen? Mit events.size gehts nicht
-    var countEventId = Array(5) {"init"}
+    //Augustin: Speicherung von Events-Ids um Data1Fragment die richtige Event-ID mitgeben zu können
+    var countEventId = mutableListOf<String>()
     var count = 0
-
-
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view =
@@ -54,8 +53,9 @@ class RecyclerAdapter(val events: List<Event>) :
             itemView.dateHolderTV.text = event.date
             itemView.timeHolderTV.text = "${event.starttime} Uhr"
             itemView.dataHolderVotes.text = event.votes.toString()
+            itemView.dataHolderVotes.text = event.votesUser?.size.toString()
 
-            countEventId[count] = event.eventId
+            countEventId.add(event.eventId)
             count++
         }
 
@@ -70,8 +70,6 @@ class RecyclerAdapter(val events: List<Event>) :
                     HomeFragmentDirections.actionHomeFragmentToData1Fragment(countEventId[pos])
 
                 navController.navigate(action_HomeToData1) //philbruck: geht auch "// navController.navigate(R.id.action.....)"
-
-
             }
         }
     }
