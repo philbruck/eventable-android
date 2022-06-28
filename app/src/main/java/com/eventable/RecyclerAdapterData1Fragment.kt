@@ -12,64 +12,43 @@ import androidx.recyclerview.widget.RecyclerView
 import com.eventable.model.Event
 import com.eventable.model.Question
 import kotlinx.android.synthetic.main.view_cardlayout.view.*
+import kotlinx.android.synthetic.main.view_cardlayout_data_1_fragment.view.*
 
 
-class RecyclerAdapterConfirmed(val events: List<Event>) :
-    RecyclerView.Adapter<RecyclerAdapterConfirmed.ViewHolder>() {
+class RecyclerAdapterData1Fragment(val questionlist: MutableList<Question>) :
+    RecyclerView.Adapter<RecyclerAdapterData1Fragment.ViewHolder>() {
 
     private lateinit var navController: NavController
-    private lateinit var events_id : String
+    private lateinit var events_id: String
 
     var countEventId = mutableListOf<String>()
     var count = 0
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerAdapterConfirmed.ViewHolder {
+    override fun onCreateViewHolder(
+        parent: ViewGroup,
+        viewType: Int
+    ): RecyclerAdapterData1Fragment.ViewHolder {
         val view =
-            LayoutInflater.from(parent.context).inflate(R.layout.view_cardlayout_confirmed, parent, false)
+            LayoutInflater.from(parent.context)
+                .inflate(R.layout.view_cardlayout_data_1_fragment, parent, false)
         return ViewHolder(view)
     }
 
-    override fun getItemCount() = events.size
+    override fun getItemCount() = questionlist.size
 
-    override fun onBindViewHolder(holder: RecyclerAdapterConfirmed.ViewHolder, position: Int) {
-        holder.bind(events[position])
+    override fun onBindViewHolder(holder: RecyclerAdapterData1Fragment.ViewHolder, position: Int) {
+        holder.bind(questionlist[position])
     }
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        fun bind(event: Event) {
-            itemView.headlineTV.text = event.name
-            itemView.placeHolderTV.text = event.location
-            itemView.dateHolderTV.text = event.date
-            itemView.timeHolderTV.text = "${event.starttime} Uhr"
+        fun bind(question: Question) {
 
-            countEventId.add(event.eventId)
-            count++
+            itemView.questionTV.text = question.questionname
+            itemView.yesHolderTV.text = question.votesyes.toString()
+            itemView.noHolderTV.text = question.votesno.toString()
         }
 
-        init {
-            itemView.setOnClickListener {
-                val pos: Int =
-                    bindingAdapterPosition //philbruck: wenn man die akteulle Position wissen will
-
-                navController = findNavController(itemView)
-
-                val action_HomeToData1 =
-                    HomeFragmentDirections.actionHomeFragmentToData1Fragment(countEventId[pos])
-
-                navController.navigate(action_HomeToData1) //philbruck: geht auch "// navController.navigate(R.id.action.....)"
-
-            }
-        }
     }
-
-
-
-
-
-
-
-
-
 
 
     /*private lateinit var navController: NavController
@@ -139,4 +118,4 @@ class RecyclerAdapterConfirmed(val events: List<Event>) :
      */
 
 
-   }
+}

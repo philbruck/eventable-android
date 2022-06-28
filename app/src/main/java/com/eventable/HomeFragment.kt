@@ -18,6 +18,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.eventable.model.Event
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
+import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_data1.*
 import kotlinx.android.synthetic.main.fragment_home.*
 import kotlinx.android.synthetic.main.fragment_invitation.*
@@ -80,6 +81,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
 
 
     override fun onResume() {
+        //fragmentManager?.beginTransaction()?.detach(this)?.attach(this)?.commit()
         super.onResume()
     }
 
@@ -93,6 +95,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
 
             val action_HomeToSelf = HomeFragmentDirections.actionHomeFragmentSelf()
             findNavController().navigate(action_HomeToSelf)
+
 
         }
     }

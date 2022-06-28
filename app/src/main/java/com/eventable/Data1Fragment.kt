@@ -10,22 +10,29 @@ import android.widget.RelativeLayout
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.navArgs
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.eventable.model.Answer
 import com.eventable.model.Event
+import com.eventable.model.Question
 import com.google.api.Distribution
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.fragment_data1.*
+import kotlinx.android.synthetic.main.fragment_home.*
+import kotlinx.android.synthetic.main.view_cardlayout.*
 
-class Data1Fragment : Fragment(R.layout.fragment_data1){
+class Data1Fragment : Fragment(R.layout.fragment_data1) {
 
-    private val args : Data1FragmentArgs by navArgs() //philbruck: autogenerire Klasse wegen dem safeArgs-Plug-In
+    private val args: Data1FragmentArgs by navArgs() //philbruck: autogenerire Klasse wegen dem safeArgs-Plug-In
     private lateinit var firestoneDb: FirebaseFirestore
     private lateinit var events: MutableList<Event>
     private lateinit var answers: MutableList<Answer>
+    private var questionList: MutableList<Question> = mutableListOf()
+
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
 
         var auth = FirebaseAuth.getInstance()
         var user = auth.currentUser
@@ -35,6 +42,11 @@ class Data1Fragment : Fragment(R.layout.fragment_data1){
         firestoneDb = FirebaseFirestore.getInstance()
         events = mutableListOf()
         answers = mutableListOf()
+        //questionList = mutableListOf()
+
+
+
+
 
 
         val eventsReference = firestoneDb.collection("events")
@@ -50,8 +62,7 @@ class Data1Fragment : Fragment(R.layout.fragment_data1){
                 events.clear()
                 events.addAll(eventList)
                 //adapter.notifyDataSetChanged()
-
-
+                Log.i("EventList: ", eventList.toString())
 
 
                 // So kann man TextViews dynamisch erzeugen -> Wie kann ich zum Beispiel die Höhe einstellen?
@@ -64,6 +75,23 @@ class Data1Fragment : Fragment(R.layout.fragment_data1){
                      ViewGroup.LayoutParams.WRAP_CONTENT)
                 dynamicCL.addView(tv_dynamic)*/
 
+                var coundquestions = eventList[0].questions?.size?.toInt()
+                Log.i("CoundQuestion", eventList[0].questions?.size.toString())
+                var questionList: MutableList<Question> = mutableListOf()
+                var i: Int = 0
+                while (i < coundquestions!!) {
+                    var question = Question()
+                    question?.questionname = eventList[0].questions?.get(i)!!
+                    questionList.add(question)
+
+
+                    Log.i("QuestionList", questionList[i].votesno.toString())
+
+                    i++
+                }
+
+                recyclerView.adapter = RecyclerAdapterData1Fragment(questionList)
+                recyclerView.layoutManager = LinearLayoutManager(activity)
 
                 for (event in eventList) {
                     Log.i(TAG, "Event ${event}")
@@ -76,8 +104,7 @@ class Data1Fragment : Fragment(R.layout.fragment_data1){
                     dataHomeDescription.text = event.description
 
 
-
-
+                    /*
                     //Augusin: Soll man das so machen oder kann man das irgendwie eleganter?
                     var coundquestions = event.questions?.size?.toInt()
                     when (coundquestions) {
@@ -106,7 +133,7 @@ class Data1Fragment : Fragment(R.layout.fragment_data1){
                             dataHomeQuestion4.text = event.questions?.get(3)
                             dataHomeQuestion5.text = event.questions?.get(4)
                         }
-                    }
+                    }*/
                 }
             }
 
@@ -126,13 +153,16 @@ class Data1Fragment : Fragment(R.layout.fragment_data1){
                 answers.clear()
                 answers.addAll(answerList)
 
+
+                /*
+
                 //var countAnswerYes1 = 0
                 //var countAnswerNo1 = 0
-                var countAnswer1 = Array(2){0}
-                var countAnswer2= Array(2){0}
-                var countAnswer3 = Array(2){0}
-                var countAnswer4 = Array(2){0}
-                var countAnswer5 = Array(2){0}
+                var countAnswer1 = Array(2) { 0 }
+                var countAnswer2 = Array(2) { 0 }
+                var countAnswer3 = Array(2) { 0 }
+                var countAnswer4 = Array(2) { 0 }
+                var countAnswer5 = Array(2) { 0 }
                 var countsum1 = 0
                 var countsum2 = 0
                 var countsum3 = 0
@@ -141,33 +171,45 @@ class Data1Fragment : Fragment(R.layout.fragment_data1){
 
                 //countAnswer[0] ist ja und countAnswer[1] ist nein
 
+*/
                 for (answer in answerList) {
                     Log.i(TAG, "Answers ${answer}")
 
-                    when(answer.questionIndex.toInt()) {
-                        0 -> {  if(answer.answer == "ja") {
-                                    countAnswer1[0]++
-                                } else if(answer.answer == "nein") {
-                                    countAnswer1[1]++
-                                 }
-                        }
-                        1 -> {  if(answer.answer == "ja") {
-                            countAnswer2[0]++
-                            } else if(answer.answer == "nein") {
-                            countAnswer2[1]++
+                    if (answer.answer == "ja") {
+                        questionList[answer.questionIndex.toInt()].votesyes++
+                    } else {
+                        questionList[answer.questionIndex.toInt()].votesno++
+                    }
+                    /*
+                    when (answer.questionIndex.toInt()) {
+                        0 -> {
+                            if (answer.answer == "ja") {
+                                countAnswer1[0]++
+                            } else if (answer.answer == "nein") {
+                                countAnswer1[1]++
                             }
                         }
-                        2 -> {if(answer.answer == "ja") {
-                            countAnswer3[0]++
-                        } else if(answer.answer == "nein") {
-                            countAnswer3[1]++
+                        1 -> {
+                            if (answer.answer == "ja") {
+                                countAnswer2[0]++
+                            } else if (answer.answer == "nein") {
+                                countAnswer2[1]++
+                            }
+                        }
+                        2 -> {
+                            if (answer.answer == "ja") {
+                                countAnswer3[0]++
+                            } else if (answer.answer == "nein") {
+                                countAnswer3[1]++
                             }
                         }
                         3 -> {}
                         4 -> {}
                     }
                     //DataHomeQueston1Sum.text = countsum.toString()
+                    */
                 }
+                /*
                 dataHomeQuestion1Yes.text = "Ja: ${countAnswer1[0]}"
                 dataHomeQuestion1No.text = "Nein: ${countAnswer1[1]}"
 
@@ -185,15 +227,17 @@ class Data1Fragment : Fragment(R.layout.fragment_data1){
 
                 countsum3 = countAnswer3[0] + countAnswer3[1]
                 dataHomeQueston3Sum.text = "Gesamt: ${countsum3}"
+*/
 
 
             }
 
 
-
-                //data1_user_id_TV.text = args.userId.toString()
-                //data1_event_id_TV.text = args.eventId.toString()
-                //data1_user_id_TV.text = args.name.toString()
-            }
-
+        //data1_user_id_TV.text = args.userId.toString()
+        //data1_event_id_TV.text = args.eventId.toString()
+        //data1_user_id_TV.text = args.name.toString()
     }
+
+
+}
+
