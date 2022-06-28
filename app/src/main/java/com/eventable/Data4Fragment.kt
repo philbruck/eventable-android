@@ -19,6 +19,10 @@ class Data4Fragment : Fragment(R.layout.fragment_data4) {
 
         continueBtn.setOnClickListener {
 
+
+
+
+
             val action_Data4ToSelf =
                 Data4FragmentDirections.actionData4FragmentSelf(one)
             findNavController().navigate(action_Data4ToSelf)
