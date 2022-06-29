@@ -5,6 +5,9 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.Toast
+import androidx.core.view.isGone
+import androidx.core.view.isInvisible
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
@@ -34,9 +37,8 @@ class Data4Fragment : Fragment(R.layout.fragment_data4) {
         eventInfos = Array(4) {"init"}
         //val one: String = args.userId
 
+
         continueBtn.setOnClickListener {
-
-
             if(questionEdTe.length() == 0) {
                 Toast.makeText(activity, "Es dürfen keine leeren Fragen gestellt werden", Toast.LENGTH_LONG).show()
             } else {
@@ -66,10 +68,18 @@ class Data4Fragment : Fragment(R.layout.fragment_data4) {
                 findNavController().navigate(action_Data4ToSelf)
             }
 
-
-
-
         }
+
+        //Um zu überprüfen, dass User mindestens eine Frage gestellt hat
+        if(alreadyCreated == false) {
+            finishBtn.visibility = View.INVISIBLE
+        }
+        else {
+            finishBtn.visibility = View.VISIBLE
+        }
+
+
+
         finishBtn.setOnClickListener {
             Toast.makeText(activity, "Event wurde erfolgreich erstellt, \n Event-ID: ${args.eventId}", Toast.LENGTH_LONG).show()
 

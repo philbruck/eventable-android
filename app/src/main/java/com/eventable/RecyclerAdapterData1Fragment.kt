@@ -3,15 +3,9 @@ package com.eventable
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.navigation.NavController
-import androidx.navigation.Navigation
-import androidx.navigation.Navigation.findNavController
-import androidx.navigation.fragment.NavHostFragment.Companion.findNavController
 import androidx.recyclerview.widget.RecyclerView
-import com.eventable.model.Event
 import com.eventable.model.Question
-import kotlinx.android.synthetic.main.view_cardlayout.view.*
 import kotlinx.android.synthetic.main.view_cardlayout_data_1_fragment.view.*
 
 
@@ -43,9 +37,9 @@ class RecyclerAdapterData1Fragment(val questionlist: MutableList<Question>) :
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         fun bind(question: Question) {
 
-            itemView.questionTV.text = question.questionname
-            itemView.yesHolderTV.text = question.votesyes.toString()
-            itemView.noHolderTV.text = question.votesno.toString()
+            itemView.nameData4HolderTV.text = question.questionname
+            itemView.locationData4HolderTV.text = question.votesyes.toString()
+            itemView.dateData4HolderTV.text = question.votesno.toString()
         }
 
     }
