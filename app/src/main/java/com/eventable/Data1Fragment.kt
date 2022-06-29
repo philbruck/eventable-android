@@ -43,7 +43,6 @@ class Data1Fragment : Fragment(R.layout.fragment_data1) {
         events = mutableListOf()
         answers = mutableListOf()
         questionList = mutableListOf()
-        //questionList = mutableListOf()
 
 
 
