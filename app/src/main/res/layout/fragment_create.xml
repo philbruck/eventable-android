@@ -14,6 +14,7 @@
         android:orientation="vertical"
         android:padding="25dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -38,11 +39,10 @@
 
             <EditText
                 android:id="@+id/headlineHolderET"
-                android:layout_width="wrap_content"
+                android:layout_width="261dp"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
                 android:layout_toRightOf="@+id/headlineTV"
-                android:text="Lorem ipsum..."
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
                 android:textSize="30dp">
 
@@ -50,7 +50,7 @@
 
             <TextView
                 android:id="@+id/placeTV"
-                android:layout_width="100dp"
+                android:layout_width="140dp"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/headlineHolderET"
                 android:padding="4dp"
@@ -61,7 +61,7 @@
 
             <TextView
                 android:id="@+id/dateTV"
-                android:layout_width="100dp"
+                android:layout_width="140dp"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/placeTV"
                 android:padding="4dp"
@@ -72,7 +72,7 @@
 
             <TextView
                 android:id="@+id/timeTV"
-                android:layout_width="100dp"
+                android:layout_width="140dp"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/dateTV"
                 android:padding="4dp"
@@ -81,38 +81,59 @@
 
             </TextView>
 
+            <TextView
+                android:id="@+id/descriptionTV"
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/timeTV"
+                android:padding="4dp"
+                android:text="Beschreibung:"
+                android:textSize="20dp">
+
+            </TextView>
+
             <EditText
                 android:id="@+id/placeHolderET"
-                android:layout_width="wrap_content"
+                android:layout_width="221dp"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/headlineHolderET"
                 android:layout_toRightOf="@+id/placeTV"
                 android:padding="4dp"
-                android:text="Lorem ipsum.."
                 android:textSize="20dp">
 
             </EditText>
 
             <EditText
                 android:id="@+id/dateHolderET"
-                android:layout_width="wrap_content"
+                android:layout_width="221dp"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/placeTV"
                 android:layout_toRightOf="@+id/placeTV"
+                android:inputType="date"
                 android:padding="4dp"
-                android:text="Lorem ipsum.."
                 android:textSize="20dp">
 
             </EditText>
 
             <EditText
                 android:id="@+id/timeHolderET"
-                android:layout_width="wrap_content"
+                android:layout_width="221dp"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/dateTV"
                 android:layout_toRightOf="@+id/placeTV"
+                android:inputType="time"
                 android:padding="4dp"
-                android:text="Lorem ipsum.."
+                android:textSize="20dp">
+
+            </EditText>
+
+            <EditText
+                android:id="@+id/descriptionET"
+                android:layout_width="221dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/timeTV"
+                android:layout_toRightOf="@+id/placeTV"
+                android:padding="4dp"
                 android:textSize="20dp">
 
             </EditText>
@@ -127,10 +148,10 @@
         android:id="@+id/createBtn"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="316dp"
         android:text="Weiter"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.4" />
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

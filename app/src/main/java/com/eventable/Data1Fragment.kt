@@ -27,7 +27,7 @@ class Data1Fragment : Fragment(R.layout.fragment_data1) {
     private lateinit var firestoneDb: FirebaseFirestore
     private lateinit var events: MutableList<Event>
     private lateinit var answers: MutableList<Answer>
-    private var questionList: MutableList<Question> = mutableListOf()
+    private lateinit var questionList: MutableList<Question>
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -42,7 +42,7 @@ class Data1Fragment : Fragment(R.layout.fragment_data1) {
         firestoneDb = FirebaseFirestore.getInstance()
         events = mutableListOf()
         answers = mutableListOf()
-        //questionList = mutableListOf()
+        questionList = mutableListOf()
 
 
 
@@ -177,7 +177,8 @@ class Data1Fragment : Fragment(R.layout.fragment_data1) {
 
                     if (answer.answer == "ja") {
                         questionList[answer.questionIndex.toInt()].votesyes++
-                    } else {
+                    } else if(answer.answer == "nein") {
+                        Log.e(TAG, "QuestinIndex: ${answer.questionIndex.toInt()}")
                         questionList[answer.questionIndex.toInt()].votesno++
                     }
                     /*

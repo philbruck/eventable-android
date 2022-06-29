@@ -105,14 +105,20 @@
         android:name="com.eventable.Data4Fragment"
         android:label="Erstellen"
         tools:layout="@layout/fragment_data4" >
-        <argument
-            android:name="user_id"
-            app:argType="string" />
         <action
             android:id="@+id/action_data4Fragment_self"
             app:destination="@id/data4Fragment" />
         <action
             android:id="@+id/action_data4Fragment_to_homeFragment"
             app:destination="@id/homeFragment" />
+        <argument
+            android:name="eventInfos"
+            app:argType="string[]" />
+        <argument
+            android:name="eventId"
+            app:argType="string" />
+        <argument
+            android:name="alreadyCreated"
+            app:argType="boolean" />
     </fragment>
 </navigation>
