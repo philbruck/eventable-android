@@ -1,26 +1,221 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Data2Fragment">
 
-    <LinearLayout
+    <Button
+        android:id="@+id/answerBtn"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="Weiter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.819" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_layout_confirmed"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:orientation="vertical"
-        android:padding="16dp">
+        android:layout_height="wrap_content"
+        android:layout_margin="12dp"
+        app:cardBackgroundColor="#1E0A70DD"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="3dp"
+        app:contentPadding="2dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:layout_width="wrap_content"
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/card_const_layout_confirmed"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Hier bist du um Daten2 zu sehen ;O"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large">
-            >
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/nameData4HolderTV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:text="Pokerturnier"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large">
+
+                </TextView>
+
+                <TextView
+                    android:id="@+id/locationData4TV"
+                    android:layout_width="115dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/nameData4HolderTV"
+                    android:padding="4dp"
+                    android:text="Ort:"
+                    android:textSize="16sp">
+
+                </TextView>
+
+                <TextView
+                    android:id="@+id/dateData4TV"
+                    android:layout_width="115dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/locationData4TV"
+                    android:padding="4dp"
+                    android:text="Datum:"
+                    android:textSize="16sp">
+
+                </TextView>
+
+                <TextView
+                    android:id="@+id/starttimeData4TV"
+                    android:layout_width="115dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/dateData4TV"
+                    android:padding="4dp"
+                    android:text="Uhrzeit:"
+                    android:textSize="16sp">
+
+                </TextView>
+
+                <TextView
+                    android:id="@+id/countQuestionData4TV"
+                    android:layout_width="115dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/starttimeData4HolderTV"
+                    android:padding="4dp"
+                    android:text="Anzahl Fragen:"
+                    android:textSize="16sp">
+
+                </TextView>
+
+                <TextView
+                    android:id="@+id/descriptionData4TV"
+                    android:layout_width="115dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/countQuestionData4TV"
+                    android:padding="4dp"
+                    android:text="Beschreibung:"
+                    android:textSize="16sp">
+
+                </TextView>
+
+                <TextView
+                    android:id="@+id/locationData4HolderTV"
+                    android:layout_width="263dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/nameData4HolderTV"
+                    android:layout_toRightOf="@+id/locationData4TV"
+                    android:padding="4dp"
+                    android:text="Lorem ipsum.."
+                    android:textSize="16sp">
+
+                </TextView>
+
+                <TextView
+                    android:id="@+id/dateData4HolderTV"
+                    android:layout_width="263dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/locationData4TV"
+                    android:layout_toRightOf="@+id/locationData4TV"
+                    android:padding="4dp"
+                    android:text="Lorem ipsum.."
+                    android:textSize="16sp">
+
+                </TextView>
+
+                <TextView
+                    android:id="@+id/starttimeData4HolderTV"
+                    android:layout_width="263dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/dateData4TV"
+                    android:layout_toRightOf="@+id/locationData4TV"
+                    android:padding="4dp"
+                    android:text="Lorem ipsum.."
+                    android:textSize="16sp">
+
+                </TextView>
+
+                <TextView
+                    android:id="@+id/countQuestionData4HolderTV"
+                    android:layout_width="263dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/starttimeData4HolderTV"
+                    android:layout_toRightOf="@+id/locationData4TV"
+                    android:padding="4dp"
+                    android:text="Lorem ipsum.."
+                    android:textSize="16sp">
+
+                </TextView>
+
+                <TextView
+                    android:id="@+id/descriptionData4HolderTV"
+                    android:layout_width="263dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/countQuestionData4HolderTV"
+                    android:layout_toRightOf="@+id/locationData4TV"
+                    android:padding="4dp"
+                    android:text="Lorem ipsum.."
+                    android:textSize="16sp">
+
+                </TextView>
+
+            </RelativeLayout>
 
 
-        </TextView>
-    </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="265dp"
+        android:layout_height="58dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.58"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.68">
+
+        <RadioButton
+            android:id="@+id/yesRB"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:text="Ja"
+            android:textSize="20sp" />
+
+        <RadioButton
+            android:id="@+id/noRB"
+            android:layout_width="122dp"
+            android:layout_height="wrap_content"
+            android:text="Nein"
+            android:textSize="20sp" />
+
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/questionData4EdTe"
+        android:layout_width="344dp"
+        android:layout_height="106dp"
+        android:layout_marginTop="248dp"
+        android:gravity="center_horizontal"
+        android:text="Frage?"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

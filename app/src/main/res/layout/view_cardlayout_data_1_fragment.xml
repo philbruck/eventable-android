@@ -24,7 +24,7 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/questionTV"
+                android:id="@+id/nameData4HolderTV"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
@@ -34,10 +34,10 @@
             </TextView>
 
             <TextView
-                android:id="@+id/yesTV"
+                android:id="@+id/locationData4TV"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/questionTV"
+                android:layout_below="@+id/nameData4HolderTV"
                 android:padding="4dp"
                 android:text="Ja:"
                 android:textSize="16sp">
@@ -45,10 +45,10 @@
             </TextView>
 
             <TextView
-                android:id="@+id/noTV"
+                android:id="@+id/dateData4TV"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/yesTV"
+                android:layout_below="@+id/locationData4TV"
                 android:padding="4dp"
                 android:text="Nein:"
                 android:textSize="16sp">
@@ -56,10 +56,10 @@
             </TextView>
 
             <TextView
-                android:id="@+id/SumTV"
+                android:id="@+id/starttimeData4TV"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/noTV"
+                android:layout_below="@+id/dateData4TV"
                 android:padding="4dp"
                 android:text="Gesamt:"
                 android:textSize="16sp">
@@ -67,11 +67,11 @@
             </TextView>
 
             <TextView
-                android:id="@+id/yesHolderTV"
+                android:id="@+id/locationData4HolderTV"
                 android:layout_width="263dp"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/questionTV"
-                android:layout_toRightOf="@+id/yesTV"
+                android:layout_below="@+id/nameData4HolderTV"
+                android:layout_toRightOf="@+id/locationData4TV"
                 android:padding="4dp"
                 android:text="Lorem ipsum.."
                 android:textSize="16sp">
@@ -79,11 +79,11 @@
             </TextView>
 
             <TextView
-                android:id="@+id/noHolderTV"
+                android:id="@+id/dateData4HolderTV"
                 android:layout_width="263dp"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/yesTV"
-                android:layout_toRightOf="@+id/yesTV"
+                android:layout_below="@+id/locationData4TV"
+                android:layout_toRightOf="@+id/locationData4TV"
                 android:padding="4dp"
                 android:text="Lorem ipsum.."
                 android:textSize="16sp">
@@ -91,11 +91,11 @@
             </TextView>
 
             <TextView
-                android:id="@+id/sumHolderTV"
+                android:id="@+id/starttimeData4HolderTV"
                 android:layout_width="263dp"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/noTV"
-                android:layout_toRightOf="@+id/yesTV"
+                android:layout_below="@+id/dateData4TV"
+                android:layout_toRightOf="@+id/locationData4TV"
                 android:padding="4dp"
                 android:text="Lorem ipsum.."
                 android:textSize="16sp">
