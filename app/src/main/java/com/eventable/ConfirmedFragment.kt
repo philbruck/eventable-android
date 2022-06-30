@@ -64,6 +64,7 @@ class ConfirmedFragment : Fragment(R.layout.fragment_confirmed) {
     }
 
     override fun onResume() {
+        recyclerViewConfirmed.adapter = RecyclerAdapterConfirmed(events)
         super.onResume()
     }
 
@@ -71,12 +72,9 @@ class ConfirmedFragment : Fragment(R.layout.fragment_confirmed) {
 
         refresherConfirmed.setOnRefreshListener { //philbruck: dem <androidx.swiperefreshlayout> Layout mit der id "refreher" eine Refrsehlsitener geben!
 
-            Toast.makeText(activity, "Page has been refreshed", Toast.LENGTH_SHORT).show()
+            recyclerViewConfirmed.adapter = RecyclerAdapterConfirmed(events)
+            Toast.makeText(activity, "Seite wurde neu geladen", Toast.LENGTH_SHORT).show()
             refresherConfirmed.isRefreshing = false
-
-            val action_ConfirmToSelf = ConfirmedFragmentDirections.actionConfirmedFragmentSelf()
-            findNavController().navigate(action_ConfirmToSelf)
-
         }
 
 

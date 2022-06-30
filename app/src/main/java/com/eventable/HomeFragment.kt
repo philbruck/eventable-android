@@ -29,7 +29,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
 
     private lateinit var firestoneDb: FirebaseFirestore
     private lateinit var events: MutableList<Event>
-    //private lateinit var adapter: RecyclerAdapter
+    private lateinit var adapter: RecyclerAdapter
 
 
     private var layoutManager: RecyclerView.LayoutManager? = null
@@ -76,12 +76,12 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         // Refresh funktioniert nicht
         refreshHome()
 
-        //recyclerView.adapter = RecyclerAdapter()
+
     }
 
 
     override fun onResume() {
-        //fragmentManager?.beginTransaction()?.detach(this)?.attach(this)?.commit()
+        recyclerView.adapter = RecyclerAdapter(events)
         super.onResume()
     }
 
@@ -90,12 +90,9 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
 
         refresherHome.setOnRefreshListener { //philbruck: dem <androidx.swiperefreshlayout> Layout mit der id "refreher" eine Refrsehlsitener geben!
 
-            Toast.makeText(activity, "Page has been refreshed", Toast.LENGTH_SHORT).show()
+            recyclerView.adapter = RecyclerAdapter(events)
+            Toast.makeText(activity, "Seite wurde neu geladen", Toast.LENGTH_SHORT).show()
             refresherHome.isRefreshing = false
-
-            val action_HomeToSelf = HomeFragmentDirections.actionHomeFragmentSelf()
-            findNavController().navigate(action_HomeToSelf)
-
 
         }
     }
