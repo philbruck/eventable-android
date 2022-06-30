@@ -65,16 +65,6 @@ class Data1Fragment : Fragment(R.layout.fragment_data1) {
                 Log.i("EventList: ", eventList.toString())
 
 
-                // So kann man TextViews dynamisch erzeugen -> Wie kann ich zum Beispiel die Höhe einstellen?
-/*                val tv_dynamic = TextView(activity)
-                tv_dynamic.textSize = 20f
-                tv_dynamic.text = "Automatisch generiert 1"
-                //Augustin: Größe setzen
-                  tv_dynamic.layoutParams = RelativeLayout.LayoutParams(
-                     ViewGroup.LayoutParams.WRAP_CONTENT,
-                     ViewGroup.LayoutParams.WRAP_CONTENT)
-                dynamicCL.addView(tv_dynamic)*/
-
                 var coundquestions = eventList[0].questions?.size?.toInt()
                 Log.i("CoundQuestion", eventList[0].questions?.size.toString())
                 var questionList: MutableList<Question> = mutableListOf()
@@ -84,9 +74,7 @@ class Data1Fragment : Fragment(R.layout.fragment_data1) {
                     question?.questionname = eventList[0].questions?.get(i)!!
                     questionList.add(question)
 
-
                     Log.i("QuestionList", questionList[i].votesno.toString())
-
                     i++
                 }
 
