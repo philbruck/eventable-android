@@ -73,10 +73,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
                 }
             }
 
-        // Refresh funktioniert nicht
         refreshHome()
-
-
     }
 
 
