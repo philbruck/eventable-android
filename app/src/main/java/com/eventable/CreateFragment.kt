@@ -50,9 +50,7 @@ class CreateFragment : Fragment(R.layout.fragment_create) {
 
                 findNavController().navigate(action_CreateToData4)
 
-
             }
-
 
         }
 

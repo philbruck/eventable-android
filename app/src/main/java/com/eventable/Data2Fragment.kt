@@ -20,20 +20,22 @@ import kotlinx.android.synthetic.main.fragment_data2.*
 class Data2Fragment : Fragment(R.layout.fragment_data2){
 
     private lateinit var firestoneDb: FirebaseFirestore
+
     private val args : Data2FragmentArgs by navArgs() //philbruck: autogenerire Klasse wegen dem safeArgs-Plug-In
     private lateinit var events: MutableList<Event>
     private lateinit var answers: Answer
 
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        var auth = FirebaseAuth.getInstance()
-        var user = auth.currentUser
-        var uid = user?.uid
-        val db = FirebaseFirestore.getInstance()
         var countQuestion = 0
         var voteQuestion = args.voteQuestion
         var invitationCode = 0
+        val db = FirebaseFirestore.getInstance()
+        var auth = FirebaseAuth.getInstance()
+        var user = auth.currentUser
+        var uid = user?.uid
 
 
         firestoneDb = FirebaseFirestore.getInstance()
@@ -43,8 +45,8 @@ class Data2Fragment : Fragment(R.layout.fragment_data2){
 
         //To-do:
         //EventInfos sollen angezeigt werden ->Erledigt
-        //Fragen sollen angezeigt und ausgefüllt werden können
-        //Counter wie viel Fragen noch kommen
+        //Fragen sollen angezeigt und ausgefüllt werden können -> ERledigt
+        //Counter wie viel Fragen noch kommen -> ERledigt
         //Unter Events soll bei Votes die uid agespeichert werden
         //Antworten sollen unter Antworten gespeichert werden
 
@@ -106,15 +108,23 @@ class Data2Fragment : Fragment(R.layout.fragment_data2){
                         .addOnFailureListener {
                             Log.d(ContentValues.TAG, "Fehler beim Antworten auf eine Frage")
                         }
+
+                    val data1 = db.collection("events").document(args.invitationCode.toString())
+
+                    data1
+                        .update("votes_user", FieldValue.arrayUnion("$uid"))
+                        .addOnSuccessListener { Log.d(TAG, "Votes_User wurde hinzugefügt") }
+                        .addOnFailureListener { Log.d(TAG, "Votes_User konnte nicht hinzugefügt werden") }
+
                 }
 
             val action_Data2ToSelf =
                 Data2FragmentDirections.actionData2FragmentSelf(args.invitationCode.toString(), voteQuestion)
             findNavController().navigate(action_Data2ToSelf)
 
-
             Log.i("Votes", voteQuestion.toString())
             Log.i("Questoin", countQuestion.toString())
+
 
             if(countQuestion == voteQuestion) {
                 //Augustin: Alle Fragen wurden beantwortet
@@ -124,52 +134,19 @@ class Data2Fragment : Fragment(R.layout.fragment_data2){
                     Toast.LENGTH_LONG
                 ).show()
 
+
                 Log.i("Code", "${args.invitationCode}")
+                Log.i("Ja", "Geht bis dahin")
 
-                //Votes um eins erhöhen
-                val data = db.collection("events").document(args.invitationCode)
-                data
-                    .update("votes", FieldValue.increment(1))
-                    .addOnSuccessListener { Log.i(TAG, "Votes erfoglreich um 1 erhöht") }
-                    .addOnFailureListener {
-                        Log.i(
-                            TAG,
-                            "Bei Erhöhung der Votes ist ein Fehler aufgetreten"
-                        )
-                    }
-                //Votes_user UID reinschreiben
-                data
-                    .update("votes_user", FieldValue.arrayUnion("$uid"))
-                    .addOnSuccessListener { Log.i(TAG, "Votes_user erfoglreich um 1 erhöht") }
-                    .addOnFailureListener {
-                        Log.i(
-                            TAG,
-                            "Bei Votes_user ist ein Fehler aufgetreten"
-                        )
-                    }
 
-                val action_Data2ToHome =
+                val action_Data2ToHomeFragment =
                     Data2FragmentDirections.actionData2FragmentToHomeFragment()
-                findNavController().navigate(action_Data2ToHome)
-
-
+                findNavController().navigate(action_Data2ToHomeFragment)
             }
 
-
         }
 
-
-
-
-
-
-
-
-
-
-
-
-        }
+    }
 
 }
 

@@ -81,13 +81,31 @@ class Data4Fragment : Fragment(R.layout.fragment_data4) {
         }
 
 
-
         finishBtn.setOnClickListener {
-            Toast.makeText(activity, "Event wurde erfolgreich erstellt, \n Event-ID: ${args.eventId}", Toast.LENGTH_LONG).show()
 
-            val action_Data4ToHome =
-                Data4FragmentDirections.actionData4FragmentToHomeFragment()
-            findNavController().navigate(action_Data4ToHome)
+            if(questionEdTe.length() == 0) {
+                val action_Data4ToHome =
+                    Data4FragmentDirections.actionData4FragmentToHomeFragment()
+                findNavController().navigate(action_Data4ToHome)
+                Toast.makeText(activity, "Event wurde erfolgreich erstellt, \n Event-ID: ${args.eventId}", Toast.LENGTH_LONG).show()
+
+            } else {
+                val data = db.collection("events").document(args.eventId.toString())
+                Toast.makeText(activity, "Frage wurde erfolgreich hinzugefügt", Toast.LENGTH_SHORT).show()
+
+                data
+                    .update("questions", FieldValue.arrayUnion("${questionEdTe.text}"))
+                    .addOnSuccessListener { Log.d(TAG, "Event wurde erfolgreich erstellt") }
+                    .addOnFailureListener { Log.d(TAG, "Fehler beim hinzufügen von Fragen") }
+
+                val action_Data4ToHome =
+                    Data4FragmentDirections.actionData4FragmentToHomeFragment()
+                findNavController().navigate(action_Data4ToHome)
+            }
+
+
+
+
 
         }
     }
