@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.eventable.model.Event
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.Query
 import kotlinx.android.synthetic.main.fragment_confirmed.*
 import kotlinx.android.synthetic.main.fragment_home.*
 

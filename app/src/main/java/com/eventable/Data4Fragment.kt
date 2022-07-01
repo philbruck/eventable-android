@@ -51,6 +51,8 @@ class Data4Fragment : Fragment(R.layout.fragment_data4) {
                     .addOnSuccessListener { Log.d(TAG, "Event wurde erstellt") }
                     .addOnFailureListener { Log.d(TAG, "Fehler beim Erstellen eines Events") }
 
+                    Toast.makeText(activity, "Frage wurde erfolgreich hinzugefügt", Toast.LENGTH_SHORT).show()
+
                 alreadyCreated = true;
                 } else {
                     //Augustin: Wenn Event schon erstellt wurde, werden nur Fragen hinzugefügt

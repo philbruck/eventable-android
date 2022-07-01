@@ -1,10 +1,10 @@
 package com.eventable
 
 import android.content.ContentValues
+import android.content.ContentValues.TAG
 import android.os.Bundle
 import android.util.Log
 import android.view.View
-import android.widget.RadioButton
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
@@ -12,9 +12,9 @@ import androidx.navigation.fragment.navArgs
 import com.eventable.model.Answer
 import com.eventable.model.Event
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FieldValue
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.fragment_data2.*
-import kotlinx.android.synthetic.main.fragment_data4.*
 
 
 class Data2Fragment : Fragment(R.layout.fragment_data2){
@@ -64,13 +64,13 @@ class Data2Fragment : Fragment(R.layout.fragment_data2){
                 events.addAll(eventList)
 
                 for (event in eventList) {
-                    nameData4HolderTV.text = event.name
-                    locationData4HolderTV.text = event.location
-                    dateData4HolderTV.text = event.date
-                    starttimeData4HolderTV.text = "${event.starttime} Uhr"
-                    countQuestionData4HolderTV.text = "${voteQuestion+1} /  ${event.questions?.size.toString()}"
-                    descriptionData4HolderTV.text = event.description
-                    questionData4EdTe.text = event.questions?.get(voteQuestion)
+                    nameData2HolderTV.text = event.name
+                    locationData2HolderTV.text = event.location
+                    dateData2HolderTV.text = event.date
+                    starttimeData2HolderTV.text = "${event.starttime} Uhr"
+                    countQuestionData2HolderTV.text = "${voteQuestion+1} /  ${event.questions?.size.toString()}"
+                    descriptionData2HolderTV.text = event.description
+                    questionData2EdTe.text = event.questions?.get(voteQuestion)
 
                     voteQuestion++
                     Log.i("Votes1", voteQuestion.toString())
@@ -108,10 +108,13 @@ class Data2Fragment : Fragment(R.layout.fragment_data2){
                         }
                 }
 
-                val action_Data2ToSelf =
-                    Data2FragmentDirections.actionData2FragmentSelf(args.invitationCode.toString(), voteQuestion)
-                findNavController().navigate(action_Data2ToSelf)
+            val action_Data2ToSelf =
+                Data2FragmentDirections.actionData2FragmentSelf(args.invitationCode, voteQuestion)
+            findNavController().navigate(action_Data2ToSelf)
 
+
+            Log.i("Votes", voteQuestion.toString())
+            Log.i("Questoin", countQuestion.toString())
 
             if(countQuestion == voteQuestion) {
                 //Augustin: Alle Fragen wurden beantwortet
@@ -121,28 +124,56 @@ class Data2Fragment : Fragment(R.layout.fragment_data2){
                     Toast.LENGTH_LONG
                 ).show()
 
-                //Augustin: Absprung zu Confirmed geht irgendwie nicht
+                Log.i("Code", "${args.invitationCode}")
+
+                //Votes um eins erhöhen
+                val data = db.collection("events").document(args.invitationCode)
+                data
+                    .update("votes", FieldValue.increment(1))
+                    .addOnSuccessListener { Log.i(TAG, "Votes erfoglreich um 1 erhöht") }
+                    .addOnFailureListener {
+                        Log.i(
+                            TAG,
+                            "Bei Erhöhung der Votes ist ein Fehler aufgetreten"
+                        )
+                    }
+                //Votes_user UID reinschreiben
+                data
+                    .update("votes_user", FieldValue.arrayUnion("$uid"))
+                    .addOnSuccessListener { Log.i(TAG, "Votes_user erfoglreich um 1 erhöht") }
+                    .addOnFailureListener {
+                        Log.i(
+                            TAG,
+                            "Bei Votes_user ist ein Fehler aufgetreten"
+                        )
+                    }
+
                 val action_Data2ToHome =
                     Data2FragmentDirections.actionData2FragmentToHomeFragment()
                 findNavController().navigate(action_Data2ToHome)
+
+
             }
 
 
-        }
-
-
-
-
-
-
-
-
-
-
 
 
         }
-    }
+
+
+
+
+
+
+
+
+
+
+
+
+        }
+
+}
 
 
 

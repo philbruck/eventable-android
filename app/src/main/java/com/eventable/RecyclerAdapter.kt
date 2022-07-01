@@ -1,26 +1,13 @@
 package com.eventable
 
-import android.annotation.SuppressLint
-import android.content.ContentValues.TAG
-import android.content.Context
-import android.provider.CalendarContract
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.navigation.NavController
-import androidx.navigation.Navigation
 import androidx.navigation.Navigation.findNavController
-import androidx.navigation.fragment.NavHostFragment.Companion.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.eventable.model.Event
-import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.view_cardlayout.view.*
-import kotlinx.coroutines.NonDisposableHandle.parent
-import org.w3c.dom.Text
-import java.lang.reflect.Array
 
 
 // Augustin: Diese Klasse hab ich erstellt
@@ -48,7 +35,7 @@ class RecyclerAdapter(val events: List<Event>) :
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         fun bind(event: Event) {
-            itemView.headlineTV.text = event.name
+            itemView.nameTV.text = event.name
             itemView.placeHolderTV.text = event.location
             itemView.dateHolderTV.text = event.date
             itemView.timeHolderTV.text = "${event.starttime} Uhr"

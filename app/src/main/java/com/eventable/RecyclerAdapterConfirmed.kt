@@ -3,14 +3,10 @@ package com.eventable
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.navigation.NavController
-import androidx.navigation.Navigation
 import androidx.navigation.Navigation.findNavController
-import androidx.navigation.fragment.NavHostFragment.Companion.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.eventable.model.Event
-import com.eventable.model.Question
 import kotlinx.android.synthetic.main.view_cardlayout.view.*
 
 
@@ -37,7 +33,7 @@ class RecyclerAdapterConfirmed(val events: List<Event>) :
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         fun bind(event: Event) {
-            itemView.headlineTV.text = event.name
+            itemView.nameTV.text = event.name
             itemView.placeHolderTV.text = event.location
             itemView.dateHolderTV.text = event.date
             itemView.timeHolderTV.text = "${event.starttime} Uhr"

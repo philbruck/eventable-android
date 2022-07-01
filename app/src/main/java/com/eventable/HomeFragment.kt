@@ -18,6 +18,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.eventable.model.Event
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.Query
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_data1.*
 import kotlinx.android.synthetic.main.fragment_home.*
@@ -56,6 +57,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         val eventsReference = firestoneDb.collection("events")
         eventsReference
             .whereEqualTo("creator", uid)
+            //.orderBy("creationTimeMs", Query.Direction.DESCENDING)
             .addSnapshotListener { snapshot, exception ->
                 if (exception != null || snapshot == null) {
                     Log.e(TAG, "Exception when querying events", exception)
@@ -76,7 +78,6 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         refreshHome()
     }
 
-
     override fun onResume() {
         recyclerView.adapter = RecyclerAdapter(events)
         super.onResume()
@@ -84,7 +85,6 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
 
 
     private fun refreshHome() {
-
         refresherHome.setOnRefreshListener { //philbruck: dem <androidx.swiperefreshlayout> Layout mit der id "refreher" eine Refrsehlsitener geben!
 
             recyclerView.adapter = RecyclerAdapter(events)
