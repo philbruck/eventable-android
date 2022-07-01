@@ -38,8 +38,8 @@ class RecyclerAdapterData1Fragment(val questionlist: MutableList<Question>) :
         fun bind(question: Question) {
 
             itemView.nameData2HolderTV.text = question.questionname
-            itemView.locationData2HolderTV.text = question.votesyes.toString()
-            itemView.dateData2HolderTV.text = question.votesno.toString()
+            itemView.locationData3HolderTV.text = question.votesyes.toString()
+            itemView.dateData3HolderTV.text = question.votesno.toString()
         }
 
     }
