@@ -109,7 +109,7 @@ class Data2Fragment : Fragment(R.layout.fragment_data2){
                 }
 
             val action_Data2ToSelf =
-                Data2FragmentDirections.actionData2FragmentSelf(args.invitationCode, voteQuestion)
+                Data2FragmentDirections.actionData2FragmentSelf(args.invitationCode.toString(), voteQuestion)
             findNavController().navigate(action_Data2ToSelf)
 
 
@@ -154,8 +154,6 @@ class Data2Fragment : Fragment(R.layout.fragment_data2){
 
 
             }
-
-
 
 
         }
