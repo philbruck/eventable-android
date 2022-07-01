@@ -1,26 +1,158 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Data3Fragment">
 
-    <LinearLayout
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_layout_data3"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:orientation="vertical"
-        android:padding="16dp">
+        android:layout_height="wrap_content"
+        android:layout_margin="12dp"
+        app:cardBackgroundColor="#1E0A70DD"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="3dp"
+        app:contentPadding="2dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:layout_width="wrap_content"
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/card_const_layout_confirmed"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Hier bist du um Daten zu sehen!"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large">
-            >
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/nameData2HolderTV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:text="Pokerturnier"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large">
+
+                </TextView>
+
+                <TextView
+                    android:id="@+id/locationData3TV"
+                    android:layout_width="115dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/nameData2HolderTV"
+                    android:padding="4dp"
+                    android:text="Ort:"
+                    android:textSize="16sp">
+
+                </TextView>
+
+                <TextView
+                    android:id="@+id/dateData3TV"
+                    android:layout_width="115dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/locationData3TV"
+                    android:padding="4dp"
+                    android:text="Datum:"
+                    android:textSize="16sp">
+
+                </TextView>
+
+                <TextView
+                    android:id="@+id/starttimeData3TV"
+                    android:layout_width="115dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/dateData3TV"
+                    android:padding="4dp"
+                    android:text="Uhrzeit:"
+                    android:textSize="16sp">
+
+                </TextView>
+
+                <TextView
+                    android:id="@+id/descriptionData3TV"
+                    android:layout_width="115dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/starttimeData3HolderTV"
+                    android:padding="4dp"
+                    android:text="Beschreibung:"
+                    android:textSize="16sp">
+
+                </TextView>
+
+                <TextView
+                    android:id="@+id/locationData3HolderTV"
+                    android:layout_width="263dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/nameData2HolderTV"
+                    android:layout_toRightOf="@+id/locationData3TV"
+                    android:padding="4dp"
+                    android:text="Lorem ipsum.."
+                    android:textSize="16sp">
+
+                </TextView>
+
+                <TextView
+                    android:id="@+id/dateData3HolderTV"
+                    android:layout_width="263dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/locationData3TV"
+                    android:layout_toRightOf="@+id/locationData3TV"
+                    android:padding="4dp"
+                    android:text="Lorem ipsum.."
+                    android:textSize="16sp">
+
+                </TextView>
+
+                <TextView
+                    android:id="@+id/starttimeData3HolderTV"
+                    android:layout_width="263dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/dateData3TV"
+                    android:layout_toRightOf="@+id/locationData3TV"
+                    android:padding="4dp"
+                    android:text="Lorem ipsum.."
+                    android:textSize="16sp">
+
+                </TextView>
+
+                <TextView
+                    android:id="@+id/descriptionData3HolderTV"
+                    android:layout_width="263dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/starttimeData3TV"
+                    android:layout_toRightOf="@+id/locationData3TV"
+                    android:padding="4dp"
+                    android:text="Lorem ipsum.."
+                    android:textSize="16sp">
+
+                </TextView>
+
+            </RelativeLayout>
 
 
-        </TextView>
-    </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
+    </androidx.cardview.widget.CardView>
+
+    <RelativeLayout
+        android:layout_width="399dp"
+        android:layout_height="481dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.82">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewData3"
+            android:layout_width="match_parent"
+            android:layout_height="464dp" />
+    </RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

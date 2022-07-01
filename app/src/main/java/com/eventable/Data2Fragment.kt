@@ -1,7 +1,6 @@
 package com.eventable
 
 import android.content.ContentValues
-import android.content.ContentValues.TAG
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -12,7 +11,6 @@ import androidx.navigation.fragment.navArgs
 import com.eventable.model.Answer
 import com.eventable.model.Event
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.firestore.FieldValue
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.fragment_data2.*
 
@@ -67,11 +65,11 @@ class Data2Fragment : Fragment(R.layout.fragment_data2){
 
                 for (event in eventList) {
                     nameData2HolderTV.text = event.name
-                    locationData2HolderTV.text = event.location
-                    dateData2HolderTV.text = event.date
-                    starttimeData2HolderTV.text = "${event.starttime} Uhr"
+                    locationData3HolderTV.text = event.location
+                    dateData3HolderTV.text = event.date
+                    starttimeData3HolderTV.text = "${event.starttime} Uhr"
                     countQuestionData2HolderTV.text = "${voteQuestion+1} /  ${event.questions?.size.toString()}"
-                    descriptionData2HolderTV.text = event.description
+                    descriptionData3HolderTV.text = event.description
                     questionData2EdTe.text = event.questions?.get(voteQuestion)
 
                     voteQuestion++
