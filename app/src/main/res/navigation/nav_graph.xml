@@ -84,12 +84,12 @@
         <argument
             android:name="invitationCode"
             app:argType="string" />
-        <action
-            android:id="@+id/action_data2Fragment_self"
-            app:destination="@id/data2Fragment" />
         <argument
             android:name="voteQuestion"
             app:argType="integer" />
+        <action
+            android:id="@+id/action_data2Fragment_self"
+            app:destination="@id/data2Fragment" />
         <action
             android:id="@+id/action_data2Fragment_to_homeFragment"
             app:destination="@id/homeFragment" />

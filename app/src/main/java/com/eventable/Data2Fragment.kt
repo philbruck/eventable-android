@@ -1,10 +1,10 @@
 package com.eventable
 
 import android.content.ContentValues
+import android.content.ContentValues.TAG
 import android.os.Bundle
 import android.util.Log
 import android.view.View
-import android.widget.RadioButton
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
@@ -12,28 +12,30 @@ import androidx.navigation.fragment.navArgs
 import com.eventable.model.Answer
 import com.eventable.model.Event
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FieldValue
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.fragment_data2.*
-import kotlinx.android.synthetic.main.fragment_data4.*
 
 
 class Data2Fragment : Fragment(R.layout.fragment_data2){
 
     private lateinit var firestoneDb: FirebaseFirestore
+
     private val args : Data2FragmentArgs by navArgs() //philbruck: autogenerire Klasse wegen dem safeArgs-Plug-In
     private lateinit var events: MutableList<Event>
     private lateinit var answers: Answer
 
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        var auth = FirebaseAuth.getInstance()
-        var user = auth.currentUser
-        var uid = user?.uid
-        val db = FirebaseFirestore.getInstance()
         var countQuestion = 0
         var voteQuestion = args.voteQuestion
         var invitationCode = 0
+        val db = FirebaseFirestore.getInstance()
+        var auth = FirebaseAuth.getInstance()
+        var user = auth.currentUser
+        var uid = user?.uid
 
 
         firestoneDb = FirebaseFirestore.getInstance()
@@ -43,8 +45,8 @@ class Data2Fragment : Fragment(R.layout.fragment_data2){
 
         //To-do:
         //EventInfos sollen angezeigt werden ->Erledigt
-        //Fragen sollen angezeigt und ausgefüllt werden können
-        //Counter wie viel Fragen noch kommen
+        //Fragen sollen angezeigt und ausgefüllt werden können -> ERledigt
+        //Counter wie viel Fragen noch kommen -> ERledigt
         //Unter Events soll bei Votes die uid agespeichert werden
         //Antworten sollen unter Antworten gespeichert werden
 
@@ -64,18 +66,16 @@ class Data2Fragment : Fragment(R.layout.fragment_data2){
                 events.addAll(eventList)
 
                 for (event in eventList) {
-                    nameData4HolderTV.text = event.name
-                    locationData4HolderTV.text = event.location
-                    dateData4HolderTV.text = event.date
-                    starttimeData4HolderTV.text = "${event.starttime} Uhr"
-                    countQuestionData4HolderTV.text = "${voteQuestion+1} /  ${event.questions?.size.toString()}"
-                    descriptionData4HolderTV.text = event.description
-                    questionData4EdTe.text = event.questions?.get(voteQuestion)
+                    nameData2HolderTV.text = event.name
+                    locationData2HolderTV.text = event.location
+                    dateData2HolderTV.text = event.date
+                    starttimeData2HolderTV.text = "${event.starttime} Uhr"
+                    countQuestionData2HolderTV.text = "${voteQuestion+1} /  ${event.questions?.size.toString()}"
+                    descriptionData2HolderTV.text = event.description
+                    questionData2EdTe.text = event.questions?.get(voteQuestion)
 
                     voteQuestion++
-                    Log.i("Votes1", voteQuestion.toString())
                     countQuestion = event.questions?.size!!
-
                 }
             }
 
@@ -96,6 +96,7 @@ class Data2Fragment : Fragment(R.layout.fragment_data2){
                 }
 
                 if (yesRB.isChecked || noRB.isChecked) {
+
                     db.collection("answers").document().set(answers)
                         .addOnSuccessListener {
                             Log.d(
@@ -108,10 +109,9 @@ class Data2Fragment : Fragment(R.layout.fragment_data2){
                         }
                 }
 
-                val action_Data2ToSelf =
-                    Data2FragmentDirections.actionData2FragmentSelf(args.invitationCode.toString(), voteQuestion)
-                findNavController().navigate(action_Data2ToSelf)
-
+            val action_Data2ToSelf =
+                Data2FragmentDirections.actionData2FragmentSelf(args.invitationCode.toString(), voteQuestion)
+            findNavController().navigate(action_Data2ToSelf)
 
             if(countQuestion == voteQuestion) {
                 //Augustin: Alle Fragen wurden beantwortet
@@ -121,28 +121,27 @@ class Data2Fragment : Fragment(R.layout.fragment_data2){
                     Toast.LENGTH_LONG
                 ).show()
 
-                //Augustin: Absprung zu Confirmed geht irgendwie nicht
-                val action_Data2ToHome =
+                Log.i("Code", "${args.invitationCode}")
+
+                //Augustin: Hier funktioniert das nicht, wirft mir immer einen Fehler aus
+                val data1 = db.collection("events").document(args.invitationCode)
+/*                data1
+                    .update("votes",  FieldValue.arrayUnion("$uid"))
+                    .addOnSuccessListener { Log.i(TAG, "Antwort wurde hinzugefügt") }
+                    .addOnFailureListener { Log.i(TAG, "Antwort konnte nicht hinzugefügt werden")}*/
+
+                val action_Data2ToHomeFragment =
                     Data2FragmentDirections.actionData2FragmentToHomeFragment()
-                findNavController().navigate(action_Data2ToHome)
+                findNavController().navigate(action_Data2ToHomeFragment)
             }
 
 
         }
 
 
-
-
-
-
-
-
-
-
-
-
-        }
     }
+
+}
 
 
 

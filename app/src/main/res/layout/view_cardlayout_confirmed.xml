@@ -24,7 +24,7 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/headlineTV"
+                android:id="@+id/nameTV"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
@@ -37,7 +37,7 @@
                 android:id="@+id/placeTV"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/headlineTV"
+                android:layout_below="@+id/nameTV"
                 android:padding="4dp"
                 android:text="Ort:"
                 android:textSize="16sp">
@@ -70,7 +70,7 @@
                 android:id="@+id/placeHolderTV"
                 android:layout_width="263dp"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/headlineTV"
+                android:layout_below="@+id/nameTV"
                 android:layout_toRightOf="@+id/placeTV"
                 android:padding="4dp"
                 android:text="Lorem ipsum.."

@@ -46,10 +46,12 @@ class Data4Fragment : Fragment(R.layout.fragment_data4) {
                 //Augustin: Überprüft, ob Event schon erstellt worden ist
                 if(alreadyCreated == false) {
                 val events = Event(args.eventInfos[4], args.eventInfos[3], uid.toString(), args.eventId.toString(), args.eventInfos[1], args.eventInfos[0],
-                    listOf("${questionEdTe.text}"), args.eventInfos[2], 0, System.currentTimeMillis(), listOf())
+                    listOf("${questionEdTe.text}"), args.eventInfos[2],  System.currentTimeMillis(), listOf())
                 db.collection("events").document(args.eventId.toString()).set(events)
                     .addOnSuccessListener { Log.d(TAG, "Event wurde erstellt") }
                     .addOnFailureListener { Log.d(TAG, "Fehler beim Erstellen eines Events") }
+
+                    Toast.makeText(activity, "Frage wurde erfolgreich hinzugefügt", Toast.LENGTH_SHORT).show()
 
                 alreadyCreated = true;
                 } else {
@@ -79,13 +81,31 @@ class Data4Fragment : Fragment(R.layout.fragment_data4) {
         }
 
 
-
         finishBtn.setOnClickListener {
-            Toast.makeText(activity, "Event wurde erfolgreich erstellt, \n Event-ID: ${args.eventId}", Toast.LENGTH_LONG).show()
 
-            val action_Data4ToHome =
-                Data4FragmentDirections.actionData4FragmentToHomeFragment()
-            findNavController().navigate(action_Data4ToHome)
+            if(questionEdTe.length() == 0) {
+                val action_Data4ToHome =
+                    Data4FragmentDirections.actionData4FragmentToHomeFragment()
+                findNavController().navigate(action_Data4ToHome)
+                Toast.makeText(activity, "Event wurde erfolgreich erstellt, \n Event-ID: ${args.eventId}", Toast.LENGTH_LONG).show()
+
+            } else {
+                val data = db.collection("events").document(args.eventId.toString())
+                Toast.makeText(activity, "Frage wurde erfolgreich hinzugefügt", Toast.LENGTH_SHORT).show()
+
+                data
+                    .update("questions", FieldValue.arrayUnion("${questionEdTe.text}"))
+                    .addOnSuccessListener { Log.d(TAG, "Event wurde erfolgreich erstellt") }
+                    .addOnFailureListener { Log.d(TAG, "Fehler beim hinzufügen von Fragen") }
+
+                val action_Data4ToHomeFragment =
+                    Data4FragmentDirections.actionData4FragmentToHomeFragment()
+                findNavController().navigate(action_Data4ToHomeFragment)
+            }
+
+
+
+
 
         }
     }

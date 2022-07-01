@@ -8,6 +8,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FieldValue
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.fragment_invitation.*
 
@@ -49,6 +50,14 @@ class InvitationFragment : Fragment(R.layout.fragment_invitation){
                                         //Nicht zweimal abgestimmt
                                         //Sprug zu den Fragen des eingegebenen Events
                                         val invitationCode = eventIdEdTe.text.toString()
+
+                                        val data1 = db.collection("events").document(eventIdEdTe.text.toString())
+                                                data1
+                                                    .update("votes",  FieldValue.arrayUnion("$uid"))
+                                                    .addOnSuccessListener { Log.i(TAG, "Antwort wurde hinzugefügt") }
+                                                    .addOnFailureListener { Log.i(TAG, "Antwort konnte nicht hinzugefügt werden")}
+
+
                                         val action_InvitationToData4 =
                                             InvitationFragmentDirections.actionInvitationFragmentToData2Fragment(invitationCode, voteQuestion)
                                         findNavController().navigate(action_InvitationToData4)

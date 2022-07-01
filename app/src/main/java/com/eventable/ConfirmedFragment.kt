@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.eventable.model.Event
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.Query
 import kotlinx.android.synthetic.main.fragment_confirmed.*
 import kotlinx.android.synthetic.main.fragment_home.*
 
@@ -40,7 +41,7 @@ class ConfirmedFragment : Fragment(R.layout.fragment_confirmed) {
 
         val eventsReference = firestoreDb.collection("events")
         eventsReference
-            .whereArrayContains("votes_user", uid.toString())
+            .whereArrayContains("votes", uid.toString())
             .addSnapshotListener{ snapshot, excecption ->
                 if (excecption != null || snapshot == null) {
                     Log.e(TAG, "Exception when querying confirmed events")

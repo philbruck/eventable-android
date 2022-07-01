@@ -37,9 +37,9 @@ class RecyclerAdapterData1Fragment(val questionlist: MutableList<Question>) :
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         fun bind(question: Question) {
 
-            itemView.nameData4HolderTV.text = question.questionname
-            itemView.locationData4HolderTV.text = question.votesyes.toString()
-            itemView.dateData4HolderTV.text = question.votesno.toString()
+            itemView.nameData2HolderTV.text = question.questionname
+            itemView.locationData2HolderTV.text = question.votesyes.toString()
+            itemView.dateData2HolderTV.text = question.votesno.toString()
         }
 
     }

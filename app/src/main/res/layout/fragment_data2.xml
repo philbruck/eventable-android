@@ -45,7 +45,7 @@
                 android:layout_height="match_parent">
 
                 <TextView
-                    android:id="@+id/nameData4HolderTV"
+                    android:id="@+id/nameData2HolderTV"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_alignParentTop="true"
@@ -55,10 +55,10 @@
                 </TextView>
 
                 <TextView
-                    android:id="@+id/locationData4TV"
+                    android:id="@+id/locationData2TV"
                     android:layout_width="115dp"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/nameData4HolderTV"
+                    android:layout_below="@+id/nameData2HolderTV"
                     android:padding="4dp"
                     android:text="Ort:"
                     android:textSize="16sp">
@@ -66,10 +66,10 @@
                 </TextView>
 
                 <TextView
-                    android:id="@+id/dateData4TV"
+                    android:id="@+id/dateData2TV"
                     android:layout_width="115dp"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/locationData4TV"
+                    android:layout_below="@+id/locationData2TV"
                     android:padding="4dp"
                     android:text="Datum:"
                     android:textSize="16sp">
@@ -77,10 +77,10 @@
                 </TextView>
 
                 <TextView
-                    android:id="@+id/starttimeData4TV"
+                    android:id="@+id/starttimeData2TV"
                     android:layout_width="115dp"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/dateData4TV"
+                    android:layout_below="@+id/dateData2TV"
                     android:padding="4dp"
                     android:text="Uhrzeit:"
                     android:textSize="16sp">
@@ -88,10 +88,10 @@
                 </TextView>
 
                 <TextView
-                    android:id="@+id/countQuestionData4TV"
+                    android:id="@+id/countQuestionData2TV"
                     android:layout_width="115dp"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/starttimeData4HolderTV"
+                    android:layout_below="@id/starttimeData2HolderTV"
                     android:padding="4dp"
                     android:text="Anzahl Fragen:"
                     android:textSize="16sp">
@@ -99,10 +99,10 @@
                 </TextView>
 
                 <TextView
-                    android:id="@+id/descriptionData4TV"
+                    android:id="@+id/descriptionData2TV"
                     android:layout_width="115dp"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/countQuestionData4TV"
+                    android:layout_below="@id/countQuestionData2TV"
                     android:padding="4dp"
                     android:text="Beschreibung:"
                     android:textSize="16sp">
@@ -110,11 +110,11 @@
                 </TextView>
 
                 <TextView
-                    android:id="@+id/locationData4HolderTV"
+                    android:id="@+id/locationData2HolderTV"
                     android:layout_width="263dp"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/nameData4HolderTV"
-                    android:layout_toRightOf="@+id/locationData4TV"
+                    android:layout_below="@+id/nameData2HolderTV"
+                    android:layout_toRightOf="@+id/locationData2TV"
                     android:padding="4dp"
                     android:text="Lorem ipsum.."
                     android:textSize="16sp">
@@ -122,11 +122,11 @@
                 </TextView>
 
                 <TextView
-                    android:id="@+id/dateData4HolderTV"
+                    android:id="@+id/dateData2HolderTV"
                     android:layout_width="263dp"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/locationData4TV"
-                    android:layout_toRightOf="@+id/locationData4TV"
+                    android:layout_below="@+id/locationData2TV"
+                    android:layout_toRightOf="@+id/locationData2TV"
                     android:padding="4dp"
                     android:text="Lorem ipsum.."
                     android:textSize="16sp">
@@ -134,11 +134,11 @@
                 </TextView>
 
                 <TextView
-                    android:id="@+id/starttimeData4HolderTV"
+                    android:id="@+id/starttimeData2HolderTV"
                     android:layout_width="263dp"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/dateData4TV"
-                    android:layout_toRightOf="@+id/locationData4TV"
+                    android:layout_below="@+id/dateData2TV"
+                    android:layout_toRightOf="@+id/locationData2TV"
                     android:padding="4dp"
                     android:text="Lorem ipsum.."
                     android:textSize="16sp">
@@ -146,11 +146,11 @@
                 </TextView>
 
                 <TextView
-                    android:id="@+id/countQuestionData4HolderTV"
+                    android:id="@+id/countQuestionData2HolderTV"
                     android:layout_width="263dp"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/starttimeData4HolderTV"
-                    android:layout_toRightOf="@+id/locationData4TV"
+                    android:layout_below="@id/starttimeData2HolderTV"
+                    android:layout_toRightOf="@+id/locationData2TV"
                     android:padding="4dp"
                     android:text="Lorem ipsum.."
                     android:textSize="16sp">
@@ -158,11 +158,11 @@
                 </TextView>
 
                 <TextView
-                    android:id="@+id/descriptionData4HolderTV"
+                    android:id="@+id/descriptionData2HolderTV"
                     android:layout_width="263dp"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/countQuestionData4HolderTV"
-                    android:layout_toRightOf="@+id/locationData4TV"
+                    android:layout_below="@id/countQuestionData2HolderTV"
+                    android:layout_toRightOf="@+id/locationData2TV"
                     android:padding="4dp"
                     android:text="Lorem ipsum.."
                     android:textSize="16sp">
@@ -206,7 +206,7 @@
     </RadioGroup>
 
     <TextView
-        android:id="@+id/questionData4EdTe"
+        android:id="@+id/questionData2EdTe"
         android:layout_width="344dp"
         android:layout_height="106dp"
         android:layout_marginTop="248dp"

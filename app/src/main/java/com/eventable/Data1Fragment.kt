@@ -47,8 +47,6 @@ class Data1Fragment : Fragment(R.layout.fragment_data1) {
 
 
 
-
-
         val eventsReference = firestoneDb.collection("events")
         eventsReference
             .whereEqualTo("event_id", args.countEventId)
@@ -78,8 +76,8 @@ class Data1Fragment : Fragment(R.layout.fragment_data1) {
                     i++
                 }
 
-                recyclerView.adapter = RecyclerAdapterData1Fragment(questionList)
-                recyclerView.layoutManager = LinearLayoutManager(activity)
+               recyclerView.adapter = RecyclerAdapterData1Fragment(questionList)
+               recyclerView.layoutManager = LinearLayoutManager(activity)
 
                 for (event in eventList) {
                     Log.i(TAG, "Event ${event}")
@@ -90,7 +88,6 @@ class Data1Fragment : Fragment(R.layout.fragment_data1) {
                     dataHomeData.text = event.date
                     dataHomeStartTime.text = event.starttime
                     dataHomeDescription.text = event.description
-
 
                     /*
                     //Augusin: Soll man das so machen oder kann man das irgendwie eleganter?
@@ -124,7 +121,6 @@ class Data1Fragment : Fragment(R.layout.fragment_data1) {
                     }*/
                 }
             }
-
 
         // Ruft die Antworten für Frage 1 ab
         val answersReference = firestoneDb.collection("answers")
@@ -217,7 +213,6 @@ class Data1Fragment : Fragment(R.layout.fragment_data1) {
                 countsum3 = countAnswer3[0] + countAnswer3[1]
                 dataHomeQueston3Sum.text = "Gesamt: ${countsum3}"
 */
-
 
             }
 
