@@ -1,6 +1,7 @@
 package com.eventable
 
 import android.content.ContentValues
+import android.content.ContentValues.TAG
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -12,6 +13,7 @@ import androidx.navigation.fragment.navArgs
 import com.eventable.model.Answer
 import com.eventable.model.Event
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FieldValue
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.fragment_data2.*
 import kotlinx.android.synthetic.main.fragment_data4.*
@@ -107,6 +109,15 @@ class Data2Fragment : Fragment(R.layout.fragment_data2){
                             Log.d(ContentValues.TAG, "Fehler beim Antworten auf eine Frage")
                         }
                 }
+
+
+/*                val data = db.collection("events").document(args.invitationCode)
+
+            data
+                .update("votes", FieldValue.increment(1))
+                .addOnSuccessListener { Log.i(TAG, "Votes um 1 erhöhen hat funkioniert") }
+                .addOnFailureListener { Log.i(TAG, "Votes um 1 erhöhen hat nicht funkioniert")}*/
+
 
                 val action_Data2ToSelf =
                     Data2FragmentDirections.actionData2FragmentSelf(args.invitationCode.toString(), voteQuestion)

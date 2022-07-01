@@ -19,7 +19,7 @@ class CreateFragment : Fragment(R.layout.fragment_create) {
 
 
     private lateinit var eventInfos: Array<String>
-    val eventId = (0..999999).random()
+    val eventId = (100000..999999).random()
     val alreadyCreated = false
 
 
