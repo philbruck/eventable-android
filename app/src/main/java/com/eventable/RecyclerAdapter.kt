@@ -39,8 +39,7 @@ class RecyclerAdapter(val events: List<Event>) :
             itemView.placeHolderTV.text = event.location
             itemView.dateHolderTV.text = event.date
             itemView.timeHolderTV.text = "${event.starttime} Uhr"
-            itemView.dataHolderVotes.text = event.votes.toString()
-            itemView.dataHolderVotes.text = event.votesUser?.size.toString()
+            itemView.dataHolderVotes.text = event.votes?.size.toString()
 
             countEventId.add(event.eventId)
             count++

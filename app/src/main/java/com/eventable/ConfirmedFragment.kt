@@ -41,7 +41,7 @@ class ConfirmedFragment : Fragment(R.layout.fragment_confirmed) {
 
         val eventsReference = firestoreDb.collection("events")
         eventsReference
-            .whereArrayContains("votes_user", uid.toString())
+            .whereArrayContains("votes", uid.toString())
             .addSnapshotListener{ snapshot, excecption ->
                 if (excecption != null || snapshot == null) {
                     Log.e(TAG, "Exception when querying confirmed events")

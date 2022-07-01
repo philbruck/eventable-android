@@ -53,6 +53,8 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         //philbruck: hier wird die activity übergeben weil man ja eine Context übergebn muss und Fragmnet leiter nicht von Context ab!
         recyclerView.layoutManager = LinearLayoutManager(activity)
 
+        refreshHome()
+
 
         val eventsReference = firestoneDb.collection("events")
         eventsReference
@@ -75,7 +77,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
                 }
             }
 
-        refreshHome()
+
     }
 
     override fun onResume() {

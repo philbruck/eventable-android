@@ -11,7 +11,6 @@ data class Event (
     var name: String = "",
     var questions: List<String>? = null,
     var date: String = "",
-    @get: PropertyName("votes") @set:PropertyName("votes") var votes: Int = 0,
     @get: PropertyName("creationTimeMs") @set:PropertyName("creationTimeMs")var creationTimeMs: Long = 0,
-    @get: PropertyName("votes_user") @set:PropertyName("votes_user")var votesUser: List<String>? = null
+    var votes: List<String>? = null
 )

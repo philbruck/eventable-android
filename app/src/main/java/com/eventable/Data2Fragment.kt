@@ -75,9 +75,7 @@ class Data2Fragment : Fragment(R.layout.fragment_data2){
                     questionData2EdTe.text = event.questions?.get(voteQuestion)
 
                     voteQuestion++
-                    Log.i("Votes1", voteQuestion.toString())
                     countQuestion = event.questions?.size!!
-
                 }
             }
 
@@ -98,6 +96,7 @@ class Data2Fragment : Fragment(R.layout.fragment_data2){
                 }
 
                 if (yesRB.isChecked || noRB.isChecked) {
+
                     db.collection("answers").document().set(answers)
                         .addOnSuccessListener {
                             Log.d(
@@ -108,23 +107,11 @@ class Data2Fragment : Fragment(R.layout.fragment_data2){
                         .addOnFailureListener {
                             Log.d(ContentValues.TAG, "Fehler beim Antworten auf eine Frage")
                         }
-
-                    val data1 = db.collection("events").document(args.invitationCode.toString())
-
-                    data1
-                        .update("votes_user", FieldValue.arrayUnion("$uid"))
-                        .addOnSuccessListener { Log.d(TAG, "Votes_User wurde hinzugefügt") }
-                        .addOnFailureListener { Log.d(TAG, "Votes_User konnte nicht hinzugefügt werden") }
-
                 }
 
             val action_Data2ToSelf =
                 Data2FragmentDirections.actionData2FragmentSelf(args.invitationCode.toString(), voteQuestion)
             findNavController().navigate(action_Data2ToSelf)
-
-            Log.i("Votes", voteQuestion.toString())
-            Log.i("Questoin", countQuestion.toString())
-
 
             if(countQuestion == voteQuestion) {
                 //Augustin: Alle Fragen wurden beantwortet
@@ -134,17 +121,23 @@ class Data2Fragment : Fragment(R.layout.fragment_data2){
                     Toast.LENGTH_LONG
                 ).show()
 
-
                 Log.i("Code", "${args.invitationCode}")
-                Log.i("Ja", "Geht bis dahin")
 
+                //Augustin: Hier funktioniert das nicht, wirft mir immer einen Fehler aus
+                val data1 = db.collection("events").document(args.invitationCode)
+/*                data1
+                    .update("votes",  FieldValue.arrayUnion("$uid"))
+                    .addOnSuccessListener { Log.i(TAG, "Antwort wurde hinzugefügt") }
+                    .addOnFailureListener { Log.i(TAG, "Antwort konnte nicht hinzugefügt werden")}*/
 
                 val action_Data2ToHomeFragment =
                     Data2FragmentDirections.actionData2FragmentToHomeFragment()
                 findNavController().navigate(action_Data2ToHomeFragment)
             }
 
+
         }
+
 
     }
 

@@ -46,7 +46,7 @@ class Data4Fragment : Fragment(R.layout.fragment_data4) {
                 //Augustin: Überprüft, ob Event schon erstellt worden ist
                 if(alreadyCreated == false) {
                 val events = Event(args.eventInfos[4], args.eventInfos[3], uid.toString(), args.eventId.toString(), args.eventInfos[1], args.eventInfos[0],
-                    listOf("${questionEdTe.text}"), args.eventInfos[2], 0, System.currentTimeMillis(), listOf())
+                    listOf("${questionEdTe.text}"), args.eventInfos[2],  System.currentTimeMillis(), listOf())
                 db.collection("events").document(args.eventId.toString()).set(events)
                     .addOnSuccessListener { Log.d(TAG, "Event wurde erstellt") }
                     .addOnFailureListener { Log.d(TAG, "Fehler beim Erstellen eines Events") }
@@ -98,9 +98,9 @@ class Data4Fragment : Fragment(R.layout.fragment_data4) {
                     .addOnSuccessListener { Log.d(TAG, "Event wurde erfolgreich erstellt") }
                     .addOnFailureListener { Log.d(TAG, "Fehler beim hinzufügen von Fragen") }
 
-                val action_Data4ToHome =
+                val action_Data4ToHomeFragment =
                     Data4FragmentDirections.actionData4FragmentToHomeFragment()
-                findNavController().navigate(action_Data4ToHome)
+                findNavController().navigate(action_Data4ToHomeFragment)
             }
 
 
