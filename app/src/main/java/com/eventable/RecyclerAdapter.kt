@@ -15,7 +15,7 @@ class RecyclerAdapter(val events: List<Event>) :
     RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
 
     private lateinit var navController: NavController
-    private lateinit var events_id : String
+    private lateinit var events_id: String
 
     //Augustin: Speicherung von Events-Ids um Data1Fragment die richtige Event-ID mitgeben zu können
     var countEventId = mutableListOf<String>()
@@ -49,7 +49,6 @@ class RecyclerAdapter(val events: List<Event>) :
             itemView.setOnClickListener {
                 val pos: Int =
                     bindingAdapterPosition //philbruck: wenn man die akteulle Position wissen will
-
 
                 navController = findNavController(itemView)
 

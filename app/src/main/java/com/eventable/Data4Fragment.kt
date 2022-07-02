@@ -36,8 +36,6 @@ class Data4Fragment : Fragment(R.layout.fragment_data4) {
         var coundQuestions = args.coundQuestions
 
         eventInfos = Array(4) { "init" }
-        //val one: String = args.userId
-
 
         continueBtn.setOnClickListener {
             if (questionEdTe.length() == 0) {
@@ -87,20 +85,17 @@ class Data4Fragment : Fragment(R.layout.fragment_data4) {
                         .addOnSuccessListener { Log.d(TAG, "Frage wurde hinzugefügt") }
                         .addOnFailureListener { Log.d(TAG, "Fehler beim hinzufügen von Fragen") }
                 }
-
                 coundQuestions++
-
 
                 val action_Data4ToSelf =
                     Data4FragmentDirections.actionData4FragmentSelf(
                         args.eventInfos,
-                        args.eventId.toString(),
+                        args.eventId,
                         alreadyCreated,
                         coundQuestions
                     )
                 findNavController().navigate(action_Data4ToSelf)
             }
-
         }
 
         // Um zu überprüfen, dass nicht mehr als 5 Fragen gestellt wurden
@@ -113,7 +108,6 @@ class Data4Fragment : Fragment(R.layout.fragment_data4) {
             ).show()
         }
 
-
         //Um zu überprüfen, dass User mindestens eine Frage gestellt hat
         if (alreadyCreated == false) {
             finishBtn.visibility = View.INVISIBLE
@@ -124,7 +118,7 @@ class Data4Fragment : Fragment(R.layout.fragment_data4) {
         Log.e("Fragen", coundQuestions.toString())
 
         finishBtn.setOnClickListener {
-
+            //Wenn keine Frage eingegeben wurde, wird nichts in Datenbank gespeichert
             if (questionEdTe.length() == 0) {
                 val action_Data4ToHome =
                     Data4FragmentDirections.actionData4FragmentToHomeFragment()
@@ -136,6 +130,7 @@ class Data4Fragment : Fragment(R.layout.fragment_data4) {
                 ).show()
 
             } else {
+                // Wenn eine Frage eingegeben wurde, wird die Frage in Datenbank gespeichert
                 val data = db.collection("events").document(args.eventId.toString())
                 Toast.makeText(activity, "Frage wurde erfolgreich hinzugefügt", Toast.LENGTH_SHORT)
                     .show()

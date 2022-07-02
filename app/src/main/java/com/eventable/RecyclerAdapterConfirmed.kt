@@ -14,14 +14,18 @@ class RecyclerAdapterConfirmed(val events: List<Event>) :
     RecyclerView.Adapter<RecyclerAdapterConfirmed.ViewHolder>() {
 
     private lateinit var navController: NavController
-    private lateinit var events_id : String
+    private lateinit var events_id: String
 
     var countEventId = mutableListOf<String>()
     var count = 0
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerAdapterConfirmed.ViewHolder {
+    override fun onCreateViewHolder(
+        parent: ViewGroup,
+        viewType: Int
+    ): RecyclerAdapterConfirmed.ViewHolder {
         val view =
-            LayoutInflater.from(parent.context).inflate(R.layout.view_cardlayout_confirmed, parent, false)
+            LayoutInflater.from(parent.context)
+                .inflate(R.layout.view_cardlayout_confirmed, parent, false)
         return ViewHolder(view)
     }
 
@@ -58,15 +62,6 @@ class RecyclerAdapterConfirmed(val events: List<Event>) :
             }
         }
     }
-
-
-
-
-
-
-
-
-
 
 
     /*private lateinit var navController: NavController
@@ -136,4 +131,4 @@ class RecyclerAdapterConfirmed(val events: List<Event>) :
      */
 
 
-   }
+}

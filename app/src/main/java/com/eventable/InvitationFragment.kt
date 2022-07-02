@@ -46,7 +46,7 @@ class InvitationFragment : Fragment(R.layout.fragment_invitation) {
                                 Toast.LENGTH_LONG
                             ).show()
                         } else {
-                            //Überpfüfen, ob schon jemand abgestimmt hat
+                            //Überpfüfen, ob zweimal abgestimmt wurde
                             db.collection("answers")
                                 .whereEqualTo("uid", uid)
                                 .whereEqualTo("event_id", eventIdEdTe.text.toString())
@@ -74,13 +74,12 @@ class InvitationFragment : Fragment(R.layout.fragment_invitation) {
                                                 )
                                             }
 
-
-                                        val action_InvitationToData4 =
+                                        val action_InvitationToData2 =
                                             InvitationFragmentDirections.actionInvitationFragmentToData2Fragment(
                                                 invitationCode,
                                                 voteQuestion
                                             )
-                                        findNavController().navigate(action_InvitationToData4)
+                                        findNavController().navigate(action_InvitationToData2)
                                     } else {
                                         // Mehrfach abgestimmt
                                         Toast.makeText(
@@ -102,10 +101,8 @@ class InvitationFragment : Fragment(R.layout.fragment_invitation) {
                     .addOnFailureListener { exeption ->
                         Log.e(TAG, "Error by join Event", exeption)
                     }
-
             }
         }
-
     }
 }
 

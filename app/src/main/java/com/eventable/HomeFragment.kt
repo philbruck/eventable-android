@@ -32,9 +32,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
     private lateinit var events: MutableList<Event>
     private lateinit var adapter: RecyclerAdapter
 
-
     private var layoutManager: RecyclerView.LayoutManager? = null
-    //private var adapter: RecyclerView.Adapter<RecyclerAdapter.ViewHolder>? = null
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -42,12 +40,10 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         var auth = FirebaseAuth.getInstance()
         var user = auth.currentUser
         var uid = user?.uid
-
-
         firestoneDb = FirebaseFirestore.getInstance()
-        //Datenquelle wird erstellt
+
         events = mutableListOf()
-        //adapter = RecyclerAdapter(this, events )
+
 
         recyclerView.adapter = RecyclerAdapter(events)
         //philbruck: hier wird die activity übergeben weil man ja eine Context übergebn muss und Fragmnet leiter nicht von Context ab!
@@ -55,11 +51,9 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
 
         refreshHome()
 
-
         val eventsReference = firestoneDb.collection("events")
         eventsReference
             .whereEqualTo("creator", uid)
-            //.orderBy("creationTimeMs", Query.Direction.DESCENDING)
             .addSnapshotListener { snapshot, exception ->
                 if (exception != null || snapshot == null) {
                     Log.e(TAG, "Exception when querying events", exception)
@@ -70,14 +64,8 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
                 var eventList = snapshot.toObjects(Event::class.java)
                 events.clear()
                 events.addAll(eventList)
-                //adapter.notifyDataSetChanged()
 
-                for (event in eventList) {
-                    Log.i(TAG, "Event ${event}")
-                }
             }
-
-
     }
 
     override fun onResume() {

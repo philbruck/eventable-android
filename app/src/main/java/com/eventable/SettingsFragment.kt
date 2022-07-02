@@ -11,24 +11,14 @@ import kotlinx.android.synthetic.main.fragment_settings.*
 
 class SettingsFragment : Fragment(R.layout.fragment_settings) {
 
-override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-    LogOutSettingsBtn.setOnClickListener{
-        //Augustin: Ausloggen des Benutzers
-        FirebaseAuth.getInstance().signOut()
-        Log.e(TAG, "Benutzer wurde erfoglreich ausgeloggt")
-        startActivity(Intent(activity, LogInActivity::class.java))
+        LogOutSettingsBtn.setOnClickListener {
+            //Augustin: Ausloggen des Benutzers
+            Log.e(TAG, "Benutzer wurde erfoglreich ausgeloggt")
+            startActivity(Intent(activity, LogInActivity::class.java))
+            FirebaseAuth.getInstance().signOut()
+        }
     }
-
-
-
-
-
-
-
-}
-
-
-
 }

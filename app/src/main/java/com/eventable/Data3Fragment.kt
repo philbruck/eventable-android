@@ -31,7 +31,6 @@ class Data3Fragment : Fragment(R.layout.fragment_data3) {
         events = mutableListOf()
         answers = mutableListOf()
 
-
         //Augustin: Abfrage der EventInfos
         val eventsReference = firestoneDb.collection("events")
         eventsReference
@@ -52,7 +51,6 @@ class Data3Fragment : Fragment(R.layout.fragment_data3) {
                     Log.i(ContentValues.TAG, "Event ${event}")
 
                     //EventInfos werden abgefragt
-
                     NameData3HolderTV.text = event.name
                     locationData3HolderTV.text = event.location
                     dateData3HolderTV.text = event.date
@@ -104,11 +102,8 @@ class Data3Fragment : Fragment(R.layout.fragment_data3) {
                             question5Data3HolderTV.text = event.questions?.get(4)
                         }
                     }
-
-
                 }
             }
-
 
         // Ruft die Antworten für Fragen ab
         val answersReference = firestoneDb.collection("answers")
@@ -125,10 +120,10 @@ class Data3Fragment : Fragment(R.layout.fragment_data3) {
                 answers.clear()
                 answers.addAll(answerList)
 
-
                 for (answer in answerList) {
                     Log.i("Anworten:", "Answers ${answer}")
 
+                    //Augustin: Ordnet die abgegebenen Antworten den Fragen zu
                     when (answer.questionIndex) {
                         0 -> {
                             question1AnswerData3HolderTV.text = answer.answer
@@ -147,7 +142,6 @@ class Data3Fragment : Fragment(R.layout.fragment_data3) {
                         }
                     }
                 }
-
             }
     }
 }

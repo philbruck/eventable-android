@@ -21,10 +21,7 @@ import kotlinx.android.synthetic.main.fragment_home.*
 class ConfirmedFragment : Fragment(R.layout.fragment_confirmed) {
 
     private lateinit var firestoreDb: FirebaseFirestore
-    private lateinit var events : MutableList<Event>
-
-    private var layoutManager: RecyclerView.LayoutManager? = null
-    //private var adapter: RecyclerView.Adapter<RecyclerAdapterConfirmed.ViewHolder>? = null
+    private lateinit var events: MutableList<Event>
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -42,7 +39,7 @@ class ConfirmedFragment : Fragment(R.layout.fragment_confirmed) {
         val eventsReference = firestoreDb.collection("events")
         eventsReference
             .whereArrayContains("votes", uid.toString())
-            .addSnapshotListener{ snapshot, excecption ->
+            .addSnapshotListener { snapshot, excecption ->
                 if (excecption != null || snapshot == null) {
                     Log.e(TAG, "Exception when querying confirmed events")
                     return@addSnapshotListener
@@ -51,17 +48,12 @@ class ConfirmedFragment : Fragment(R.layout.fragment_confirmed) {
                 events.clear()
                 events.addAll(eventList)
 
-                for(event in eventList) {
+                for (event in eventList) {
                     Log.i(TAG, "Confirmed ${event}")
                 }
             }
 
         refreshConfirmed()
-
-        //recyclerViewConfirmed.layoutManager =
-          //  LinearLayoutManager(activity) //philbruck: hier wird die activity übergeben weil man ja eine Context übergebn muss und Fragmnet leiter nicht von Context ab!
-
-        //recyclerViewConfirmed.adapter = RecyclerAdapterConfirmed()
     }
 
     override fun onResume() {
@@ -77,9 +69,5 @@ class ConfirmedFragment : Fragment(R.layout.fragment_confirmed) {
             Toast.makeText(activity, "Seite wurde neu geladen", Toast.LENGTH_SHORT).show()
             refresherConfirmed.isRefreshing = false
         }
-
-
     }
-
-
 }
