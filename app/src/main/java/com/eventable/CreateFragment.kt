@@ -14,6 +14,7 @@ class CreateFragment : Fragment(R.layout.fragment_create) {
     private lateinit var eventInfos: Array<String>
     val eventId = (100000..999999).random()
     val alreadyCreated = false
+    var coundQuestions = 0
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -45,8 +46,8 @@ class CreateFragment : Fragment(R.layout.fragment_create) {
                     Log.i("EventInfos", eventInfos.toString())
 
                 val action_CreateToData4 = CreateFragmentDirections.actionCreateFragmentToData4Fragment(eventInfos,
-                    eventId.toString(), alreadyCreated
-                )
+                    eventId.toString(), alreadyCreated, coundQuestions)
+
 
                 findNavController().navigate(action_CreateToData4)
 

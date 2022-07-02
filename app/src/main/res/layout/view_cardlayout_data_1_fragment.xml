@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/card_layout_confirmed"
+    android:id="@+id/card_layout_Data3Fragment"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="12dp"
@@ -24,7 +24,7 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/nameData2HolderTV"
+                android:id="@+id/cardLayoutNameData1HolderTV"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
@@ -34,10 +34,10 @@
             </TextView>
 
             <TextView
-                android:id="@+id/locationData2TV"
+                android:id="@+id/cardLayoutYesData1TV"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/nameData2HolderTV"
+                android:layout_below="@+id/cardLayoutNameData1HolderTV"
                 android:padding="4dp"
                 android:text="Ja:"
                 android:textSize="16sp">
@@ -45,10 +45,10 @@
             </TextView>
 
             <TextView
-                android:id="@+id/dateData2TV"
+                android:id="@+id/cardLayoutNoData1TV"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/locationData2TV"
+                android:layout_below="@+id/cardLayoutYesData1TV"
                 android:padding="4dp"
                 android:text="Nein:"
                 android:textSize="16sp">
@@ -56,10 +56,10 @@
             </TextView>
 
             <TextView
-                android:id="@+id/starttimeData2TV"
+                android:id="@+id/cardLayoutSumData1TV"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/dateData2TV"
+                android:layout_below="@+id/cardLayoutNoData1TV"
                 android:padding="4dp"
                 android:text="Gesamt:"
                 android:textSize="16sp">
@@ -67,11 +67,11 @@
             </TextView>
 
             <TextView
-                android:id="@+id/locationData2HolderTV"
+                android:id="@+id/cardLayoutYesData1HolderTV"
                 android:layout_width="263dp"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/nameData2HolderTV"
-                android:layout_toRightOf="@+id/locationData2TV"
+                android:layout_below="@+id/cardLayoutNameData1HolderTV"
+                android:layout_toRightOf="@+id/cardLayoutYesData1TV"
                 android:padding="4dp"
                 android:text="Lorem ipsum.."
                 android:textSize="16sp">
@@ -79,11 +79,11 @@
             </TextView>
 
             <TextView
-                android:id="@+id/dateData2HolderTV"
+                android:id="@+id/cardLayoutNoData1HolderTV"
                 android:layout_width="263dp"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/locationData2TV"
-                android:layout_toRightOf="@+id/locationData2TV"
+                android:layout_below="@+id/cardLayoutYesData1TV"
+                android:layout_toRightOf="@+id/cardLayoutYesData1TV"
                 android:padding="4dp"
                 android:text="Lorem ipsum.."
                 android:textSize="16sp">
@@ -91,11 +91,11 @@
             </TextView>
 
             <TextView
-                android:id="@+id/starttimeData2HolderTV"
+                android:id="@+id/cardLayoutSumData1HolderTV"
                 android:layout_width="263dp"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/dateData2TV"
-                android:layout_toRightOf="@+id/locationData2TV"
+                android:layout_below="@+id/cardLayoutNoData1TV"
+                android:layout_toRightOf="@+id/cardLayoutYesData1TV"
                 android:padding="4dp"
                 android:text="Lorem ipsum.."
                 android:textSize="16sp">
