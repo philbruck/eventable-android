@@ -37,9 +37,26 @@ class RecyclerAdapterData1Fragment(val questionlist: MutableList<Question>) :
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         fun bind(question: Question) {
 
+
 /*            itemView.question5Data1HolderTV.text = question.questionname
             itemView.cardLayoutLocationData1HolderTV.text = question.votesyes.toString()
             itemView.dateData3HolderTV.text = question.votesno.toString()*/
+
+        }
+
+    }
+
+
+    /*private lateinit var navController: NavController
+
+    override fun onCreateViewHolder(
+        parent: ViewGroup,
+        viewType: Int
+    ): RecyclerAdapterConfirmed.ViewHolder {
+        val v = LayoutInflater.from(parent.context)
+            .inflate(R.layout.view_cardlayout_confirmed, parent, false)
+        return ViewHolder(v)
+    }
 
         }
     }

@@ -41,7 +41,6 @@
                 android:padding="4dp"
                 android:text="Ja:"
                 android:textSize="16sp">
-
             </TextView>
 
             <TextView
@@ -56,6 +55,7 @@
             </TextView>
 
             <TextView
+
                 android:id="@+id/cardLayoutSumData1TV"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
@@ -75,7 +75,6 @@
                 android:padding="4dp"
                 android:text="Lorem ipsum.."
                 android:textSize="16sp">
-
             </TextView>
 
             <TextView

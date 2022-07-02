@@ -57,11 +57,13 @@ class Data2Fragment : Fragment(R.layout.fragment_data2) {
 
                 for (event in eventList) {
                     nameData2HolderTV.text = event.name
+
                     locationData2HolderTV.text = event.location
                     dateData2HolderTV.text = event.date
                     starttimeData2HolderTV.text = "${event.starttime} Uhr"
                     coundQuestionsData2HolderTV.text = "${voteQuestion + 1} /  ${event.questions?.size.toString()}"
                     descriptionData2HolderTV.text = event.description
+
 
                     questionData2EdTe.text = event.questions?.get(voteQuestion)
 
