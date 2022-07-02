@@ -61,6 +61,7 @@
                     android:padding="4dp"
                     android:text="Datum:"
                     android:textSize="16sp">
+
                 </TextView>
 
                 <TextView
@@ -106,6 +107,7 @@
                     android:padding="4dp"
                     android:text="Lorem ipsum.."
                     android:textSize="16sp">
+
                 </TextView>
 
                 <TextView
@@ -117,6 +119,7 @@
                     android:padding="4dp"
                     android:text="Lorem ipsum.."
                     android:textSize="16sp">
+
                 </TextView>
 
                 <TextView
@@ -476,9 +479,5 @@
         </ScrollView>
     </ScrollView>
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerViewData3"
-            android:layout_width="match_parent"
-            android:layout_height="464dp" />
-    </RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
+

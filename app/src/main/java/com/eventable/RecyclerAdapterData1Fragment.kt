@@ -45,19 +45,5 @@ class RecyclerAdapterData1Fragment(val questionlist: MutableList<Question>) :
         }
 
     }
-
-
-    /*private lateinit var navController: NavController
-
-    override fun onCreateViewHolder(
-        parent: ViewGroup,
-        viewType: Int
-    ): RecyclerAdapterConfirmed.ViewHolder {
-        val v = LayoutInflater.from(parent.context)
-            .inflate(R.layout.view_cardlayout_confirmed, parent, false)
-        return ViewHolder(v)
-    }
-
         }
-    }
-}
+
