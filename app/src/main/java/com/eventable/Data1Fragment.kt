@@ -1,20 +1,15 @@
 package com.eventable
 
-import android.app.ActionBar
 import android.content.ContentValues.TAG
 import android.os.Bundle
 import android.util.Log
 import android.view.View
-import android.view.ViewGroup
-import android.widget.RelativeLayout
-import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.eventable.model.Answer
 import com.eventable.model.Event
 import com.eventable.model.Question
-import com.google.api.Distribution
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.fragment_data1.*
@@ -28,6 +23,10 @@ class Data1Fragment : Fragment(R.layout.fragment_data1) {
     private lateinit var events: MutableList<Event>
     private lateinit var answers: MutableList<Answer>
     private lateinit var questionList: MutableList<Question>
+    private lateinit var answerList: MutableList<Question>
+    private lateinit var votes: MutableList<String>
+
+
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -38,14 +37,11 @@ class Data1Fragment : Fragment(R.layout.fragment_data1) {
         var user = auth.currentUser
         var uid = user?.uid
 
-
         firestoneDb = FirebaseFirestore.getInstance()
         events = mutableListOf()
         answers = mutableListOf()
         questionList = mutableListOf()
-
-
-
+        answerList = mutableListOf()
 
         val eventsReference = firestoneDb.collection("events")
         eventsReference
@@ -63,7 +59,7 @@ class Data1Fragment : Fragment(R.layout.fragment_data1) {
                 Log.i("EventList: ", eventList.toString())
 
 
-                var coundquestions = eventList[0].questions?.size?.toInt()
+/*                var coundquestions = eventList[0].questions?.size?.toInt()
                 Log.i("CoundQuestion", eventList[0].questions?.size.toString())
                 var questionList: MutableList<Question> = mutableListOf()
                 var i: Int = 0
@@ -74,10 +70,10 @@ class Data1Fragment : Fragment(R.layout.fragment_data1) {
 
                     Log.i("QuestionList", questionList[i].votesno.toString())
                     i++
-                }
+                }*/
 
-               recyclerView.adapter = RecyclerAdapterData1Fragment(questionList)
-               recyclerView.layoutManager = LinearLayoutManager(activity)
+                recyclerView.adapter = RecyclerAdapterData1Fragment(eventList, questionList)
+                recyclerView.layoutManager = LinearLayoutManager(activity)
 
                 for (event in eventList) {
                     Log.i(TAG, "Event ${event}")
@@ -224,4 +220,5 @@ class Data1Fragment : Fragment(R.layout.fragment_data1) {
 
 
 }
+
 
