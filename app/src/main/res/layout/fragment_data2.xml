@@ -13,13 +13,13 @@
         android:text="Weiter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintHorizontal_bias="0.513"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.819" />
+        app:layout_constraintVertical_bias="0.875" />
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/card_layout_data3"
+        android:id="@+id/card_layout_Data2Fragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="12dp"
@@ -55,7 +55,7 @@
                 </TextView>
 
                 <TextView
-                    android:id="@+id/locationData3TV"
+                    android:id="@+id/LocationData2TV"
                     android:layout_width="115dp"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/nameData2HolderTV"
@@ -66,10 +66,10 @@
                 </TextView>
 
                 <TextView
-                    android:id="@+id/dateData3TV"
+                    android:id="@+id/dataData2TV"
                     android:layout_width="115dp"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/locationData3TV"
+                    android:layout_below="@+id/LocationData2TV"
                     android:padding="4dp"
                     android:text="Datum:"
                     android:textSize="16sp">
@@ -80,7 +80,7 @@
                     android:id="@+id/starttimeData3TV"
                     android:layout_width="115dp"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/dateData3TV"
+                    android:layout_below="@+id/dataData2TV"
                     android:padding="4dp"
                     android:text="Uhrzeit:"
                     android:textSize="16sp">
@@ -88,7 +88,7 @@
                 </TextView>
 
                 <TextView
-                    android:id="@+id/countQuestionData2TV"
+                    android:id="@+id/coundQuestionsData2TV"
                     android:layout_width="115dp"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/starttimeData3HolderTV"
@@ -102,7 +102,7 @@
                     android:id="@+id/descriptionData3TV"
                     android:layout_width="115dp"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/countQuestionData2TV"
+                    android:layout_below="@id/coundQuestionsData2TV"
                     android:padding="4dp"
                     android:text="Beschreibung:"
                     android:textSize="16sp">
@@ -114,7 +114,7 @@
                     android:layout_width="263dp"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/nameData2HolderTV"
-                    android:layout_toRightOf="@+id/locationData3TV"
+                    android:layout_toRightOf="@+id/LocationData2TV"
                     android:padding="4dp"
                     android:text="Lorem ipsum.."
                     android:textSize="16sp">
@@ -125,8 +125,8 @@
                     android:id="@+id/dateData3HolderTV"
                     android:layout_width="263dp"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/locationData3TV"
-                    android:layout_toRightOf="@+id/locationData3TV"
+                    android:layout_below="@+id/LocationData2TV"
+                    android:layout_toRightOf="@+id/LocationData2TV"
                     android:padding="4dp"
                     android:text="Lorem ipsum.."
                     android:textSize="16sp">
@@ -137,8 +137,8 @@
                     android:id="@+id/starttimeData3HolderTV"
                     android:layout_width="263dp"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/dateData3TV"
-                    android:layout_toRightOf="@+id/locationData3TV"
+                    android:layout_below="@+id/dataData2TV"
+                    android:layout_toRightOf="@+id/LocationData2TV"
                     android:padding="4dp"
                     android:text="Lorem ipsum.."
                     android:textSize="16sp">
@@ -146,11 +146,11 @@
                 </TextView>
 
                 <TextView
-                    android:id="@+id/countQuestionData2HolderTV"
+                    android:id="@+id/coundQuestionsData2HolderTV"
                     android:layout_width="263dp"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/starttimeData3HolderTV"
-                    android:layout_toRightOf="@+id/locationData3TV"
+                    android:layout_below="@id/starttimeData2HolderTV"
+                    android:layout_toRightOf="@+id/LocationData2TV"
                     android:padding="4dp"
                     android:text="Lorem ipsum.."
                     android:textSize="16sp">
@@ -161,8 +161,8 @@
                     android:id="@+id/descriptionData3HolderTV"
                     android:layout_width="263dp"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/countQuestionData2HolderTV"
-                    android:layout_toRightOf="@+id/locationData3TV"
+                    android:layout_below="@id/coundQuestionsData2HolderTV"
+                    android:layout_toRightOf="@+id/LocationData2TV"
                     android:padding="4dp"
                     android:text="Lorem ipsum.."
                     android:textSize="16sp">
@@ -183,7 +183,7 @@
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.58"
+        app:layout_constraintHorizontal_bias="0.63"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.68">
@@ -207,14 +207,14 @@
 
     <TextView
         android:id="@+id/questionData2EdTe"
-        android:layout_width="344dp"
+        android:layout_width="0dp"
         android:layout_height="106dp"
-        android:layout_marginTop="248dp"
+        android:layout_marginTop="276dp"
         android:gravity="center_horizontal"
         android:text="Frage?"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

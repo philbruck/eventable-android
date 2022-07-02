@@ -1,25 +1,17 @@
 package com.eventable
 
-import android.app.ActionBar
 import android.content.ContentValues.TAG
 import android.os.Bundle
 import android.util.Log
 import android.view.View
-import android.view.ViewGroup
-import android.widget.RelativeLayout
-import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.navArgs
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.eventable.model.Answer
 import com.eventable.model.Event
 import com.eventable.model.Question
-import com.google.api.Distribution
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.fragment_data1.*
-import kotlinx.android.synthetic.main.fragment_home.*
-import kotlinx.android.synthetic.main.view_cardlayout.*
 
 class Data1Fragment : Fragment(R.layout.fragment_data1) {
 
@@ -45,8 +37,6 @@ class Data1Fragment : Fragment(R.layout.fragment_data1) {
         questionList = mutableListOf()
 
 
-
-
         val eventsReference = firestoneDb.collection("events")
         eventsReference
             .whereEqualTo("event_id", args.countEventId)
@@ -62,166 +52,177 @@ class Data1Fragment : Fragment(R.layout.fragment_data1) {
                 //adapter.notifyDataSetChanged()
                 Log.i("EventList: ", eventList.toString())
 
-
-                var coundquestions = eventList[0].questions?.size?.toInt()
-                Log.i("CoundQuestion", eventList[0].questions?.size.toString())
-                var questionList: MutableList<Question> = mutableListOf()
-                var i: Int = 0
-                while (i < coundquestions!!) {
-                    var question = Question()
-                    question?.questionname = eventList[0].questions?.get(i)!!
-                    questionList.add(question)
-
-                    Log.i("QuestionList", questionList[i].votesno.toString())
-                    i++
-                }
-
-               recyclerView.adapter = RecyclerAdapterData1Fragment(questionList)
-               recyclerView.layoutManager = LinearLayoutManager(activity)
-
                 for (event in eventList) {
                     Log.i(TAG, "Event ${event}")
 
-                    dataHomeLocation.text = event.location
-                    dataHomeName.text = event.name
-                    dataHomeEventId.text = event.eventId
-                    dataHomeData.text = event.date
-                    dataHomeStartTime.text = event.starttime
-                    dataHomeDescription.text = event.description
+                    nameData1HolderTV.text = event.name
+                    locationData1HolderTV.text = event.location
+                    dateData1HolderTV.text = event.date
+                    starttimeData1HolderTV.text = "${event.starttime} Uhr"
+                    eventIDData1HolderTV.text = event.eventId
+                    descriptionData1HolderTV.text = event.description
 
-                    /*
-                    //Augusin: Soll man das so machen oder kann man das irgendwie eleganter?
+
+                    //Augusin:
                     var coundquestions = event.questions?.size?.toInt()
                     when (coundquestions) {
                         0 -> Log.e(TAG, "Keine Fragen vorhanden")
-                        1 -> dataHomeQuestion1.text = event.questions?.get(0)
+                        1 -> {
+                            question1Data1HolderTV.text = event.questions?.get(0)
+                            card_layout_question2.visibility = View.INVISIBLE
+                            card_layout_question3.visibility = View.INVISIBLE
+                            card_layout_question4.visibility = View.INVISIBLE
+                            card_layout_question5.visibility = View.INVISIBLE
+                        }
+
                         2 -> {
-                            dataHomeQuestion1.text = event.questions?.get(0)
-                            dataHomeQuestion2.text = event.questions?.get(1)
+                            question1Data1HolderTV.text = event.questions?.get(0)
+                            question2Data1HolderTV.text = event.questions?.get(1)
+
+                            card_layout_question3.visibility = View.INVISIBLE
+                            card_layout_question4.visibility = View.INVISIBLE
+                            card_layout_question5.visibility = View.INVISIBLE
                         }
                         3 -> {
-                            dataHomeQuestion1.text = event.questions?.get(0)
-                            dataHomeQuestion2.text = event.questions?.get(1)
-                            dataHomeQuestion3.text = event.questions?.get(2)
+                            question1Data1HolderTV.text = event.questions?.get(0)
+                            question2Data1HolderTV.text = event.questions?.get(1)
+                            question3Data1HolderTV.text = event.questions?.get(2)
+
+                            card_layout_question4.visibility = View.INVISIBLE
+                            card_layout_question5.visibility = View.INVISIBLE
                         }
                         4 -> {
-                            dataHomeQuestion1.text = event.questions?.get(0)
-                            dataHomeQuestion2.text = event.questions?.get(1)
-                            dataHomeQuestion3.text = event.questions?.get(2)
-                            dataHomeQuestion4.text = event.questions?.get(3)
-        
+                            question1Data1HolderTV.text = event.questions?.get(0)
+                            question2Data1HolderTV.text = event.questions?.get(1)
+                            question3Data1HolderTV.text = event.questions?.get(2)
+                            question4Data1HolderTV.text = event.questions?.get(3)
+
+                            card_layout_question5.visibility = View.INVISIBLE
                         }
                         5 -> {
-                            dataHomeQuestion1.text = event.questions?.get(0)
-                            dataHomeQuestion2.text = event.questions?.get(1)
-                            dataHomeQuestion3.text = event.questions?.get(2)
-                            dataHomeQuestion4.text = event.questions?.get(3)
-                            dataHomeQuestion5.text = event.questions?.get(4)
+                            question1Data1HolderTV.text = event.questions?.get(0)
+                            question2Data1HolderTV.text = event.questions?.get(1)
+                            question3Data1HolderTV.text = event.questions?.get(2)
+                            question4Data1HolderTV.text = event.questions?.get(3)
+                            question5Data1HolderTV.text = event.questions?.get(4)
                         }
-                    }*/
-                }
-            }
-
-        // Ruft die Antworten für Frage 1 ab
-        val answersReference = firestoneDb.collection("answers")
-        answersReference
-            .whereEqualTo("event_id", args.countEventId)
-            //.whereEqualTo("question_index", "0")
-            .addSnapshotListener { snapshot, exception ->
-                if (exception != null || snapshot == null) {
-                    Log.e(TAG, "Exception when querying answers", exception)
-                    return@addSnapshotListener
-                }
-                //Speichert die Objekte in eine Liste
-                var answerList = snapshot.toObjects(Answer::class.java)
-                answers.clear()
-                answers.addAll(answerList)
-
-
-                /*
-
-                //var countAnswerYes1 = 0
-                //var countAnswerNo1 = 0
-                var countAnswer1 = Array(2) { 0 }
-                var countAnswer2 = Array(2) { 0 }
-                var countAnswer3 = Array(2) { 0 }
-                var countAnswer4 = Array(2) { 0 }
-                var countAnswer5 = Array(2) { 0 }
-                var countsum1 = 0
-                var countsum2 = 0
-                var countsum3 = 0
-                var countsum4 = 0
-                var countsum5 = 0
-
-                //countAnswer[0] ist ja und countAnswer[1] ist nein
-
-*/
-                for (answer in answerList) {
-                    Log.i(TAG, "Answers ${answer}")
-
-                    if (answer.answer == "ja") {
-                        questionList[answer.questionIndex.toInt()].votesyes++
-                    } else if(answer.answer == "nein") {
-                        Log.e(TAG, "QuestinIndex: ${answer.questionIndex.toInt()}")
-                        questionList[answer.questionIndex.toInt()].votesno++
                     }
-                    /*
-                    when (answer.questionIndex.toInt()) {
-                        0 -> {
-                            if (answer.answer == "ja") {
-                                countAnswer1[0]++
-                            } else if (answer.answer == "nein") {
-                                countAnswer1[1]++
-                            }
-                        }
-                        1 -> {
-                            if (answer.answer == "ja") {
-                                countAnswer2[0]++
-                            } else if (answer.answer == "nein") {
-                                countAnswer2[1]++
-                            }
-                        }
-                        2 -> {
-                            if (answer.answer == "ja") {
-                                countAnswer3[0]++
-                            } else if (answer.answer == "nein") {
-                                countAnswer3[1]++
-                            }
-                        }
-                        3 -> {}
-                        4 -> {}
-                    }
-                    //DataHomeQueston1Sum.text = countsum.toString()
-                    */
                 }
-                /*
-                dataHomeQuestion1Yes.text = "Ja: ${countAnswer1[0]}"
-                dataHomeQuestion1No.text = "Nein: ${countAnswer1[1]}"
 
-                dataHomeQuestion2Yes.text = "Ja: ${countAnswer2[0]}"
-                dataHomeQuestion2No.text = "Nein: ${countAnswer2[1]}"
 
-                dataHomeQuestion3Yes.text = "Ja: ${countAnswer3[0]}"
-                dataHomeQuestion3No.text = "Nein: ${countAnswer3[1]}"
+                // Ruft die Antworten für Fragen ab
+                val answersReference = firestoneDb.collection("answers")
+                answersReference
+                    .whereEqualTo("event_id", args.countEventId)
+                    //.whereEqualTo("question_index", "0")
+                    .addSnapshotListener { snapshot, exception ->
+                        if (exception != null || snapshot == null) {
+                            Log.e(TAG, "Exception when querying answers", exception)
+                            return@addSnapshotListener
+                        }
+                        //Speichert die Objekte in eine Liste
+                        var answerList = snapshot.toObjects(Answer::class.java)
+                        answers.clear()
+                        answers.addAll(answerList)
 
-                countsum1 = countAnswer1[0] + countAnswer1[1]
-                dataHomeQueston1Sum.text = "Gesamt: ${countsum1}"
 
-                countsum2 = countAnswer2[0] + countAnswer2[1]
-                dataHomeQueston2Sum.text = "Gesamt: ${countsum2}"
+                        var countAnswerYes1 = 0
+                        var countAnswerNo1 = 0
+                        var countAnswer1 = Array(2) { 0 }
+                        var countAnswer2 = Array(2) { 0 }
+                        var countAnswer3 = Array(2) { 0 }
+                        var countAnswer4 = Array(2) { 0 }
+                        var countAnswer5 = Array(2) { 0 }
+                        var countsum1 = 0
+                        var countsum2 = 0
+                        var countsum3 = 0
+                        var countsum4 = 0
+                        var countsum5 = 0
 
-                countsum3 = countAnswer3[0] + countAnswer3[1]
-                dataHomeQueston3Sum.text = "Gesamt: ${countsum3}"
-*/
+                        //countAnswer[0] ist ja und countAnswer[1] ist nein
+
+
+                        for (answer in answerList) {
+                            Log.i(TAG, "Answers ${answer}")
+
+                            when (answer.questionIndex.toInt()) {
+                                0 -> {
+                                    if (answer.answer == "ja") {
+                                        countAnswer1[0]++
+                                    } else if (answer.answer == "nein") {
+                                        countAnswer1[1]++
+                                    }
+                                }
+                                1 -> {
+                                    if (answer.answer == "ja") {
+                                        countAnswer2[0]++
+                                    } else if (answer.answer == "nein") {
+                                        countAnswer2[1]++
+                                    }
+                                }
+                                2 -> {
+                                    if (answer.answer == "ja") {
+                                        countAnswer3[0]++
+                                    } else if (answer.answer == "nein") {
+                                        countAnswer3[1]++
+                                    }
+                                }
+                                3 -> {
+                                    if (answer.answer == "ja") {
+                                        countAnswer4[0]++
+                                    } else if (answer.answer == "nein") {
+                                        countAnswer4[1]++
+                                    }
+                                }
+                                4 -> {
+                                    if (answer.answer == "ja") {
+                                        countAnswer4[0]++
+                                    } else if (answer.answer == "nein") {
+                                        countAnswer4[1]++
+                                    }
+                                }
+                            }
+                            question1SumData1HolderTV.text = countsum1.toString()
+                            question2SumData1HolderTV.text = countsum2.toString()
+                            question3SumData1HolderTV.text = countsum3.toString()
+                            question4SumData1HolderTV.text = countsum4.toString()
+                            question5SumData1HolderTV.text = countsum5.toString()
+
+                        }
+
+                        question1YesData1HolderTV.text = "${countAnswer1[0]}"
+                        question1NoData1HolderTV.text = "${countAnswer1[1]}"
+
+                        question2YesData1HolderTV.text = "${countAnswer2[0]}"
+                        question2NoData1HolderTV.text = "${countAnswer2[1]}"
+
+                        question3YesData1HolderTV.text = "${countAnswer3[0]}"
+                        question3NoData1HolderTV.text = "${countAnswer3[1]}"
+
+                        question4YesData1HolderTV.text = "${countAnswer4[0]}"
+                        question4NoData1HolderTV.text = "${countAnswer4[1]}"
+
+                        question5YesData1HolderTV.text = "${countAnswer5[0]}"
+                        question5NoData1HolderTV.text = "${countAnswer5[1]}"
+
+                        countsum1 = countAnswer1[0] + countAnswer1[1]
+                        question1SumData1HolderTV.text = "${countsum1}"
+
+                        countsum2 = countAnswer2[0] + countAnswer2[1]
+                        question2SumData1HolderTV.text = "${countsum2}"
+
+                        countsum3 = countAnswer3[0] + countAnswer3[1]
+                        question3SumData1HolderTV.text = "${countsum3}"
+
+                        countsum4 = countAnswer4[0] + countAnswer4[1]
+                        question4SumData1HolderTV.text = "${countsum4}"
+
+                        countsum5 = countAnswer5[0] + countAnswer5[1]
+                        question5SumData1HolderTV.text = "${countsum5}"
+
+                    }
 
             }
-
-
-        //data1_user_id_TV.text = args.userId.toString()
-        //data1_event_id_TV.text = args.eventId.toString()
-        //data1_user_id_TV.text = args.name.toString()
     }
-
-
 }
 

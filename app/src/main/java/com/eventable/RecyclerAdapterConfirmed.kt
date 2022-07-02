@@ -38,6 +38,7 @@ class RecyclerAdapterConfirmed(val events: List<Event>) :
             itemView.dateHolderTV.text = event.date
             itemView.timeHolderTV.text = "${event.starttime} Uhr"
 
+
             countEventId.add(event.eventId)
             count++
         }
@@ -49,10 +50,10 @@ class RecyclerAdapterConfirmed(val events: List<Event>) :
 
                 navController = findNavController(itemView)
 
-                val action_HomeToData1 =
-                    HomeFragmentDirections.actionHomeFragmentToData1Fragment(countEventId[pos])
+                val action_ConfirmedToData3 =
+                    ConfirmedFragmentDirections.actionConfirmedFragmentToData3Fragment(countEventId[pos])
+                navController.navigate(action_ConfirmedToData3)
 
-                navController.navigate(action_HomeToData1) //philbruck: geht auch "// navController.navigate(R.id.action.....)"
 
             }
         }

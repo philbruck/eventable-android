@@ -19,7 +19,6 @@ override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         FirebaseAuth.getInstance().signOut()
         Log.e(TAG, "Benutzer wurde erfoglreich ausgeloggt")
         startActivity(Intent(activity, LogInActivity::class.java))
-
     }
 
 

@@ -7,7 +7,7 @@
     tools:context=".Data3Fragment">
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/card_layout_data3"
+        android:id="@+id/card_layout_Data3Fragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="12dp"
@@ -33,7 +33,7 @@
                 android:layout_height="match_parent">
 
                 <TextView
-                    android:id="@+id/nameData2HolderTV"
+                    android:id="@+id/NameData3HolderTV"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_alignParentTop="true"
@@ -43,10 +43,10 @@
                 </TextView>
 
                 <TextView
-                    android:id="@+id/locationData3TV"
+                    android:id="@+id/LocationData3TV"
                     android:layout_width="115dp"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/nameData2HolderTV"
+                    android:layout_below="@+id/NameData3HolderTV"
                     android:padding="4dp"
                     android:text="Ort:"
                     android:textSize="16sp">
@@ -54,21 +54,20 @@
                 </TextView>
 
                 <TextView
-                    android:id="@+id/dateData3TV"
+                    android:id="@+id/dataData3TV"
                     android:layout_width="115dp"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/locationData3TV"
+                    android:layout_below="@+id/LocationData3TV"
                     android:padding="4dp"
                     android:text="Datum:"
                     android:textSize="16sp">
-
                 </TextView>
 
                 <TextView
                     android:id="@+id/starttimeData3TV"
                     android:layout_width="115dp"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/dateData3TV"
+                    android:layout_below="@+id/dataData3TV"
                     android:padding="4dp"
                     android:text="Uhrzeit:"
                     android:textSize="16sp">
@@ -76,7 +75,7 @@
                 </TextView>
 
                 <TextView
-                    android:id="@+id/descriptionData3TV"
+                    android:id="@+id/desctiptionData3TV"
                     android:layout_width="115dp"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/starttimeData3HolderTV"
@@ -90,8 +89,8 @@
                     android:id="@+id/locationData3HolderTV"
                     android:layout_width="263dp"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/nameData2HolderTV"
-                    android:layout_toRightOf="@+id/locationData3TV"
+                    android:layout_below="@+id/NameData3HolderTV"
+                    android:layout_toRightOf="@+id/LocationData3TV"
                     android:padding="4dp"
                     android:text="Lorem ipsum.."
                     android:textSize="16sp">
@@ -102,32 +101,30 @@
                     android:id="@+id/dateData3HolderTV"
                     android:layout_width="263dp"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/locationData3TV"
-                    android:layout_toRightOf="@+id/locationData3TV"
+                    android:layout_below="@+id/LocationData3TV"
+                    android:layout_toRightOf="@+id/LocationData3TV"
                     android:padding="4dp"
                     android:text="Lorem ipsum.."
                     android:textSize="16sp">
-
                 </TextView>
 
                 <TextView
                     android:id="@+id/starttimeData3HolderTV"
                     android:layout_width="263dp"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/dateData3TV"
-                    android:layout_toRightOf="@+id/locationData3TV"
+                    android:layout_below="@+id/dataData3TV"
+                    android:layout_toRightOf="@+id/LocationData3TV"
                     android:padding="4dp"
                     android:text="Lorem ipsum.."
                     android:textSize="16sp">
-
                 </TextView>
 
                 <TextView
                     android:id="@+id/descriptionData3HolderTV"
                     android:layout_width="263dp"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/starttimeData3TV"
-                    android:layout_toRightOf="@+id/locationData3TV"
+                    android:layout_below="@id/starttimeData3HolderTV"
+                    android:layout_toRightOf="@+id/LocationData3TV"
                     android:padding="4dp"
                     android:text="Lorem ipsum.."
                     android:textSize="16sp">
@@ -141,14 +138,343 @@
 
     </androidx.cardview.widget.CardView>
 
-    <RelativeLayout
-        android:layout_width="399dp"
-        android:layout_height="481dp"
+    <ScrollView
+        android:layout_width="410dp"
+        android:layout_height="468dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.82">
+        app:layout_constraintVertical_bias="1.0">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card_layout_question1Data3"
+                    android:layout_width="370dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="12dp"
+                    app:cardBackgroundColor="#1E0A70DD"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="3dp"
+                    app:contentPadding="2dp">
+
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/card_const_layout_confirmed"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="10dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                android:id="@+id/question1Data3HolderTV"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentTop="true"
+                                android:text="Frage1"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Large">
+
+                            </TextView>
+
+                            <TextView
+                                android:id="@+id/question1AnswerData3TV"
+                                android:layout_width="70dp"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/question1Data3HolderTV"
+                                android:padding="4dp"
+                                android:text="Antwort:"
+                                android:textSize="16sp">
+
+                            </TextView>
+
+                            <TextView
+                                android:id="@+id/question1AnswerData3HolderTV"
+                                android:layout_width="263dp"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/question1Data3HolderTV"
+                                android:layout_toRightOf="@+id/question1AnswerData3TV"
+                                android:padding="4dp"
+                                android:text="Lorem ipsum.."
+                                android:textSize="16sp">
+
+                            </TextView>
+
+                        </RelativeLayout>
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card_layout_question2Data3"
+                    android:layout_width="370dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="12dp"
+                    app:cardBackgroundColor="#1E0A70DD"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="3dp"
+                    app:contentPadding="2dp">
+
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/card_const_layout_confirmed"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="10dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                android:id="@+id/question2Data3HolderTV"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentTop="true"
+                                android:text="Frage2"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Large">
+
+                            </TextView>
+
+                            <TextView
+                                android:id="@+id/question2AnswerData3TV"
+                                android:layout_width="70dp"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/question2Data3HolderTV"
+                                android:padding="4dp"
+                                android:text="Antwort:"
+                                android:textSize="16sp">
+
+                            </TextView>
+
+                            <TextView
+                                android:id="@+id/question2AnswerData3HolderTV"
+                                android:layout_width="263dp"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/question2Data3HolderTV"
+                                android:layout_toRightOf="@+id/question2AnswerData3TV"
+                                android:padding="4dp"
+                                android:text="Lorem ipsum.."
+                                android:textSize="16sp">
+
+                            </TextView>
+
+                        </RelativeLayout>
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card_layout_question3Data3"
+                    android:layout_width="370dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="12dp"
+                    app:cardBackgroundColor="#1E0A70DD"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="3dp"
+                    app:contentPadding="2dp">
+
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/card_const_layout_confirmed"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="10dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                android:id="@+id/question3Data3HolderTV"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentTop="true"
+                                android:text="Frage3"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Large">
+
+                            </TextView>
+
+                            <TextView
+                                android:id="@+id/question3AnswerData3TV"
+                                android:layout_width="70dp"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/question3Data3HolderTV"
+                                android:padding="4dp"
+                                android:text="Antwort:"
+                                android:textSize="16sp">
+
+                            </TextView>
+
+                            <TextView
+                                android:id="@+id/question3AnswerData3HolderTV"
+                                android:layout_width="263dp"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/question3Data3HolderTV"
+                                android:layout_toRightOf="@+id/question3AnswerData3TV"
+                                android:padding="4dp"
+                                android:text="Lorem ipsum.."
+                                android:textSize="16sp">
+
+                            </TextView>
+
+                        </RelativeLayout>
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card_layout_question4Data3"
+                    android:layout_width="370dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="12dp"
+                    app:cardBackgroundColor="#1E0A70DD"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="3dp"
+                    app:contentPadding="2dp">
+
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/card_const_layout_confirmed"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="10dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                android:id="@+id/question4Data3HolderTV"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentTop="true"
+                                android:text="Frage4"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Large">
+
+                            </TextView>
+
+                            <TextView
+                                android:id="@+id/question4AnswerData3TV"
+                                android:layout_width="70dp"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/question4Data3HolderTV"
+                                android:padding="4dp"
+                                android:text="Antwort:"
+                                android:textSize="16sp">
+
+                            </TextView>
+
+                            <TextView
+                                android:id="@+id/question4AnswerData3HolderTV"
+                                android:layout_width="263dp"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/question4Data3HolderTV"
+                                android:layout_toRightOf="@+id/question4AnswerData3TV"
+                                android:padding="4dp"
+                                android:text="Lorem ipsum.."
+                                android:textSize="16sp">
+
+                            </TextView>
+
+                        </RelativeLayout>
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card_layout_question5Data3"
+                    android:layout_width="370dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="12dp"
+                    app:cardBackgroundColor="#1E0A70DD"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="3dp"
+                    app:contentPadding="2dp">
+
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/card_const_layout_confirmed"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="10dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                android:id="@+id/question5Data3HolderTV"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentTop="true"
+                                android:text="Frage5"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Large">
+
+                            </TextView>
+
+                            <TextView
+                                android:id="@+id/question5AnswerData3TV"
+                                android:layout_width="70dp"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/question5Data3HolderTV"
+                                android:padding="4dp"
+                                android:text="Antwort:"
+                                android:textSize="16sp">
+
+                            </TextView>
+
+                            <TextView
+                                android:id="@+id/question5AnswerData3HolderTV"
+                                android:layout_width="263dp"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/question5Data3HolderTV"
+                                android:layout_toRightOf="@+id/question5AnswerData3TV"
+                                android:padding="4dp"
+                                android:text="Lorem ipsum.."
+                                android:textSize="16sp">
+
+                            </TextView>
+
+                        </RelativeLayout>
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+        </ScrollView>
+    </ScrollView>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerViewData3"
