@@ -23,21 +23,17 @@ class Data2Fragment : Fragment(R.layout.fragment_data2) {
     private lateinit var events: MutableList<Event>
     private lateinit var answers: Answer
 
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         var countQuestion = 0
         var voteQuestion = args.voteQuestion
-        var invitationCode = 0
         val db = FirebaseFirestore.getInstance()
         var auth = FirebaseAuth.getInstance()
         var user = auth.currentUser
         var uid = user?.uid
-
-
         firestoneDb = FirebaseFirestore.getInstance()
-        //Datenquelle wird erstellt
+
         events = mutableListOf()
 
         //Augustin: Abfrage von EventInfos
@@ -57,13 +53,12 @@ class Data2Fragment : Fragment(R.layout.fragment_data2) {
 
                 for (event in eventList) {
                     nameData2HolderTV.text = event.name
-
                     locationData2HolderTV.text = event.location
                     dateData2HolderTV.text = event.date
                     starttimeData2HolderTV.text = "${event.starttime} Uhr"
-                    coundQuestionsData2HolderTV.text = "${voteQuestion + 1} /  ${event.questions?.size.toString()}"
+                    coundQuestionsData2HolderTV.text =
+                        "${voteQuestion + 1} /  ${event.questions?.size.toString()}"
                     descriptionData2HolderTV.text = event.description
-
 
                     questionData2EdTe.text = event.questions?.get(voteQuestion)
 
@@ -88,7 +83,6 @@ class Data2Fragment : Fragment(R.layout.fragment_data2) {
             }
 
             if (yesRB.isChecked || noRB.isChecked) {
-
                 db.collection("answers").document().set(answers)
                     .addOnSuccessListener {
                         Log.d(
@@ -122,13 +116,8 @@ class Data2Fragment : Fragment(R.layout.fragment_data2) {
                     Data2FragmentDirections.actionData2FragmentToHomeFragment()
                 findNavController().navigate(action_Data2ToHomeFragment)
             }
-
-
         }
-
-
     }
-
 }
 
 

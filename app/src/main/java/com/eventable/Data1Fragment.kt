@@ -8,7 +8,6 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.navArgs
 import com.eventable.model.Answer
 import com.eventable.model.Event
-import com.eventable.model.Question
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.fragment_data1.*
@@ -19,23 +18,17 @@ class Data1Fragment : Fragment(R.layout.fragment_data1) {
     private lateinit var firestoneDb: FirebaseFirestore
     private lateinit var events: MutableList<Event>
     private lateinit var answers: MutableList<Answer>
-    private lateinit var questionList: MutableList<Question>
-
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
 
         var auth = FirebaseAuth.getInstance()
         var user = auth.currentUser
         var uid = user?.uid
 
-
         firestoneDb = FirebaseFirestore.getInstance()
         events = mutableListOf()
         answers = mutableListOf()
-        questionList = mutableListOf()
-
 
         val eventsReference = firestoneDb.collection("events")
         eventsReference
@@ -49,8 +42,6 @@ class Data1Fragment : Fragment(R.layout.fragment_data1) {
                 var eventList = snapshot.toObjects(Event::class.java)
                 events.clear()
                 events.addAll(eventList)
-                //adapter.notifyDataSetChanged()
-                Log.i("EventList: ", eventList.toString())
 
                 for (event in eventList) {
                     Log.i(TAG, "Event ${event}")
@@ -62,8 +53,7 @@ class Data1Fragment : Fragment(R.layout.fragment_data1) {
                     eventIDData1HolderTV.text = event.eventId
                     descriptionData1HolderTV.text = event.description
 
-
-                    //Augusin:
+                    //Augusin: Fügt die Fragen den entsprechenden Holdern zu und blendet nicht gebrauchte Cards aus
                     var coundquestions = event.questions?.size?.toInt()
                     when (coundquestions) {
                         0 -> Log.e(TAG, "Keine Fragen vorhanden")
@@ -74,7 +64,6 @@ class Data1Fragment : Fragment(R.layout.fragment_data1) {
                             card_layout_question4.visibility = View.INVISIBLE
                             card_layout_question5.visibility = View.INVISIBLE
                         }
-
                         2 -> {
                             question1Data1HolderTV.text = event.questions?.get(0)
                             question2Data1HolderTV.text = event.questions?.get(1)
@@ -109,12 +98,10 @@ class Data1Fragment : Fragment(R.layout.fragment_data1) {
                     }
                 }
 
-
                 // Ruft die Antworten für Fragen ab
                 val answersReference = firestoneDb.collection("answers")
                 answersReference
                     .whereEqualTo("event_id", args.countEventId)
-                    //.whereEqualTo("question_index", "0")
                     .addSnapshotListener { snapshot, exception ->
                         if (exception != null || snapshot == null) {
                             Log.e(TAG, "Exception when querying answers", exception)
@@ -125,9 +112,6 @@ class Data1Fragment : Fragment(R.layout.fragment_data1) {
                         answers.clear()
                         answers.addAll(answerList)
 
-
-                        var countAnswerYes1 = 0
-                        var countAnswerNo1 = 0
                         var countAnswer1 = Array(2) { 0 }
                         var countAnswer2 = Array(2) { 0 }
                         var countAnswer3 = Array(2) { 0 }
@@ -140,8 +124,6 @@ class Data1Fragment : Fragment(R.layout.fragment_data1) {
                         var countsum5 = 0
 
                         //countAnswer[0] ist ja und countAnswer[1] ist nein
-
-
                         for (answer in answerList) {
                             Log.i(TAG, "Answers ${answer}")
 
@@ -176,9 +158,9 @@ class Data1Fragment : Fragment(R.layout.fragment_data1) {
                                 }
                                 4 -> {
                                     if (answer.answer == "ja") {
-                                        countAnswer4[0]++
+                                        countAnswer5[0]++
                                     } else if (answer.answer == "nein") {
-                                        countAnswer4[1]++
+                                        countAnswer5[1]++
                                     }
                                 }
                             }
@@ -187,9 +169,8 @@ class Data1Fragment : Fragment(R.layout.fragment_data1) {
                             question3SumData1HolderTV.text = countsum3.toString()
                             question4SumData1HolderTV.text = countsum4.toString()
                             question5SumData1HolderTV.text = countsum5.toString()
-
                         }
-
+                        //Ordnet den Counterzählern die richtige Anzahl zu
                         question1YesData1HolderTV.text = "${countAnswer1[0]}"
                         question1NoData1HolderTV.text = "${countAnswer1[1]}"
 
@@ -205,6 +186,8 @@ class Data1Fragment : Fragment(R.layout.fragment_data1) {
                         question5YesData1HolderTV.text = "${countAnswer5[0]}"
                         question5NoData1HolderTV.text = "${countAnswer5[1]}"
 
+
+                        //Berechnet die Summe aller Antworten pro Frage
                         countsum1 = countAnswer1[0] + countAnswer1[1]
                         question1SumData1HolderTV.text = "${countsum1}"
 
@@ -219,9 +202,7 @@ class Data1Fragment : Fragment(R.layout.fragment_data1) {
 
                         countsum5 = countAnswer5[0] + countAnswer5[1]
                         question5SumData1HolderTV.text = "${countsum5}"
-
                     }
-
             }
     }
 }

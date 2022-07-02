@@ -20,7 +20,6 @@ class LogInActivity : AppCompatActivity() {
         val passwordLogInEdTe: EditText = findViewById(R.id.passwordLogInEdTe)
         val logInBtn: Button = findViewById(R.id.logInBtn)
         auth = FirebaseAuth.getInstance()
-        
 
         registrationActivityBtn.setOnClickListener {
             val intent = Intent(this, RegistrationActivity::class.java)

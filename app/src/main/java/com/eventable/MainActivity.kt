@@ -28,8 +28,6 @@ class MainActivity : AppCompatActivity() {
 
         Log.i("TAG", "Die MainActivity hat gestartet!")
 
-
-
         appBarConfiguration = AppBarConfiguration(
             setOf(
                 R.id.homeFragment,
@@ -55,7 +53,6 @@ class MainActivity : AppCompatActivity() {
 
         toolbar.setupWithNavController(navController) //philbruck: toolbar mit dem navController koppeln
         bottom_nav.setupWithNavController(navController) //philbruck: bootton_nav mit dem navController koppeln
-
 
     }
 

@@ -17,14 +17,12 @@ class RegistrationActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_registration)
 
-
         val emailregEdTe: EditText = findViewById(R.id.emailregEdTe)
         val passwordregEdTe: EditText = findViewById(R.id.passwordregEdTe)
         val registrationBtn: Button = findViewById(R.id.registrationBtn)
         val logInActivityBtn: Button = findViewById(R.id.logInActivityBtn)
 
         val db = Firebase.firestore
-
 
         logInActivityBtn.setOnClickListener {
             // Zurück auf die LogInActivity
@@ -51,7 +49,6 @@ class RegistrationActivity : AppCompatActivity() {
                     ).show()
                 }
                 else -> {
-
                     val email: String = emailregEdTe.text.toString().trim { it <= ' ' }
                     val password: String = passwordregEdTe.text.toString().trim { it <= ' ' }
 
