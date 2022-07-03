@@ -6,6 +6,8 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.commit
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.fragment_settings.*
@@ -21,9 +23,10 @@ class SettingsFragment : Fragment(R.layout.fragment_settings) {
                 //Augustin: Ausloggen des Benutzers
             Log.e(TAG, "Benutzer wurde erfoglreich ausgeloggt")
             myAuth.signOut()
+
             if(myAuth.currentUser == null) {
-                activity?.finish()
                 startActivity(Intent(activity, LogInActivity::class.java))
+
             }
         }
     }

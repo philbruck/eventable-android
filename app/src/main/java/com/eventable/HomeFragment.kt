@@ -74,6 +74,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
     }
 
 
+
     private fun refreshHome() {
         refresherHome.setOnRefreshListener { //philbruck: dem <androidx.swiperefreshlayout> Layout mit der id "refreher" eine Refrsehlsitener geben!
 
