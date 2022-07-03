@@ -32,14 +32,16 @@ class Data2Fragment : Fragment(R.layout.fragment_data2) {
         var auth = FirebaseAuth.getInstance()
         var user = auth.currentUser
         var uid = user?.uid
+        var invitationCode = args.invitationCode
         firestoneDb = FirebaseFirestore.getInstance()
+
 
         events = mutableListOf()
 
         //Augustin: Abfrage von EventInfos
         val eventsReference = firestoneDb.collection("events")
         eventsReference
-            .whereEqualTo("event_id", args.invitationCode)
+            .whereEqualTo("event_id", invitationCode)
             .addSnapshotListener { snapshot, exception ->
                 if (exception != null || snapshot == null) {
                     Log.e(ContentValues.TAG, "Exception when querying events", exception)

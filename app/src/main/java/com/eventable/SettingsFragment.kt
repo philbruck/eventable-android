@@ -19,8 +19,6 @@ class SettingsFragment : Fragment(R.layout.fragment_settings) {
 
         LogOutSettingsBtn.setOnClickListener {
                 //Augustin: Ausloggen des Benutzers
-
-
             Log.e(TAG, "Benutzer wurde erfoglreich ausgeloggt")
             myAuth.signOut()
             if(myAuth.currentUser == null) {
