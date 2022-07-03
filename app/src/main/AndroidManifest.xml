@@ -10,9 +10,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Eventable">
         <activity
-            android:name=".DashboardActivity"
-            android:exported="false" />
-        <activity
             android:name=".RegistrationActivity"
             android:exported="false" />
         <activity
@@ -25,7 +22,8 @@
         </activity>
         <activity
             android:name=".MainActivity"
-            android:exported="false">
+            android:exported="false"
+            android:noHistory="true">
         </activity>
     </application>
 
