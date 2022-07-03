@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/card_layout_Data3Fragment"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="12dp"
+    app:cardBackgroundColor="#1E0A70DD"
+    app:cardCornerRadius="10dp"
+    app:cardElevation="3dp"
+    app:contentPadding="2dp">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/card_const_layout_confirmed"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/nameTV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:text="Lorem ipsum..."
+                android:textAppearance="@style/TextAppearance.AppCompat.Large">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/placeTV"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/nameTV"
+                android:padding="4dp"
+                android:text="Ort:"
+                android:textSize="16sp">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/dateTV"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/placeTV"
+                android:padding="4dp"
+                android:text="Datum:"
+                android:textSize="16sp">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/timeTV"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/dateTV"
+                android:padding="4dp"
+                android:text="Uhrzeit:"
+                android:textSize="16sp">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/placeHolderTV"
+                android:layout_width="263dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/nameTV"
+                android:layout_toRightOf="@+id/placeTV"
+                android:padding="4dp"
+                android:text="Lorem ipsum.."
+                android:textSize="16sp">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/dateHolderTV"
+                android:layout_width="263dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/placeTV"
+                android:layout_toRightOf="@+id/placeTV"
+                android:padding="4dp"
+                android:text="Lorem ipsum.."
+                android:textSize="16sp">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/timeHolderTV"
+                android:layout_width="263dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/dateTV"
+                android:layout_toRightOf="@+id/placeTV"
+                android:padding="4dp"
+                android:text="Lorem ipsum.."
+                android:textSize="16sp">
+
+            </TextView>
+
+
+        </RelativeLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

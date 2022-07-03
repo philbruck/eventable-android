@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/card_layout_Data3Fragment"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="12dp"
+    app:cardBackgroundColor="#1E0A70DD"
+    app:cardCornerRadius="10dp"
+    app:cardElevation="3dp"
+    app:contentPadding="2dp">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/card_const_layout_confirmed"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/cardLayoutNameData1HolderTV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:text="Lorem ipsum..."
+                android:textAppearance="@style/TextAppearance.AppCompat.Large">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/cardLayoutYesData1TV"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/cardLayoutNameData1HolderTV"
+                android:padding="4dp"
+                android:text="Ja:"
+                android:textSize="16sp">
+            </TextView>
+
+            <TextView
+                android:id="@+id/cardLayoutNoData1TV"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/cardLayoutYesData1TV"
+                android:padding="4dp"
+                android:text="Nein:"
+                android:textSize="16sp">
+
+            </TextView>
+
+            <TextView
+
+                android:id="@+id/cardLayoutSumData1TV"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/cardLayoutNoData1TV"
+                android:padding="4dp"
+                android:text="Gesamt:"
+                android:textSize="16sp">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/cardLayoutYesData1HolderTV"
+                android:layout_width="263dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/cardLayoutNameData1HolderTV"
+                android:layout_toRightOf="@+id/cardLayoutYesData1TV"
+                android:padding="4dp"
+                android:text="Lorem ipsum.."
+                android:textSize="16sp">
+            </TextView>
+
+            <TextView
+                android:id="@+id/cardLayoutNoData1HolderTV"
+                android:layout_width="263dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/cardLayoutYesData1TV"
+                android:layout_toRightOf="@+id/cardLayoutYesData1TV"
+                android:padding="4dp"
+                android:text="Lorem ipsum.."
+                android:textSize="16sp">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/cardLayoutSumData1HolderTV"
+                android:layout_width="263dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/cardLayoutNoData1TV"
+                android:layout_toRightOf="@+id/cardLayoutYesData1TV"
+                android:padding="4dp"
+                android:text="Lorem ipsum.."
+                android:textSize="16sp">
+
+            </TextView>
+            
+        </RelativeLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

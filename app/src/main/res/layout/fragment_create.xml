@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CreateFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/card_const_layout"
+        android:layout_width="410dp"
+        android:layout_height="538dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="25dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout"
+            android:layout_width="364dp"
+            android:layout_height="457dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.51"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.04000002">
+
+            <TextView
+                android:id="@+id/nameTV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:text="Name:"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textSize="24sp">
+
+            </TextView>
+
+            <EditText
+                android:id="@+id/nameHolderET"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/nameTV"
+                android:layout_alignParentTop="false"
+                android:padding="4dp"
+                android:textSize="24sp">
+
+            </EditText>
+
+            <TextView
+                android:id="@+id/placeTV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/timeHolderET"
+                android:padding="4dp"
+                android:text="Ort:"
+                android:textSize="24sp">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/dateTV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/nameHolderET"
+                android:padding="4dp"
+                android:text="Datum:"
+                android:textSize="24sp">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/timeTV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/dateHolderET"
+                android:padding="4dp"
+                android:text="Uhrzeit:"
+                android:textSize="24sp">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/descriptionTV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/placeHolderET"
+                android:padding="4dp"
+                android:text="Beschreibung:"
+                android:textSize="24sp">
+
+            </TextView>
+
+            <EditText
+                android:id="@+id/placeHolderET"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/placeTV"
+                android:padding="4dp"
+                android:textSize="24sp">
+
+            </EditText>
+
+            <EditText
+                android:id="@+id/dateHolderET"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/dateTV"
+                android:inputType="date"
+                android:padding="4dp"
+                android:textSize="24sp">
+
+            </EditText>
+
+            <EditText
+                android:id="@+id/timeHolderET"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/timeTV"
+                android:inputType="time"
+                android:padding="4dp"
+                android:textSize="24sp">
+
+            </EditText>
+
+            <EditText
+                android:id="@+id/descriptionHolderET"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/descriptionTV"
+                android:padding="4dp"
+                android:textSize="24sp">
+
+            </EditText>
+
+
+        </RelativeLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <Button
+        android:id="@+id/createBtn"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="548dp"
+        android:text="Weiter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

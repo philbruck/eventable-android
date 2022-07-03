@@ -1,0 +1,728 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Data1Fragment">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_layout_data3"
+        android:layout_width="370dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="12dp"
+        app:cardBackgroundColor="#1E0A70DD"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="3dp"
+        app:contentPadding="2dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/card_const_layout_confirmed"
+            android:layout_width="370dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="4dp"
+                tools:layout_editor_absoluteX="10dp"
+                tools:layout_editor_absoluteY="10dp">
+
+                <TextView
+                    android:id="@+id/descriptionData1HolderTV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/eventIDData1TV"
+                    android:layout_toRightOf="@id/descriptionData1TV"
+                    android:padding="4dp"
+                    android:text="TextView"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/descriptionData1TV"
+                    android:layout_width="110dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/eventIDData1TV"
+                    android:padding="4dp"
+                    android:text="Beschreibung:"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/eventIDData1HolderTV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/starttimeData1HolderTV"
+                    android:layout_toRightOf="@id/eventIDData1TV"
+                    android:padding="4dp"
+                    android:text="Lorem..."
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/eventIDData1TV"
+                    android:layout_width="110dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/starttimeData1TV"
+                    android:padding="4dp"
+                    android:text="Event-ID:"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/nameData1HolderTV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:text="Pokerturnier"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large">
+
+                </TextView>
+
+                <TextView
+                    android:id="@+id/locationData1TV"
+                    android:layout_width="110dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/nameData1HolderTV"
+                    android:padding="4dp"
+                    android:text="Ort:"
+                    android:textSize="16sp">
+
+                </TextView>
+
+                <TextView
+                    android:id="@+id/dateData1TV"
+                    android:layout_width="110dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/locationData1TV"
+                    android:padding="4dp"
+                    android:text="Datum:"
+                    android:textSize="16sp">
+
+                </TextView>
+
+                <TextView
+                    android:id="@+id/starttimeData1TV"
+                    android:layout_width="110dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/dateData1TV"
+                    android:padding="4dp"
+                    android:text="Uhrzeit:"
+                    android:textSize="16sp">
+
+                </TextView>
+
+                <TextView
+                    android:id="@+id/locationData1HolderTV"
+                    android:layout_width="263dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/nameData1HolderTV"
+                    android:layout_toRightOf="@+id/locationData1TV"
+                    android:padding="4dp"
+                    android:text="Lorem ipsum.."
+                    android:textSize="16sp">
+
+                </TextView>
+
+                <TextView
+                    android:id="@+id/dateData1HolderTV"
+                    android:layout_width="263dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/locationData1TV"
+                    android:layout_toRightOf="@+id/locationData1TV"
+                    android:padding="4dp"
+                    android:text="Lorem ipsum.."
+                    android:textSize="16sp">
+
+                </TextView>
+
+                <TextView
+                    android:id="@+id/starttimeData1HolderTV"
+                    android:layout_width="263dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/dateData1TV"
+                    android:layout_toRightOf="@+id/locationData1TV"
+                    android:padding="4dp"
+                    android:text="Lorem ipsum.."
+                    android:textSize="16sp">
+
+                </TextView>
+
+            </RelativeLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="386dp"
+        android:layout_height="408dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.45"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_layout_question1"
+                android:layout_width="370dp"
+                android:layout_height="match_parent"
+                android:layout_margin="12dp"
+                app:cardBackgroundColor="#1E0A70DD"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="3dp"
+                app:contentPadding="2dp">
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/card_const_layout_confirmed"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/question1Data1HolderTV"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentTop="true"
+                            android:text="Frage1"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Large">
+
+                        </TextView>
+
+                        <TextView
+                            android:id="@+id/question1YesData1TV"
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/question1Data1HolderTV"
+                            android:padding="4dp"
+                            android:text="Ja:"
+                            android:textSize="16sp">
+
+                        </TextView>
+
+                        <TextView
+                            android:id="@+id/question1NoData1TV"
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/question1YesData1TV"
+                            android:padding="4dp"
+                            android:text="Nein:"
+                            android:textSize="16sp">
+
+                        </TextView>
+
+                        <TextView
+                            android:id="@+id/question1SumData1TV"
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/question1NoData1TV"
+                            android:padding="4dp"
+                            android:text="Gesamt:"
+                            android:textSize="16sp">
+
+                        </TextView>
+
+                        <TextView
+                            android:id="@+id/question1YesData1HolderTV"
+                            android:layout_width="263dp"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/question1Data1HolderTV"
+                            android:layout_toRightOf="@+id/question1YesData1TV"
+                            android:padding="4dp"
+                            android:text="Lorem ipsum.."
+                            android:textSize="16sp">
+
+                        </TextView>
+
+                        <TextView
+                            android:id="@+id/question1NoData1HolderTV"
+                            android:layout_width="263dp"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/question1YesData1TV"
+                            android:layout_toRightOf="@+id/question1YesData1TV"
+                            android:padding="4dp"
+                            android:text="Lorem ipsum.."
+                            android:textSize="16sp">
+
+                        </TextView>
+
+                        <TextView
+                            android:id="@+id/question1SumData1HolderTV"
+                            android:layout_width="263dp"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/question1NoData1TV"
+                            android:layout_toRightOf="@+id/question1YesData1TV"
+                            android:padding="4dp"
+                            android:text="Lorem ipsum.."
+                            android:textSize="16sp">
+
+                        </TextView>
+
+                    </RelativeLayout>
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_layout_question2"
+                android:layout_width="370dp"
+                android:layout_height="match_parent"
+                android:layout_margin="12dp"
+                app:cardBackgroundColor="#1E0A70DD"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="3dp"
+                app:contentPadding="2dp">
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/card_const_layout_confirmed"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/question2Data1HolderTV"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentTop="true"
+                            android:text="Frage2"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Large">
+
+                        </TextView>
+
+                        <TextView
+                            android:id="@+id/question2YesData1TV"
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/question2Data1HolderTV"
+                            android:padding="4dp"
+                            android:text="Ja:"
+                            android:textSize="16sp">
+
+                        </TextView>
+
+                        <TextView
+                            android:id="@+id/question2NoData1TV"
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/question2YesData1TV"
+                            android:padding="4dp"
+                            android:text="Nein:"
+                            android:textSize="16sp">
+
+                        </TextView>
+
+                        <TextView
+                            android:id="@+id/question2SumData1TV"
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/question2NoData1TV"
+                            android:padding="4dp"
+                            android:text="Gesamt:"
+                            android:textSize="16sp">
+
+                        </TextView>
+
+                        <TextView
+                            android:id="@+id/question2YesData1HolderTV"
+                            android:layout_width="263dp"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/question2Data1HolderTV"
+                            android:layout_toRightOf="@+id/question2YesData1TV"
+                            android:padding="4dp"
+                            android:text="Lorem ipsum.."
+                            android:textSize="16sp">
+
+                        </TextView>
+
+                        <TextView
+                            android:id="@+id/question2NoData1HolderTV"
+                            android:layout_width="263dp"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/question2YesData1TV"
+                            android:layout_toRightOf="@+id/question2YesData1TV"
+                            android:padding="4dp"
+                            android:text="Lorem ipsum.."
+                            android:textSize="16sp">
+
+                        </TextView>
+
+                        <TextView
+                            android:id="@+id/question2SumData1HolderTV"
+                            android:layout_width="263dp"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/question2NoData1TV"
+                            android:layout_toRightOf="@+id/question2YesData1TV"
+                            android:padding="4dp"
+                            android:text="Lorem ipsum.."
+                            android:textSize="16sp">
+
+                        </TextView>
+
+                    </RelativeLayout>
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_layout_question3"
+                android:layout_width="370dp"
+                android:layout_height="match_parent"
+                android:layout_margin="12dp"
+                app:cardBackgroundColor="#1E0A70DD"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="3dp"
+                app:contentPadding="2dp">
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/card_const_layout_confirmed"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/question3Data1HolderTV"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentTop="true"
+                            android:text="Frage3"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Large">
+
+                        </TextView>
+
+                        <TextView
+                            android:id="@+id/question3YesData1TV"
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/question3Data1HolderTV"
+                            android:padding="4dp"
+                            android:text="Ja:"
+                            android:textSize="16sp">
+
+                        </TextView>
+
+                        <TextView
+                            android:id="@+id/question3NoData1TV"
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/question3YesData1TV"
+                            android:padding="4dp"
+                            android:text="Nein:"
+                            android:textSize="16sp">
+
+                        </TextView>
+
+                        <TextView
+                            android:id="@+id/question3SumData1TV"
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/question3NoData1TV"
+                            android:padding="4dp"
+                            android:text="Gesamt:"
+                            android:textSize="16sp">
+
+                        </TextView>
+
+                        <TextView
+                            android:id="@+id/question3YesData1HolderTV"
+                            android:layout_width="263dp"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/question3Data1HolderTV"
+                            android:layout_toRightOf="@+id/question3YesData1TV"
+                            android:padding="4dp"
+                            android:text="Lorem ipsum.."
+                            android:textSize="16sp">
+
+                        </TextView>
+
+                        <TextView
+                            android:id="@+id/question3NoData1HolderTV"
+                            android:layout_width="263dp"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/question3YesData1TV"
+                            android:layout_toRightOf="@+id/question3YesData1TV"
+                            android:padding="4dp"
+                            android:text="Lorem ipsum.."
+                            android:textSize="16sp">
+
+                        </TextView>
+
+                        <TextView
+                            android:id="@+id/question3SumData1HolderTV"
+                            android:layout_width="263dp"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/question3NoData1TV"
+                            android:layout_toRightOf="@+id/question3YesData1TV"
+                            android:padding="4dp"
+                            android:text="Lorem ipsum.."
+                            android:textSize="16sp">
+
+                        </TextView>
+
+                    </RelativeLayout>
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_layout_question4"
+                android:layout_width="370dp"
+                android:layout_height="match_parent"
+                android:layout_margin="12dp"
+                app:cardBackgroundColor="#1E0A70DD"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="3dp"
+                app:contentPadding="2dp">
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/card_const_layout_confirmed"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/question4Data1HolderTV"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentTop="true"
+                            android:text="Frage4"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Large">
+
+                        </TextView>
+
+                        <TextView
+                            android:id="@+id/question4YesData1TV"
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/question4Data1HolderTV"
+                            android:padding="4dp"
+                            android:text="Ja:"
+                            android:textSize="16sp">
+
+                        </TextView>
+
+                        <TextView
+                            android:id="@+id/question4NoDataTV"
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/question4YesData1TV"
+                            android:padding="4dp"
+                            android:text="Nein:"
+                            android:textSize="16sp">
+
+                        </TextView>
+
+                        <TextView
+                            android:id="@+id/question4SumData1TV"
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/question4NoDataTV"
+                            android:padding="4dp"
+                            android:text="Gesamt:"
+                            android:textSize="16sp">
+
+                        </TextView>
+
+                        <TextView
+                            android:id="@+id/question4YesData1HolderTV"
+                            android:layout_width="263dp"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/question4Data1HolderTV"
+                            android:layout_toRightOf="@+id/question4YesData1TV"
+                            android:padding="4dp"
+                            android:text="Lorem ipsum.."
+                            android:textSize="16sp">
+
+                        </TextView>
+
+                        <TextView
+                            android:id="@+id/question4NoData1HolderTV"
+                            android:layout_width="263dp"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/question4YesData1TV"
+                            android:layout_toRightOf="@+id/question4YesData1TV"
+                            android:padding="4dp"
+                            android:text="Lorem ipsum.."
+                            android:textSize="16sp">
+
+                        </TextView>
+
+                        <TextView
+                            android:id="@+id/question4SumData1HolderTV"
+                            android:layout_width="263dp"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/question4NoDataTV"
+                            android:layout_toRightOf="@+id/question4YesData1TV"
+                            android:padding="4dp"
+                            android:text="Lorem ipsum.."
+                            android:textSize="16sp">
+
+                        </TextView>
+
+                    </RelativeLayout>
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_layout_question5"
+                android:layout_width="370dp"
+                android:layout_height="match_parent"
+                android:layout_margin="12dp"
+                app:cardBackgroundColor="#1E0A70DD"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="3dp"
+                app:contentPadding="2dp">
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/card_const_layout_confirmed"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/question5Data1HolderTV"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentTop="true"
+                            android:text="Frage5"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Large">
+
+                        </TextView>
+
+                        <TextView
+                            android:id="@+id/question5YesData1TV"
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/question5Data1HolderTV"
+                            android:padding="4dp"
+                            android:text="Ja:"
+                            android:textSize="16sp">
+
+                        </TextView>
+
+                        <TextView
+                            android:id="@+id/question5NoData1TV"
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/question5YesData1TV"
+                            android:padding="4dp"
+                            android:text="Nein:"
+                            android:textSize="16sp">
+
+                        </TextView>
+
+                        <TextView
+                            android:id="@+id/question5SumData1TV"
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/question5NoData1TV"
+                            android:padding="4dp"
+                            android:text="Gesamt:"
+                            android:textSize="16sp">
+
+                        </TextView>
+
+                        <TextView
+                            android:id="@+id/question5YesData1HolderTV"
+                            android:layout_width="263dp"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/question5Data1HolderTV"
+                            android:layout_toRightOf="@+id/question5YesData1TV"
+                            android:padding="4dp"
+                            android:text="Lorem ipsum.."
+                            android:textSize="16sp">
+
+                        </TextView>
+
+                        <TextView
+                            android:id="@+id/question5NoData1HolderTV"
+                            android:layout_width="263dp"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/question5YesData1TV"
+                            android:layout_toRightOf="@+id/question5YesData1TV"
+                            android:padding="4dp"
+                            android:text="Lorem ipsum.."
+                            android:textSize="16sp">
+
+                        </TextView>
+
+                        <TextView
+                            android:id="@+id/question5SumData1HolderTV"
+                            android:layout_width="263dp"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/question5NoData1TV"
+                            android:layout_toRightOf="@+id/question5YesData1TV"
+                            android:padding="4dp"
+                            android:text="Lorem ipsum.."
+                            android:textSize="16sp">
+
+                        </TextView>
+
+                    </RelativeLayout>
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
